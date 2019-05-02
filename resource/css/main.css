@@ -240,56 +240,140 @@ body{
 	color: #696969;
 }
 
+.mySlides {
+	display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+ 	max-width: 100%;
+	margin: 0 auto;
+  	position: relative;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
 .projectslist {
 	list-style-type: none;
 }
 .project {
-	margin-bottom: 20px;
-	border-bottom: 1px solid #57606F;
-	padding: 5px;
+	position: relative;
+	text-align: center;
+	padding: 60px;
 }
-.project:last-child{
-	border-bottom: none;
+.project img {
+	width: 50vw;
 }
-.project:hover {
-	box-shadow: 0px 4px 6px -4px #c6b4c0;
-	transition: 0.7s;
+.projectFullDetails {
+	position: absolute;
+	bottom: 0;
+	padding: 5px 30px;
+	background: rgba(30, 33, 60, 0.8);
+	text-align: left;
+	border-radius: 15px;
+	left: 50px;
+	right: 50px;
+}
+.projectFullDetails:hover {
+	box-shadow: 0px 8px 7px -10px white;
 }
 .projectTitle {
-	font-size: 1.6vw;
+	color: white;
+	font-weight: bold;
+	font-size: 1.5vw;
 }
 .projectRole {
-	color: #e3e3e3;
-	font-weight: 100;
+	font-size: 1.3vw;
 	margin-bottom: 5px;
-	margin-top: 5px;
+	color: #d5d5d5;
 }
 .projectDetails {
-	font-size: 1.4vw;
-	font-weight: 100;
+	font-size: 1.2vw;
+	margin-bottom: 15px;
+	color: #d5d5d5;
+	margin-top: 10px;
 }
 .projectFooter {
-	margin-top: 5px;
-	overflow: hidden;
+	display: block;
 }
-.links{
+.links {
 	float: left;
 }
 .links a {
-	color: #8886a5;
-	font-weight: 100;
+	color: #d4d4d4;
+	transition: 0.7s ease;
 }
-.links a:hover {
+.links a:hover{
 	opacity: 0.7;
-	transition: 0.7s;
+	transition: 0.7s ease;
 }
-.projectLanguages{
+.projectLanguages {
 	float: right;
 }
 .projectLanguages p{
-	font-weight: 100;
+	color: #d4d4d4;
 }
-
 .grid-container {
 	display: block;
 	display: grid;
@@ -313,13 +397,17 @@ body{
 	bottom: -15px;
 }
 .instituitionDetailsSection {
-	box-shadow: 0px 8px 7px -10px white;
 	margin: 20px;
 	border-radius: 25px;
 	padding: 5px;
 	position: relative;
 	z-index: 10;
 	background: #181D27;
+	transition: 0.7s ease;
+}
+.instituitionDetailsSection:hover {
+	box-shadow: 0px 8px 7px -10px white;
+	transition: 0.7s ease;
 }
 .instituitionDetailsSectionAttribute{
 	display: block;
@@ -598,6 +686,9 @@ body{
 	*{
 		font-size: 2.5vw;
 	}
+	.page-margin-top {
+		margin-top: 80px;
+	}
 	.itemdetails {
 		display: grid;
 		grid-template-columns: auto auto auto;
@@ -696,23 +787,16 @@ body{
 	}
 	.sectionHeader {
 		font-size: 6vw;
-		margin-top: 80px;
+		margin-top: 25px;
 	}
 	.sectionSubHeader {
 		font-size: 4vw;
 	}
 	.devIconSize {
-		font-size: 6vw;
+		font-size: 12vw;
 	}
 	.partition {
 		width: 100%;
-	}
-	.projectTitle {
-		font-size: 4vw;
-	}
-	.projectDetails {
-		font-size: 3vw;
-		font-weight: 100;
 	}
 	.InstituitionSubject h2 {
 		font-size: 4vw;
@@ -750,5 +834,8 @@ body{
 	.activitiesDetails p {
 		font-size: 3vw;
 		font-weight: 100;
+	}
+	.prev, .next,.text {
+		font-size: 11px;
 	}
 }
