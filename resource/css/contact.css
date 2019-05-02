@@ -1,20 +1,21 @@
 @font-face {
   font-family: nameFont;
-  src: url(../fonts/alexbrush_regular.ttf);
+  src: url(../fonts/aladin_regular.ttf);
 }
 
 @font-face {
   font-family: bodyFont;
-  src: url(../fonts/aladin_regular.ttf);
+  src: url(../fonts/quicksand_regular.otf);
 }
 
-*{
+* {
 	margin: 0;
 	outline: 0;
 	padding: 0;
 	font-family: bodyFont;
 	color: #adadad;
-	font-size: 1em;
+	font-size: 1.5vw;
+	letter-spacing: 0.25px;
 }
 body{
 	background: #181d27;
@@ -33,11 +34,11 @@ ul{
 }
 .name {
 	font-family: nameFont;
-	font-size: 50px;
+	font-size: 5vw;
 	font-style: normal;
 	line-height: 1.3;
 	color: #8886a5;
-	text-shadow: 1px 1px #b9b9b9;
+	font-weight: 100;
 }
 .emailAddress{
 	color: #8886a5;
@@ -84,14 +85,6 @@ ul{
 }
 
 @media (max-width: 1000px) { 
-	.name {
-		font-family: nameFont;
-		font-size: 5vw;
-		font-style: normal;
-		line-height: 1.3;
-		color: #8886a5;
-		text-shadow: 1px 1px #b9b9b9;
-	}
 	.nputfield {
 		width: 5vw;
 		border: none;
@@ -111,14 +104,6 @@ ul{
 	}
 }
 @media (max-width: 650px) { 
-	.name {
-		font-family: nameFont;
-		font-size: 5vw;
-		font-style: normal;
-		line-height: 1.3;
-		color: #8886a5;
-		text-shadow: 1px 1px #b9b9b9;
-	}
 	.nputfield {
 		width: 5vw;
 		border: none;
