@@ -684,7 +684,10 @@ body{
 }
 @media (max-width: 480px) {
 	*{
-		font-size: 2.5vw;
+		font-size: 3vw;
+	}
+	.body-align-section{
+		width: 100%;
 	}
 	.page-margin-top {
 		margin-top: 80px;
@@ -694,6 +697,14 @@ body{
 		grid-template-columns: auto auto auto;
 		list-style-type: none;
 		text-align: center;
+	}
+	.name {
+		font-family: nameFont;
+		font-size: 8vw;
+		font-style: normal;
+		line-height: 1.3;
+		color: #8886a5;
+		font-weight: 100;
 	}
 	.devIconSize {
 		font-size: 12vw;
@@ -787,16 +798,60 @@ body{
 	}
 	.sectionHeader {
 		font-size: 6vw;
-		margin-top: 25px;
+		margin: 25px 25px;
 	}
 	.sectionSubHeader {
 		font-size: 4vw;
+		padding: 0 30px;
 	}
 	.devIconSize {
 		font-size: 12vw;
 	}
 	.partition {
 		width: 100%;
+	}
+	.project {
+		position: relative;
+		text-align: center;
+		padding: 60px 0;
+	}
+	.project img {
+		width: 80vw;
+	}
+	.projectFullDetails {
+		position: absolute;
+		bottom: 0;
+		padding: 5px 15px;
+		background: rgba(30, 33, 60, 0.8);
+		text-align: left;
+		border-radius: 15px;
+		left: 25px;
+		right: 25px;
+	}
+	.projectTitle {
+		color: white;
+		font-weight: bold;
+		font-size: 3vw;
+	}
+	.projectRole {
+		font-size: 2vw;
+		margin-bottom: 5px;
+		color: #d5d5d5;
+	}
+	.projectDetails {
+		font-size: 2vw;
+		margin-bottom: 15px;
+		color: #d5d5d5;
+		margin-top: 10px;
+	}
+	.links a {
+		color: #d4d4d4;
+		transition: 0.7s ease;
+		font-size: 2.5vw;
+	}
+	.projectLanguages p {
+		color: #d4d4d4;
+		font-size: 2.5vw;
 	}
 	.InstituitionSubject h2 {
 		font-size: 4vw;
