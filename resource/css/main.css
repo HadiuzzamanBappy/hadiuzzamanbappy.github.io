@@ -226,7 +226,13 @@ body{
 	text-align: center;
 }
 .item {
-	margin: 25px 0;
+	margin: 25px 5px;
+	padding-bottom: 5px;
+	transition: 0.7s;
+}
+.item:hover {
+	box-shadow: 0px 8px 7px -10px white;
+	transition: 0.7s;
 }
 .itemIcon {
 	text-align: center;
