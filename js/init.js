@@ -231,8 +231,8 @@ function callbackFunc(entries)
 //          case 'javascript':
 //             $('#javascript').removeClass('javascript-start');
 //             break;
-      }
-   }
+//       }
+//    }
     
     document.getElementById('log').appendChild(document.createTextNode(txt));
   });
