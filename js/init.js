@@ -232,9 +232,9 @@ function callbackFunc(entries)
 //             $('#javascript').removeClass('javascript-start');
 //             break;
 //       }
-//    }
+   }
     
-    document.getElementById('log').appendChild(document.createTextNode(txt));
+   //  document.getElementById('log').appendChild(document.createTextNode(txt));
   });
 }
 
