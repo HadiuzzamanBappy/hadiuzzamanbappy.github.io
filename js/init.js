@@ -209,28 +209,28 @@ function callbackFunc(entries)
       }
    }
    else{
-      switch(entry.target.id){
-         case 'figma':
-            $('#figma').removeClass('figma-start');
-            break;
-         case 'adobexd':
-            $('#adobexd').removeClass('adobexd-start');
-            break;
-         case 'photoshop':
-            $('#photoshop').removeClass('photoshop-start');
-            break;
-         case 'illustrator':
-            $('#illustrator').removeClass('illustrator-start');
-            break;
-         case 'css':
-            $('#css').removeClass('css-start');
-            break;
-         case 'html5':
-            $('#html5').removeClass('html5-start');
-            break;
-         case 'javascript':
-            $('#javascript').removeClass('javascript-start');
-            break;
+//       switch(entry.target.id){
+//          case 'figma':
+//             $('#figma').removeClass('figma-start');
+//             break;
+//          case 'adobexd':
+//             $('#adobexd').removeClass('adobexd-start');
+//             break;
+//          case 'photoshop':
+//             $('#photoshop').removeClass('photoshop-start');
+//             break;
+//          case 'illustrator':
+//             $('#illustrator').removeClass('illustrator-start');
+//             break;
+//          case 'css':
+//             $('#css').removeClass('css-start');
+//             break;
+//          case 'html5':
+//             $('#html5').removeClass('html5-start');
+//             break;
+//          case 'javascript':
+//             $('#javascript').removeClass('javascript-start');
+//             break;
       }
    }
     
