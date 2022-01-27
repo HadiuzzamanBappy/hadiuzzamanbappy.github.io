@@ -95,10 +95,22 @@ header .social li {
    padding: 0;
 }
 
-header .social li a { color: #fff; }
-header .social li a:hover { opacity: 0.5; }
-header .social li a .upwork{ width: 40px; margin-bottom: -8px;}
-header .social li a .fiverr{ width: 30px;}
+header .social li a { 
+   color: #fff; 
+}
+header .social li a:hover { 
+   opacity: 0.4; 
+   -webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;}
+header .social li a .upwork{ 
+   width: 40px; 
+   margin-bottom: -8px;
+}
+header .social li a .fiverr{ 
+   width: 30px;
+}
 
 /* scrolldown link */
 header .scrolldown a {
@@ -120,7 +132,11 @@ header .scrolldown a {
    -o-transition: all .3s ease-in-out;
    transition: all .3s ease-in-out;
 }
-header .scrolldown a:hover { color: #000; }
+header .scrolldown a:hover { color: #666; 
+   -webkit-transition: all .4s ease-in-out;
+   -moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;}
 
 /* primary navigation
 --------------------------------------------------------------------- */
@@ -227,10 +243,18 @@ ul#nav li.current a { color: #F06000; }
 #about .download .button {
    margin-top: 6px;
    background: #444;
+   -webkit-transition: all .4s ease-in-out;
+   -moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
 }
 #about .download .button:hover {
    background: #fff;
    color: #2B2B2B;
+   -webkit-transition: all .4s ease-in-out;
+   -moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
 }
 #about .download .button i {
    margin-right: 15px;
@@ -511,16 +535,28 @@ ul#nav li.current a { color: #F06000; }
 	opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
+   -webkit-transition: all .3s ease-in-out;
+   -moz-transition: all .3s ease-in-out;
+   -o-transition: all .3s ease-in-out;
+   transition: all .3s ease-in-out;
 }
 .portfolio-item:hover .link-icon {
    opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
+   -webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 .portfolio-item:hover .portfolio-item-meta {
    opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
+   -webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
 }
 
 /* popup modal */
@@ -868,7 +904,7 @@ call-to-action .button {
 #contact textarea:focus,
 #contact select:focus {
 	color: #fff;
-	background-color: #11ABB0;
+	background-color: #F06000;
 }
 #contact button.submit {
 	text-transform: uppercase;
@@ -887,7 +923,7 @@ call-to-action .button {
 	background: #fff;
 }
 #contact span.required {
-	color: #11ABB0;
+	color: #F06000;
 	font-size: 13px;
 }
 #message-warning, #message-success {
@@ -945,7 +981,11 @@ footer {
 }
 
 footer a, footer a:visited { color: #fff; opacity: 0.3;}
-footer a:hover, footer a:focus { opacity: 1; }
+footer a:hover, footer a:focus { opacity: 1; 
+   -webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	-o-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;}
 
 footer .social-links li a .upwork{ width: 40px; margin-bottom: -8px;}
 footer .social-links li a .fiverr{ width: 30px;}
