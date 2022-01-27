@@ -179,10 +179,74 @@
 
 });
 
+function callbackFunc(entries)
+{
+  entries.forEach(entry => {
+   //  var txt = entry.target.id + " visibility: " + entry.isIntersecting;
+   if(entry.isIntersecting){
+      switch(entry.target.id){
+         case 'figma':
+            $('#figma').addClass('figma-start');
+            break;
+         case 'adobexd':
+            $('#adobexd').addClass('adobexd-start');
+            break;
+         case 'photoshop':
+            $('#photoshop').addClass('photoshop-start');
+            break;
+         case 'illustrator':
+            $('#illustrator').addClass('illustrator-start');
+            break;
+         case 'css':
+            $('#css').addClass('css-start');
+            break;
+         case 'html5':
+            $('#html5').addClass('html5-start');
+            break;
+         case 'javascript':
+            $('#javascript').addClass('javascript-start');
+            break;
+      }
+   }
+   else{
+      switch(entry.target.id){
+         case 'figma':
+            $('#figma').removeClass('figma-start');
+            break;
+         case 'adobexd':
+            $('#adobexd').removeClass('adobexd-start');
+            break;
+         case 'photoshop':
+            $('#photoshop').removeClass('photoshop-start');
+            break;
+         case 'illustrator':
+            $('#illustrator').removeClass('illustrator-start');
+            break;
+         case 'css':
+            $('#css').removeClass('css-start');
+            break;
+         case 'html5':
+            $('#html5').removeClass('html5-start');
+            break;
+         case 'javascript':
+            $('#javascript').removeClass('javascript-start');
+            break;
+      }
+   }
+    
+    document.getElementById('log').appendChild(document.createTextNode(txt));
+  });
+}
 
+let observer = new IntersectionObserver(callbackFunc);
 
-
-
+observer.observe(document.getElementById('figma'));
+observer.observe(document.getElementById('adobexd'));
+observer.observe(document.getElementById('photoshop'));
+observer.observe(document.getElementById('illustrator'));
+observer.observe(document.getElementById('css'));
+observer.observe(document.getElementById('html5'));
+observer.observe(document.getElementById('javascript'));
 
 
 
