@@ -376,7 +376,7 @@ ul#nav li.current a { color: #F06000; }
   	width: 90%;
   	animation: css 2s ease;
 }
-.html5-start{
+.html-start{
   	width: 90%;
   	animation: html5 2s ease;
 }
@@ -410,7 +410,7 @@ ul#nav li.current a { color: #F06000; }
    100% { width: 90%;  }
  }
 
- @keyframes html5 {
+ @keyframes html {
    0%   { width: 0px;  }
    100% { width: 90%;  }
  }
@@ -805,7 +805,7 @@ call-to-action .button {
     margin: 0 6px;
     display: inline-block;
     zoom: 1;
-    *display: inline;
+    display: inline;
 }
 .flex-control-paging li a {
     width: 12px;

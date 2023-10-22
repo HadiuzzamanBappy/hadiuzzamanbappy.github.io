@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "displayid": "modal-1",
+        "visible": true,
+        "name": "MusicbuZZ - An online Website for listening Music",
+        "type": "UI\/UX & Graphic Design",
+        "thumbnail": "res\/images\/project\/pc9.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf9.jpg",
+        "details": "MusicbuZZ threw its inauguration process lately to start their music website for rock music listeners. They provide more than a million songs playlist for its listeners.",
+        "link": "https:\/\/www.behance.net\/gallery\/131715397\/MusicbuZZ-An-online-Website-for-listening-Music"
+    },
+    {
+        "id": 2,
+        "displayid": "modal-2",
+        "visible": true,
+        "name": "GoTravel App : Onboard to Explore",
+        "type": "iOS App UI\/UX Template",
+        "thumbnail": "res\/images\/project\/pc8.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf8.jpg",
+        "details": "Here is a New Login, Signup page surfing for GoTravel App",
+        "link": "https:\/\/dribbble.com\/shots\/17359757-GoTravel-App-Onboard-to-Explore"
+    },
+    {
+        "id": 3,
+        "displayid": "modal-3",
+        "visible": true,
+        "name": "DMV driver UI",
+        "type": "Android UI Development",
+        "thumbnail": "res\/images\/project\/pc7.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf7.jpg",
+        "details": "DMV is an online bike and car service company app which frontend i have develped with Android Studio",
+        "link": "http:\/\/www.behance.net"
+    },
+    {
+        "id": 4,
+        "displayid": "modal-4",
+        "visible": true,
+        "name": "E-Home venture",
+        "type": "iOS App UI\/UX Template",
+        "thumbnail": "res\/images\/project\/pc6.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf6.jpg",
+        "details": "Here is a New Explore screen for E-Home app.",
+        "link": "https:\/\/dribbble.com\/shots\/17359709-E-Home-App-Explore"
+    },
+    {
+        "id": 5,
+        "displayid": "modal-5",
+        "visible": true,
+        "name": "JOLO-JOG : An online food ordering website",
+        "type": "UI\/UX & Graphic Design",
+        "thumbnail": "res\/images\/project\/pc5.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf5.jpg",
+        "details": "Everybody wants their day to start fresh and JOLO-JOG is present there to make your day delightful with their variety of breakfast. They are growing their business and also want to serve their taste with e-people.",
+        "link": "https:\/\/www.behance.net\/gallery\/131919265\/JOLO-JOG-An-online-food-ordering-website"
+    },
+    {
+        "id": 6,
+        "displayid": "modal-6",
+        "visible": true,
+        "name": "CryptoWire App Login\/Signup",
+        "type": "iOS App UI\/UX Template",
+        "thumbnail": "res\/images\/project\/pc4.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf4.jpg",
+        "details": "Here is a New Login, Signup screen for CryptoWire crypto app.",
+        "link": "https:\/\/dribbble.com\/shots\/17339262-CryptoWire-Crypto-Landing-Page"
+    },
+    {
+        "id": 7,
+        "displayid": "modal-7",
+        "visible": true,
+        "name": "E-Commerce Landing Page: Tech Fusion Limited(TFL)",
+        "type": "UI\/UX",
+        "thumbnail": "res\/images\/project\/pc3.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf3.jpg",
+        "details": "Tech Fusion Limited(TFL) is a startup company that started its new section of trading with technical products. I designed their minimalist logo and website landing page with two themes.",
+        "link": "https:\/\/www.behance.net\/gallery\/133577211\/E-Commerce-Landing-Page-TFL-Tech-Fusion-Limited"
+    },
+    {
+        "id": 8,
+        "displayid": "modal-8",
+        "visible": true,
+        "name": "Digital Tech Agency Landing Page",
+        "type": "UI\/UX",
+        "thumbnail": "res\/images\/project\/pc2.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf2.jpg",
+        "details": "It is a Landing Page for a digital tech agency. I designed with all their feature possible to grab users for their beloved service.",
+        "link": "https:\/\/www.behance.net\/gallery\/132710691\/Digital-Tech-Agency-Landing-Page"
+    },
+    {
+        "id": 9,
+        "displayid": "modal-9",
+        "visible": true,
+        "name": "CryptoWire Landing Page",
+        "type": "UI\/UX & Branding",
+        "thumbnail": "res\/images\/project\/pc1.jpg",
+        "coverphoto": "res\/images\/project\/modals\/pf1.jpg",
+        "details": "CryptoWire is a platform for buying and selling Cryptocurrency coins and nft products very easily and smoothly with an E-wallet system. They provide the best service regarding all the services.",
+        "link": "https:\/\/www.behance.net\/gallery\/135767829\/CryptoWire-Crypto-Landing-Page"
+    }
+]
