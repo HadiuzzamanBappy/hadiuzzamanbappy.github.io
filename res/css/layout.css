@@ -82,6 +82,32 @@ header .banner-text hr {
    border-color: rgba(150, 150, 150, .1);
 }
 
+/* header contact me button */
+#about .download {
+   width: 58.33333%;
+   padding-top: 6px;
+}
+.banner-text .button {
+   margin-top: 6px;
+   background: #ac613f;
+   -webkit-transition: all .4s ease-in-out;
+   -moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
+}
+.banner-text .button:hover {
+   background: #fff;
+   color: #2B2B2B;
+   -webkit-transition: all .4s ease-in-out;
+   -moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
+}
+.banner-text .button i {
+   margin-right: 15px;
+   font-size: 20px;
+}
+
 /* header social links */
 header .social {
    margin: 24px 0;
@@ -373,10 +399,10 @@ ul#nav li.current a { color: #F06000; }
   	animation: illustrator 2s ease;
 }
 .css-start{
-  	width: 90%;
+  	width: 80%;
   	animation: css 2s ease;
 }
-.html-start{
+.html5-start{
   	width: 90%;
   	animation: html5 2s ease;
 }
@@ -407,10 +433,10 @@ ul#nav li.current a { color: #F06000; }
 
  @keyframes css {
    0%   { width: 0px;  }
-   100% { width: 90%;  }
+   100% { width: 80%;  }
  }
 
- @keyframes html {
+ @keyframes html5 {
    0%   { width: 0px;  }
    100% { width: 90%;  }
  }

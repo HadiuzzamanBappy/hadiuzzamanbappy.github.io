@@ -56,29 +56,17 @@
 
       </nav> <!-- end #nav-wrap -->
 
-      <?php
-      $json = file_get_contents('res/data/basic.json');
-      $basic_data = json_decode($json, true);
-
-      $address = $basic_data['address'];
-      $roles = $basic_data['roles'];
-      $social = $basic_data['social'];
-      ?>
-
       <div class="row banner">
          <div class="banner-text">
             <h3>Myself </h3>
-            <h1 class="responsive-headline"><?= $basic_data['name'] ?></h1>
-            <h3>I'm an <span><?= $roles['role_1'] ?>,</span> <span><?= $roles['role_2'] ?></span> creating awesome and
+            <h1 class="responsive-headline" id="pName" >Name</h1>
+            <h3>I'm an <span id="role_1">role</span>,<span id="role_2">role</span> creating awesome and
                effective various kind of design offline and online. Let's <a class="smoothscroll" href="#about">start scrolling</a>
                and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
             <hr />
-            <ul class="social">
-               <li><a target="_blank" href="<?= $social['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
-               <li><a target="_blank" href="<?= $social['linkedin'] ?>"><i class="fa fa-linkedin"></i></a></li>
-               <li><a target="_blank" href="<?= $social['behance'] ?>"><i class="fab fa-behance"></i></a></li>
-               <li><a target="_blank" href="<?= $social['dribble'] ?>"><i class="fa fa-dribbble"></i></a></li>
-               <!-- <li><a target="_blank" href="https://www.upwork.com/freelancers/~0135d357b96cf71d7b"><img class="social_logo upwork" style="margin-bottom: -8px;" src="res/images/upwork.svg"></a></li> -->
+            <a href="mailto:hbappy79@gmail.com?subject=Talk%20With%20Me" class="button">TALK TO ME</a>
+            <ul class="social" id="socials">
+
             </ul>
          </div>
       </div>
@@ -94,50 +82,6 @@
    ================================================== -->
 
    <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic" src='<?= $basic_data['photo'] ?>' alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>About Me</h2>
-
-            <p>
-               <?= $basic_data['about'] ?>
-            </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-                     <span><?= $basic_data['name'] ?></span><br>
-                     <span><?= $address['village'] ?>, <?= $address['PO'] ?> - <?= $address['pcode'] ?>, <?= $address['upojila'] ?><br>
-                        <?= $address['district'] ?>, <?= $address['state'] ?>, <?= $address['country'] ?>
-                     </span><br>
-                     <span><?= $basic_data['phone'] ?></span><br>
-                  </p>
-
-               </div>
-
-               <div class="columns download">
-                  <p>
-                     <a href="<?= $basic_data['resume'] ?>" class="button" download="HadiuzzamanBappy"><i class="fa fa-download"></i>Get a Copy</a>
-                  </p>
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
    </section> <!-- About Section End-->
 
 
@@ -149,36 +93,12 @@
       ----------------------------------------------- -->
       <div class="row education">
 
-         <?php
-         $json = file_get_contents('res/data/education.json');
-         $data = json_decode($json, true);
-
-         $educations = $data['educations'];
-         ?>
-
          <div class="three columns header-col">
             <h1><span>Education</span></h1>
          </div>
 
-         <div class="nine columns main-col">
+         <div id="education" class="nine columns main-col">
 
-            <?php foreach ($educations as $education) : ?>
-               <div class="row item">
-
-                  <div class="twelve columns">
-
-                     <h3><?= $education['type'] ?> in <?= $education['subject'] ?></h3>
-                     <p class="info"> <?= $education['institution'] ?> <span>&bull;</span> <em class="date"> <?= $education['time'] ?> </em></p>
-
-                     <p>
-                        <?= $education['about'] ?>
-                     </p>
-
-                  </div>
-
-               </div> <!-- item end -->
-
-            <?php endforeach; ?>
          </div> <!-- main-col end -->
 
       </div> <!-- End Education -->
@@ -188,37 +108,11 @@
       ----------------------------------------------- -->
       <div class="row work">
 
-         <?php
-         $json = file_get_contents('res/data/experience.json');
-         $experiences = json_decode($json, true);
-
-         ?>
-
          <div class="three columns header-col">
             <h1><span>Experiences</span></h1>
          </div>
 
-         <div class="nine columns main-col">
-
-            <?php foreach ($experiences as $experience) : 
-            if($experience['visible']){
-            ?>
-               <div class="row item">
-
-                  <div class="twelve columns">
-
-                     <h3> <a href="<?= $experience['link'] ?>" target="_blank"> <?= $experience['organization'] ?></a></h3>
-                     <p class="info"> <?= $experience['role'] ?> <span>&bull;</span> <em class="date"><?= $experience['start'] ?> - <?= $experience['end'] ?></em></p>
-
-                     <p>
-                        <?= $experience['about'] ?>
-                     </p>
-
-                  </div>
-
-               </div> <!-- item end -->
-
-            <?php } endforeach; ?>
+         <div id="experience" class="nine columns main-col">
 
          </div> <!-- main-col end -->
 
@@ -242,7 +136,7 @@
 
                <ul id="skills" class="skills">
                   <li><span id="figma" class="bar-expand figma"></span><em>Figma</em></li>
-                  <li><span id="html" class="bar-expand html"></span><em>HTML5</em></li>
+                  <li><span id="html5" class="bar-expand html5"></span><em>HTML5</em></li>
                   <li><span id="css" class="bar-expand css"></span><em>CSS</em></li>
                   <li><span id="javascript" class="bar-expand javascript"></span><em>JAVASCRIPT</em></li>
                   <li><span id="photoshop" class="bar-expand photoshop"></span><em>Photoshop</em></li>
@@ -261,15 +155,7 @@
    <!-- Portfolio Section
    ================================================== -->
    <section id="portfolio">
-
-      <?php
-      $json = file_get_contents('res/data/portfolio.json');
-      $portfoliosdemo = json_decode($json, true);
-
-      $portfolios=array_reverse($portfoliosdemo);
-      ?>
-
-      <div class="row">
+      <div id="innerPortfolio" class="row">
 
          <div class="twelve columns collapsed">
 
@@ -278,55 +164,14 @@
             <!-- portfolio-wrapper -->
             <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
 
-               <?php foreach ($portfolios as $portfolio) : ?>
-
-                  <div class="columns portfolio-item">
-                     <div class="item-wrap">
-
-                        <a href="#<?= $portfolio['displayid'] ?>" title="">
-                           <img alt="" src="<?= $portfolio['thumbnail'] ?>">
-                           <div class="portfolio-item-meta">
-                              <h5><?= $portfolio['name'] ?></h5>
-                              <p><?= $portfolio['type'] ?></p>
-                           </div>
-                           <div class="overlay">
-
-                           </div>
-                           <div class="link-icon"><i class="icon-plus"></i></div>
-                        </a>
-
-                     </div>
-                  </div> <!-- item end -->
-
-               <?php endforeach; ?>
-
             </div> <!-- portfolio-wrapper end -->
 
          </div> <!-- twelve columns end -->
 
 
          <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-         <?php foreach ($portfolios as $portfolio) : ?>
+	      ----------------------------------------------------------------->
 
-            <div id="<?= $portfolio['displayid'] ?>" class="popup-modal mfp-hide">
-
-               <img class="scale-with-grid" src="<?= $portfolio['coverphoto'] ?>" alt="" />
-
-               <div class="description-box">
-                  <h4><?= $portfolio['name'] ?></h4>
-                  <p><?= $portfolio['details'] ?></p>
-                  <span class="categories"><i class="fa fa-tag"></i><?= $portfolio['type'] ?></span>
-               </div>
-
-               <div class="link-box">
-                  <a href="<?= $portfolio['link'] ?>" target="_blank">Details</a>
-                  <a class="popup-modal-dismiss">Close</a>
-               </div>
-
-            </div><!-- modal-01 End -->
-
-         <?php endforeach; ?>
 
       </div> <!-- row End -->
 
@@ -337,10 +182,6 @@
    ================================================== -->
    <section id="testimonials">
 
-      <?php
-      $json = file_get_contents('res/data/testimonial.json');
-      $testimonials = json_decode($json, true);
-      ?>
       <div class="text-container">
 
          <div class="row">
@@ -355,17 +196,7 @@
 
                <div class="flexslider">
 
-                  <ul class="slides">
-                     <?php foreach ($testimonials as $testimonial) : ?>
-                        <li>
-                           <blockquote>
-                              <p>
-                                 <?= $testimonial['comment'] ?>
-                              </p>
-                              <cite><?= $testimonial['name'] ?> (<?= $testimonial['organization'] ?>)</cite>
-                           </blockquote>
-                        </li> <!-- slide ends -->
-                     <?php endforeach; ?>
+                  <ul id="testimonial_slide" class="slides">
                   </ul>
 
                </div> <!-- div.flexslider ends -->
@@ -379,100 +210,6 @@
    </section> <!-- Testimonials Section End-->
 
 
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-      <div class="row section-head">
-
-         <div class="two columns header-col">
-
-            <h1><span>Get In Touch.</span></h1>
-
-         </div>
-
-         <div class="ten columns">
-
-            <p class="lead">
-               If you have any query about myself you can just type and send. I will grab
-               you soon.
-            </p>
-
-         </div>
-
-      </div>
-
-      <div class="row">
-
-         <div class="eight columns">
-
-            <!-- form -->
-            <form action="" method="post" id="contactForm" name="contactForm">
-               <fieldset>
-
-                  <div>
-                     <label for="contactName">Name <span class="required">*</span></label>
-                     <input type="text" value="" size="35" id="contactName" name="contactName">
-                  </div>
-
-                  <div>
-                     <label for="contactEmail">Email <span class="required">*</span></label>
-                     <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-                  </div>
-
-                  <div>
-                     <label for="contactSubject">Subject</label>
-                     <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                  </div>
-
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="10" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
-
-                  <div>
-                     <button class="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="res/images/loader.gif">
-                     </span>
-                  </div>
-
-               </fieldset>
-            </form> <!-- Form End -->
-
-            <!-- contact-warning -->
-            <div id="message-warning"> Error!</div>
-            <!-- contact-success -->
-            <div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-            </div>
-
-         </div>
-
-
-         <aside class="four columns footer-widgets">
-
-            <div class="widget widget_contact">
-
-               <h4>Address and Phone</h4>
-               <p class="address">
-                  <span><?= $basic_data['name'] ?></span><br>
-                  <span><?= $address['village'] ?>, <?= $address['PO'] ?> - <?= $address['pcode'] ?>, <?= $address['upojila'] ?><br>
-                     <?= $address['district'] ?>, <?= $address['state'] ?>, <?= $address['country'] ?>
-                  </span><br>
-                  <span><?= $basic_data['email'] ?></span><br>
-                  <span><?= $basic_data['phone'] ?></span><br>
-               </p>
-
-            </div>
-
-         </aside>
-
-      </div>
-
-   </section> <!-- Contact Section End-->
-
-
    <!-- footer
    ================================================== -->
    <footer>
@@ -481,18 +218,12 @@
 
          <div class="twelve columns">
 
-            <ul class="social-links">
-               <li><a target="_blank" href="https://www.facebook.com/hadiuzzaman.bappy.79/"><i class="fa fa-facebook"></i></a></li>
-               <!-- <li><a target="_blank" href="https://myaccount.google.com/?pli=1&nlr=1"><i class="fa fa-google-plus"></i></a></li> -->
-               <li><a target="_blank" href="https://www.linkedin.com/in/hadiuzzaman-bappy-544327147/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a target="_blank" href="https://www.behance.net/hbappy79"><i class="fab fa-behance"></i></a></li>
-               <li><a target="_blank" href="https://dribbble.com/hadiuzzamanbappy"><i class="fa fa-dribbble"></i></a></li>
-               <!-- <li><a target="_blank" href="https://www.upwork.com/freelancers/~0135d357b96cf71d7b"><img class="social_logo upwork" src="res/images/upwork.svg"></a></li>
-               <li><a target="_blank" href="https://www.fiverr.com/users/bappy79"><img class="social_logo fiverr" src="res/images/fiverr.svg"></a></li> -->
+            <ul id="social_footer" class="social-links">
+
             </ul>
 
             <ul class="copyright">
-               <li>&copy; Copyright 2022 Md. Hadiuzzaman Bappy</li>
+               <li>&copy; Copyright 2022 @ Md. Hadiuzzaman Bappy</li>
             </ul>
 
          </div>
@@ -510,16 +241,15 @@
       window.jQuery || document.write('<script src="res/js/jquery-1.10.2.min.js"><\/script>')
    </script>
    <script type="text/javascript" src="res/js/jquery-migrate-1.2.1.min.js"></script>
+   <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
 
    <script src="res/js/jquery.flexslider.js"></script>
    <script src="res/js/waypoints.js"></script>
    <script src="res/js/jquery.fittext.js"></script>
    <script src="res/js/magnific-popup.js"></script>
+   <script src="res/js/index.js"></script>
    <script src="res/js/init.js"></script>
-
-
-   <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
-
+   
 </body>
 
 </html>

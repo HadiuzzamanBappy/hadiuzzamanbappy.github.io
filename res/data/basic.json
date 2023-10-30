@@ -3,7 +3,7 @@
     "email": "hbappy79@gmail.com",
     "phone": "(+880) 1521-318670",
     "about": "After completeing my college education, i admitted to Khulna University as a Computer Science Student. During those years i have tried to learn a variety of things. In which Developing and Designing attracted me mostly. I have done so many frontend work both on web and mobile platform. I have also did some quality brand idendity designing. Later designing and developing fusion me to have enthusiasm for becoming a Product designer also known as User Interface (UI) designer.",
-    "resume": "pdf/HadiuzzamanBappy.pdf",
+    "resume": "res\/pdf/HadiuzzamanBappy.pdf",
     "photo": "res\/images\/profilepic.jpg",
     "address": {
         "village": "Raymanik",
@@ -22,8 +22,10 @@
     "social": {
         "facebook": "https:\/\/www.facebook.com\/hadiuzzaman.bappy.79\/",
         "github": "https:\/\/github.com\/HadiuzzamanBappy",
-        "linkedin": "https:\/\/www.linkedin.com\/in\/hadiuzzaman-bappy-544327147\/",
+        "linkedin": "https:\/\/bd.linkedin.com\/in\/hadiuzzamanbappy",
         "behance": "https:\/\/www.behance.net\/hbappy79",
-        "dribble": "https:\/\/dribbble.com\/hadiuzzamanbappy"
+        "dribble": "https:\/\/dribbble.com\/hadiuzzamanbappy",
+        "upwork": "https:\/\/www.upwork.com\/freelancers\/~0135d357b96cf71d7b",
+        "fiver": "https:\/\/www.fiverr.com\/users\/bappy79"
     }
 }
