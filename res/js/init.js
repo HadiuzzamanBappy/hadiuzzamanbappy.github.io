@@ -137,4 +137,4 @@ setTimeout(function() {
          randomize: false,
       });
    });
-}, 0);
+}, 100);
