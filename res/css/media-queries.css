@@ -293,6 +293,7 @@
 
    /* Control Nav */
    .flex-control-nav {
+      justify-content: center;
       text-align: center;
       margin-left: -30px;
    }

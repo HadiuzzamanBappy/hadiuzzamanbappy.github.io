@@ -23,64 +23,49 @@
 
 <body>
     <main>
-        <?php
-        $json = file_get_contents('../../res/data/experience.json');
-        $experiences = json_decode($json, true);
-
-        if (isset($_GET['action'])) {
-            $action = $_GET['action'];
-            $id = $_GET['id'];
-
-            if ($experiences[$id - 1]['visible']) {
-                $experiences[$id - 1]['visible'] = false;
-            } else {
-                $experiences[$id - 1]['visible'] = true;
-            }
-    
-            // Save the updated data back to the JSON file
-            file_put_contents('../../res/data/experience.json', json_encode($experiences, JSON_PRETTY_PRINT));
-        }
-        ?>
-
         <div class="header">
             <h1>Experiences</h1>
-            <a class="button add" href="addEditExperience.php?action=0"><i class="fas fa-plus"></i> Add New</a>
+            <a class="button add" href="addEditExperience.html?action=0"><i class="fas fa-plus"></i> Add New</a>
         </div>
 
-        <div class="body">
-
-            <?php foreach ($experiences as $experience) : ?>
-
-                <div class="item">
-
-                    <div class="item-body">
-
-                        <h3> <a href="<?= $experience['link'] ?>" target="_blank"> <?= $experience['organization'] ?></a></h3>
-
-                        <p class="info"> <?= $experience['role'] ?> <span>&bull;</span> <em class="date"><?= $experience['start'] ?> to <?= $experience['end'] ?></em></p>
-
-                        <p>
-                            <?= $experience['about'] ?>
-                        </p>
-
-                    </div>
-                    <div class="vl"></div>
-                    <div class="cta">
-                        <?php if ($experience['visible']) { ?>
-                            <a class="button hide" href="?action=hide&id=<?= $experience['id'] ?>"><i class="fas fa-eye-slash"></i></a>
-                        <?php } else { ?>
-                            <a class="button hide" href="?action=hide&id=<?= $experience['id'] ?>"><i class="fas fa-eye"></i></a>
-                        <?php } ?>
-                        <a class="button edit" href="addEditExperience.php?action=<?= $experience['id'] ?>"><i class="fas fa-edit"></i></a>
-                        <a class="button delete" href="?action=delete&id=<?= $experience['id'] ?>"><i class="fa-solid fa-trash-can"></i></a>
-                    </div>
-
-                </div> <!-- item end -->
-
-            <?php endforeach; ?>
+        <div id="listBody" class="body">
 
         </div> <!-- main-col end -->
     </main>
+    <!-- Java Script
+   ================================================== -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
+
+   <script>
+    $.getJSON("../../res/data/experience.json", function (data) {
+        $.each(data, function (index, item) {
+            var html = `
+            <div class="item">
+                <div class="item-body">
+                    <h3> <a href="${item.link}" target="_blank"> ${item.organization}</a></h3>
+                    <p class="info"> ${item.role} <span>&bull;</span> <em class="date">${item.start} to ${item.end}</em></p>
+                    <p>
+                        ${item.about}
+                    </p>
+                </div>
+                <div class="vl"></div>
+                <div class="cta">`;
+                if(item.visible){
+                    html=html+`<a class="button hide" href="?action=hide&id=${item.id}"><i class="fas fa-eye-slash"></i></a>`;
+                }else {
+                    html=html+`<a class="button hide" href="?action=hide&id=${item.id}"><i class="fas fa-eye"></i></a>`;
+                }
+                html+=`
+                    <a class="button edit" href="addEditExperience.php?action=${item.id}"><i class="fas fa-edit"></i></a>
+                    <a class="button delete" href="?action=delete&id=${item.id}"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </div> <!-- item end -->
+            `;
+            $("#listBody").append(html);
+        });
+    });
+   </script>
 </body>
 
 </html>

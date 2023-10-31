@@ -94,7 +94,7 @@ function generateData(){
             <div class="row item">
                 <div class="twelve columns">
                     <h3> <a href="${item.link}" target="_blank"> ${item.organization}</a></h3>
-                    <p class="info"> ${item.role} <span>&bull;</span> <em class="date">${item.start} - ${item.end}</em></p>
+                    <p class="info"> ${item.role} <span>&bull;</span> <em class="date">${item.start} to ${item.end}</em></p>
                     <p>
                         ${item.about}
                     </p>
