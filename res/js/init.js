@@ -4,8 +4,7 @@
 /*
 -----------------------------------------------------------------------------------*/
 
- jQuery(document).ready(function() {
-
+ $(document).ready(function() {
 /*----------------------------------------------------*/
 /* FitText Settings
 ------------------------------------------------------ */
@@ -98,109 +97,44 @@
 	});
 
 
-/*----------------------------------------------------*/
-/*	Modal Popup
-------------------------------------------------------*/
-
-    $('.item-wrap a').magnificPopup({
-
-       type:'inline',
-       fixedContentPos: false,
-       removalDelay: 200,
-       showCloseBtn: false,
-       mainClass: 'mfp-fade'
-
-    });
-
-    $(document).on('click', '.popup-modal-dismiss', function (e) {
-    		e.preventDefault();
-    		$.magnificPopup.close();
-    });
-
-
-/*----------------------------------------------------*/
-/*	Flexslider
-/*----------------------------------------------------*/
-   $('.flexslider').flexslider({
-      namespace: "flex-",
-      controlsContainer: ".flex-container",
-      animation: 'slide',
-      controlNav: true,
-      directionNav: false,
-      smoothHeight: true,
-      slideshowSpeed: 7000,
-      animationSpeed: 600,
-      randomize: false,
-   });
 });
 
-function callbackFunc(entries)
-{
-  entries.forEach(entry => {
-   //  var txt = entry.target.id + " visibility: " + entry.isIntersecting;
-   if(entry.isIntersecting){
-      switch(entry.target.id){
-         case 'figma':
-            $('#figma').addClass('figma-start');
-            break;
-         case 'adobexd':
-            $('#adobexd').addClass('adobexd-start');
-            break;
-         case 'photoshop':
-            $('#photoshop').addClass('photoshop-start');
-            break;
-         case 'illustrator':
-            $('#illustrator').addClass('illustrator-start');
-            break;
-         case 'css':
-            $('#css').addClass('css-start');
-            break;
-         case 'html5':
-            $('#html5').addClass('html5-start');
-            break;
-         case 'javascript':
-            $('#javascript').addClass('javascript-start');
-            break;
-      }
-   }
-   else{
-      switch(entry.target.id){
-         case 'figma':
-            $('#figma').removeClass('figma-start');
-            break;
-         case 'adobexd':
-            $('#adobexd').removeClass('adobexd-start');
-            break;
-         case 'photoshop':
-            $('#photoshop').removeClass('photoshop-start');
-            break;
-         case 'illustrator':
-            $('#illustrator').removeClass('illustrator-start');
-            break;
-         case 'css':
-            $('#css').removeClass('css-start');
-            break;
-         case 'html5':
-            $('#html5').removeClass('html5-start');
-            break;
-         case 'javascript':
-            $('#javascript').removeClass('javascript-start');
-            break;
-      }
-   }
-    
-   //  document.getElementById('log').appendChild(document.createTextNode(txt));
-  });
-}
+// Delay the execution for 3 seconds (for example)
+setTimeout(function() {
+   $(document).ready(function() {
+      /*----------------------------------------------------*/
+      /*	Modal Popup
+      ------------------------------------------------------*/
 
-let observer = new IntersectionObserver(callbackFunc);
+      $('.item-wrap a').magnificPopup({
 
-observer.observe(document.getElementById('figma'));
-observer.observe(document.getElementById('html5'));
-observer.observe(document.getElementById('photoshop'));
-observer.observe(document.getElementById('illustrator'));
-observer.observe(document.getElementById('css'));
-observer.observe(document.getElementById('javascript'));
+         type:'inline',
+         fixedContentPos: false,
+         removalDelay: 200,
+         showCloseBtn: false,
+         mainClass: 'mfp-fade'
+
+      });
+
+      $(document).on('click', '.popup-modal-dismiss', function (e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+      });
 
 
-
+      /*----------------------------------------------------*/
+      /*	Flexslider
+      /*----------------------------------------------------*/
+      $('.flexslider').flexslider({
+         namespace: "flex-",
+         controlsContainer: ".flex-container",
+         animation: 'slide',
+         controlNav: true,
+         directionNav: false,
+         smoothHeight: true,
+         slideshowSpeed: 7000,
+         animationSpeed: 600,
+         randomize: false,
+      });
+   });
+}, 1000);

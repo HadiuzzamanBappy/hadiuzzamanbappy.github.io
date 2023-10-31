@@ -1,15 +1,14 @@
-$(document).ready(function () {
-    // Make an AJAX request to fetch the JSON data
+function generateData(){
     $.getJSON("res/data/basic.json", function (data) {
         const socials = data.social;
         const address = data.address;
         const roles = data.roles;
-
+    
         $("#pName").html(data.name);
-
+    
         $("#role_1").html(roles.role_1);
         $("#role_2").html(roles.role_2);
-
+    
         $("#socials").html(`
                 <li><a target="_blank" href="${socials.facebook}"><i class="fa fa-facebook"></i></a></li>
                 <li><a target="_blank" href="${socials.linkedin}"><i class="fa fa-linkedin"></i></a></li>
@@ -17,7 +16,7 @@ $(document).ready(function () {
                 <li><a target="_blank" href="${socials.dribble}"><i class="fa fa-dribbble"></i></a></li>
                 <li><a target="_blank" href="${socials.github}"><i class="fa fa-github-alt"></i></a></li>
             `);
-
+    
         $("#about").html(`
             <div class="row">
                 <div class="three columns">
@@ -49,7 +48,7 @@ $(document).ready(function () {
                 </div> <!-- end .main-col -->
             </div>
             `);
-
+    
         $("#social_footer").html(`
                 <li><a target="_blank" href="${socials.facebook}"><i class="fa fa-facebook"></i></a></li>
                 <li><a target="_blank" href="${socials.linkedin}"><i class="fa fa-linkedin"></i></a></li>
@@ -57,7 +56,7 @@ $(document).ready(function () {
                 <li><a target="_blank" href="${socials.dribble}"><i class="fa fa-dribbble"></i></a></li>
                 <li><a target="_blank" href="${socials.github}"><i class="fa fa-github-alt"></i></a></li>
             `);
-
+    
         $("#address_contact").html(`
                 <span>${data.name}</span><br>
                 <span>${address.village}, ${address.PO} - ${address.pcode}, ${address.upojila}<br>
@@ -67,7 +66,7 @@ $(document).ready(function () {
                 <span>${data.phone}</span><br>
             `);
     });
-
+    
     // Make an AJAX request to fetch the JSON data
     $.getJSON("res/data/education.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
@@ -86,7 +85,7 @@ $(document).ready(function () {
             $("#education").append(html);
         });
     });
-
+    
     // Make an AJAX request to fetch the JSON data
     $.getJSON("res/data/experience.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
@@ -105,12 +104,12 @@ $(document).ready(function () {
             $("#experience").append(html);
         });
     });
-
+    
     // Make an AJAX request to fetch the JSON data
     $.getJSON("res/data/portfolio.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
         $.each(data, function (index, item) {
-        var html = `
+            var html = `
         <div class="columns portfolio-item">
             <div class="item-wrap">
             <a href="#${item.displayid}" title="">
@@ -126,9 +125,9 @@ $(document).ready(function () {
             </div>
         </div> <!-- item end -->
         `;
-        $("#portfolio-wrapper").append(html);
-
-        var html_modal = `
+            $("#portfolio-wrapper").append(html);
+    
+            var html_modal = `
         <div id="${item.displayid}" class="popup-modal mfp-hide">
            <img class="scale-with-grid" src="${item.coverphoto}" alt="" />
            <div class="description-box">
@@ -145,7 +144,7 @@ $(document).ready(function () {
             $("#innerPortfolio").append(html_modal);
         });
     });
-
+    
     // Make an AJAX request to fetch the JSON data
     $.getJSON("res/data/testimonial.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
@@ -163,4 +162,74 @@ $(document).ready(function () {
             $("#testimonial_slide").append(html);
         });
     });
-});
+}
+
+generateData();
+
+function callbackFunc(entries)
+{
+  entries.forEach(entry => {
+   //  var txt = entry.target.id + " visibility: " + entry.isIntersecting;
+   if(entry.isIntersecting){
+      switch(entry.target.id){
+         case 'figma':
+            $('#figma').addClass('figma-start');
+            break;
+         case 'adobexd':
+            $('#adobexd').addClass('adobexd-start');
+            break;
+         case 'photoshop':
+            $('#photoshop').addClass('photoshop-start');
+            break;
+         case 'illustrator':
+            $('#illustrator').addClass('illustrator-start');
+            break;
+         case 'css':
+            $('#css').addClass('css-start');
+            break;
+         case 'html5':
+            $('#html5').addClass('html5-start');
+            break;
+         case 'javascript':
+            $('#javascript').addClass('javascript-start');
+            break;
+      }
+   }
+   else{
+      switch(entry.target.id){
+         case 'figma':
+            $('#figma').removeClass('figma-start');
+            break;
+         case 'adobexd':
+            $('#adobexd').removeClass('adobexd-start');
+            break;
+         case 'photoshop':
+            $('#photoshop').removeClass('photoshop-start');
+            break;
+         case 'illustrator':
+            $('#illustrator').removeClass('illustrator-start');
+            break;
+         case 'css':
+            $('#css').removeClass('css-start');
+            break;
+         case 'html5':
+            $('#html5').removeClass('html5-start');
+            break;
+         case 'javascript':
+            $('#javascript').removeClass('javascript-start');
+            break;
+      }
+   }
+    
+   //  document.getElementById('log').appendChild(document.createTextNode(txt));
+  });
+}
+
+let observer = new IntersectionObserver(callbackFunc);
+
+observer.observe(document.getElementById('figma'));
+observer.observe(document.getElementById('html5'));
+observer.observe(document.getElementById('photoshop'));
+observer.observe(document.getElementById('illustrator'));
+observer.observe(document.getElementById('css'));
+observer.observe(document.getElementById('javascript'));

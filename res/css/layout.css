@@ -822,6 +822,7 @@ call-to-action .button {
 
 /* Control Nav */
 .flex-control-nav {
+    display: flex;
     width: 100%;
     position: absolute;
     bottom: -20px;
