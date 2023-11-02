@@ -70,19 +70,21 @@ function generateData(){
     // Make an AJAX request to fetch the JSON data
     $.getJSON("res/data/education.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
-        $.each(data.educations, function (index, item) {
-            var html = `
-            <div class="row item">
-                <div class="twelve columns">
-                    <h3>${item.type} in ${item.subject}</h3>
-                    <p class="info">${item.institution} <span>&bull;</span> <em class="date"> ${item.time}</em></p>
-                    <p>
-                        ${item.about}
-                    </p>
+        $.each(data, function (index, item) {
+            if(item.visible){
+                var html = `
+                <div class="row item">
+                    <div class="twelve columns">
+                        <h3>${item.type} in ${item.subject}</h3>
+                        <p class="info">${item.institution} <span>&bull;</span> <em class="date"> ${item.time}</em></p>
+                        <p>
+                            ${item.about}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            `;
-            $("#education").append(html);
+                `;
+                $("#education").append(html);
+            }
         });
     });
     
@@ -90,18 +92,20 @@ function generateData(){
     $.getJSON("res/data/experience.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
         $.each(data, function (index, item) {
-            var html = `
-            <div class="row item">
-                <div class="twelve columns">
-                    <h3> <a href="${item.link}" target="_blank"> ${item.organization}</a></h3>
-                    <p class="info"> ${item.role} <span>&bull;</span> <em class="date">${item.start} to ${item.end}</em></p>
-                    <p>
-                        ${item.about}
-                    </p>
+            if(item.visible){
+                var html = `
+                <div class="row item">
+                    <div class="twelve columns">
+                        <h3> <a href="${item.link}" target="_blank"> ${item.organization}</a></h3>
+                        <p class="info"> ${item.role} <span>&bull;</span> <em class="date">${item.start} to ${item.end}</em></p>
+                        <p>
+                            ${item.about}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            `;
-            $("#experience").append(html);
+                `;
+                $("#experience").append(html);
+            }
         });
     });
     
@@ -109,39 +113,41 @@ function generateData(){
     $.getJSON("res/data/portfolio.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
         $.each(data, function (index, item) {
-            var html = `
-        <div class="columns portfolio-item">
-            <div class="item-wrap">
-            <a href="#${item.displayid}" title="">
-                <img alt="" src="${item.thumbnail}">
-                <div class="portfolio-item-meta">
-                    <h5>${item.name}</h5>
-                    <p>${item.type}</p>
+            if(item.visible){
+                var html = `
+                <div class="columns portfolio-item">
+                    <div class="item-wrap">
+                    <a href="#${item.displayid}" title="">
+                        <img alt="" src="${item.thumbnail}">
+                        <div class="portfolio-item-meta">
+                            <h5>${item.name}</h5>
+                            <p>${item.type}</p>
+                        </div>
+                        <div class="overlay">
+                        </div>
+                        <div class="link-icon"><i class="icon-plus"></i></div>
+                    </a>
+                    </div>
+                </div> <!-- item end -->
+                `;
+                $("#portfolio-wrapper").append(html);
+        
+                var html_modal = `
+                <div id="${item.displayid}" class="popup-modal mfp-hide">
+                <img class="scale-with-grid" src="${item.coverphoto}" alt="" />
+                <div class="description-box">
+                    <h4>${item.name}</h4>
+                    <p>${item.details}</p>
+                    <span class="categories"><i class="fa fa-tag"></i>${item.type}</span>
                 </div>
-                <div class="overlay">
+                <div class="link-box">
+                    <a href="${item.link}" target="_blank">Details</a>
+                    <a class="popup-modal-dismiss">Close</a>
                 </div>
-                <div class="link-icon"><i class="icon-plus"></i></div>
-            </a>
-            </div>
-        </div> <!-- item end -->
-        `;
-            $("#portfolio-wrapper").append(html);
-    
-            var html_modal = `
-        <div id="${item.displayid}" class="popup-modal mfp-hide">
-           <img class="scale-with-grid" src="${item.coverphoto}" alt="" />
-           <div class="description-box">
-              <h4>${item.name}</h4>
-              <p>${item.details}</p>
-              <span class="categories"><i class="fa fa-tag"></i>${item.type}</span>
-           </div>
-           <div class="link-box">
-              <a href="${item.link}" target="_blank">Details</a>
-              <a class="popup-modal-dismiss">Close</a>
-           </div>
-        </div><!-- modal-01 End -->
-        `;
-            $("#innerPortfolio").append(html_modal);
+                </div><!-- modal-01 End -->
+                `;
+                $("#innerPortfolio").append(html_modal);
+            }
         });
     });
     
@@ -149,17 +155,19 @@ function generateData(){
     $.getJSON("res/data/testimonial.json", function (data) {
         // Iterate through the JSON array and append each item to the HTML
         $.each(data, function (index, item) {
-            var html = `
-            <li>
-                <blockquote>
-                    <p>
-                        ${item.comment}
-                    </p>
-                    <cite>${item.name} (${item.organization})</cite>
-                </blockquote>
-            </li>
-            `;
-            $("#testimonial_slide").append(html);
+            if(item.visible){
+                var html = `
+                <li>
+                    <blockquote>
+                        <p>
+                            ${item.comment}
+                        </p>
+                        <cite>${item.name} (${item.organization})</cite>
+                    </blockquote>
+                </li>
+                `;
+                $("#testimonial_slide").append(html);
+            }
         });
     });
 }

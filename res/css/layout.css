@@ -313,6 +313,7 @@ ul#nav li.current a { color: #F06000; }
 }
 #resume h3 {
    font: 25px/30px 'opensans-bold', sans-serif;
+   color: #11ABB0;
 }
 
 #resume .header-col { padding-top: 9px; }
@@ -361,7 +362,7 @@ ul#nav li.current a { color: #F06000; }
 }
 .bars li em {
 	font: 15px 'opensans-bold', sans-serif;
-   color: #313131;
+   color: #11ABB0;
 	text-transform: uppercase;
    letter-spacing: 2px;
 	font-weight: normal;
@@ -387,7 +388,7 @@ ul#nav li.current a { color: #F06000; }
    animation: figma 2s ease;
 }
 .adobexd-start{
-   width: 85%;
+   width: 70%;
    animation: adobexd 2s ease;
 }
 .photoshop-start{
@@ -418,7 +419,7 @@ ul#nav li.current a { color: #F06000; }
 
 @keyframes adobexd {
    0%   { width: 0px;  }
-   100% { width: 85%;  }
+   100% { width: 70%;  }
  }
 
  @keyframes photoshop {
@@ -461,7 +462,7 @@ ul#nav li.current a { color: #F06000; }
    letter-spacing: 1px;
    text-align: center;
    margin-bottom: 48px;
-   color: #95A3A3;
+   color: #11ABB0;
 }
 
 /* Portfolio Content */
@@ -766,7 +767,7 @@ call-to-action .button {
    font-size: 12px;
    font-style: normal;
    line-height: 18px;
-   color: #fff;
+   color: #11ABB0;
 }
 #testimonials blockquote cite:before { content: "\2014 \0020"; }
 #testimonials blockquote cite a,
@@ -1027,6 +1028,7 @@ footer .copyright li {
     margin: 0;
     padding: 0;
     line-height: 24px;
+    color: #636b6c;
 }
 .ie footer .copyright li {
    display: inline;

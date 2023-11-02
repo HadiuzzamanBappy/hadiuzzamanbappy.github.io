@@ -49,6 +49,10 @@ body .item .cta{
     padding: 0rem 1rem 0 0;
 }
 
+form .item img {
+    border-radius: unset !important;
+}
+
 .photos{
     position: relative;
     width: 100%;

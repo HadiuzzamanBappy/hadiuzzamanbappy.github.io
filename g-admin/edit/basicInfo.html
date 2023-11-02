@@ -154,7 +154,7 @@
                 </div>
             </div>
 
-            <input type="submit" name="submit" value="Save">
+            <input type="submit" id="submit" name="submit" value="Submit">
         </form>
     </main>
     <!-- Java Script
@@ -192,6 +192,10 @@
             $("#linkedin").val(data.social.linkedin);
             $("#behance").val(data.social.behance);
             $("#dribble").val(data.social.dribble);
+
+            $("#submit").click(function () {
+                alert("Not finished this function");
+            });
         });
     </script>
 </body>

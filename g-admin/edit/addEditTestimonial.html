@@ -25,95 +25,78 @@
 
 <body>
     <main>
-        <div id="add_div" style="display:none;">
-            <div class="header">
-                <h1>Add New Testimonial</h1>
-            </div>
-            <form id="add_form" method="post">
-                <div class="item">
-                    <label for="pName">Person name:*</label>
-                    <input type="text" id="pName" name="pName" placeholder="Enter person name" >
-                </div>
-                <div class="item">
-                    <label for="organization">Organization:</label>
-                    <input type="text" id="organization" name="organization" placeholder="Enter Organization name">
-                </div>
-                <div class="item">
-                    <label for="role">Role:*</label>
-                    <input type="text" id="role" name="role" placeholder="Enter role" >
-                </div>
-                <div class="item">
-                    <label for="comment">Comment:*</label>
-                    <textarea id="comment" name="comment" rows="4" placeholder="Write comment" ></textarea>
-                </div>
-
-                <input type="submit" id="add" name="add" value="Add">
-            </form>
+        <div id="add_div" style="display:none;" class="header">
+            <h1>Add New Testimonial</h1>
         </div>
-        <div id="edit_div" style="display:none;">
-            <div class="header">
-                <h1>Edit Testimonial</h1>
-            </div>
-            <form id="edit_form" method="post">
-                <div class="item">
-                    <label for="pName">Person name:*</label>
-                    <input type="text" id="E_pName" name="pName" placeholder="Enter person name" required>
-                </div>
-                <div class="item">
-                    <label for="organization">Organization:</label>
-                    <input type="text" id="E_organization" name="organization" placeholder="Enter Organization name">
-                </div>
-                <div class="item">
-                    <label for="role">Role:*</label>
-                    <input type="text" id="E_role" name="role" placeholder="Enter role" required>
-                </div>
-                <div class="item">
-                    <label for="comment">Comment:*</label>
-                    <textarea id="E_comment" name="comment" rows="4" placeholder="Write comment" required></textarea>
-                </div>
-
-                <input type="submit" name="edit" value="Edit">
-            </form>
+        <div id="edit_div" style="display:none;" class="header">
+            <h1>Edit Testimonial</h1>
         </div>
+        <form id="add_form" method="post">
+            <div class="item">
+                <label for="pName">Person name:*</label>
+                <input type="text" id="pName" name="pName" placeholder="Enter person name" >
+            </div>
+            <div class="item">
+                <label for="organization">Organization:</label>
+                <input type="text" id="organization" name="organization" placeholder="Enter Organization name">
+            </div>
+            <div class="item">
+                <label for="role">Role:*</label>
+                <input type="text" id="role" name="role" placeholder="Enter role" >
+            </div>
+            <div class="item">
+                <label for="comment">Comment:*</label>
+                <textarea id="comment" name="comment" rows="4" placeholder="Write comment" ></textarea>
+            </div>
+
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>            
     </main>
 
     <!-- Java Script
    ================================================== -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
+
     <script>
         $(document).ready(function () {
             // Parse the URL and get the value of 'id' parameter
             const urlParams = new URLSearchParams(window.location.search);
             const action = urlParams.get('action');
-            const id = urlParams.get('id');
+            const id = urlParams.get('id')-1;
 
             // Show the appropriate form based on the 'id' parameter
             if (action === "add") {
                 $('#add_div').show();
 
                 $.getJSON("../../res/data/testimonial.json", function (data) {
-                    $("#add").click(function () {
-                        // Get the form input values
-                        var newData = {
-                            organization: $('#organization').val(),
-                            name: $('#pName').val(),
-                            role: $('#role').val(),
-                            comment: $('#comment').val()
-                        };
+                    $("#submit").click(function () {
+                        alert("Not finished this function");
 
-                        // Update the JSON data in memory
-                        data.push(newData);
+                        // // Get the form input values
+                        // var newData = {
+                        //     organization: $('#organization').val(),
+                        //     name: $('#pName').val(),
+                        //     role: $('#role').val(),
+                        //     comment: $('#comment').val()
+                        // };
+                        // // Update the JSON data in memory
+                        // data.push(newData);
                     });
                 });
             } else {
+                debugger;
                 $('#edit_div').show();
 
                 $.getJSON("../../res/data/testimonial.json", function (data) {
-                    $("#E_pName").val(data.name);
-                    $("#E_organization").val(data.organization);
-                    $("#E_role").val(data.role);
-                    $("#E_comment").val(data.comment);
+                    $("#pName").val(data[id].name);
+                    $("#organization").val(data[id].organization);
+                    $("#role").val(data[id].role);
+                    $("#comment").val(data[id].comment);
+
+                    $("#submit").click(function () {
+                        alert("Not finished this function");
+                    });
                 });
             }
         });

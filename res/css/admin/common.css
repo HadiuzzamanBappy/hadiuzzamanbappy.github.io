@@ -18,6 +18,9 @@ a{
     font-size: .8rem;
     font-weight: 500;
 }
+h3{
+    color: #c67c00;
+}
 main{
     padding-bottom: 24px;
 }

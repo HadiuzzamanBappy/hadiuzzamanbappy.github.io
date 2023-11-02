@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Admin | Experiences</title>
+    <title>Admin | Education</title>
     <meta name="description" content="Personal Portfolio">
     <meta name="author" content="Md. Hadiuzzaman Bappy">
 
@@ -28,32 +28,20 @@
         </div>
         <form method="post" enctype="multipart/form-data">
             <div class="item">
-                <label for="oName">Organization Name:*</label>
-                <input type="text" id="oName" name="oName" placeholder="Enter organization name" required>
+                <label for="cType">Certification Type:*</label>
+                <input type="text" id="cType" name="cType" placeholder="Enter organization name" required>
             </div>
             <div class="item">
-                <label for="wLink">Website link:</label>
-                <input type="text" id="wLink" name="wLink" placeholder="Enter website link">
+                <label for="iName">Institution name:</label>
+                <input type="text" id="iName" name="iName" placeholder="Enter website link">
             </div>
             <div class="item">
-                <label for="role">My Role:*</label>
-                <input type="text" id="role" name="role" placeholder="Enter your role" required>
+                <label for="subject">Subject:*</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter your role" required>
             </div>
             <div class="item">
-                <label for="sDate">Starting Date:*</label>
-                <input type="month" id="sDate" name="sDate" required>
-            </div>
-            <div class="item">
-                <label for="eDate">End Date:*</label>
-
-                <div class="dropdown">
-                    <select id="options" name="selectedOption" onchange="toggleInput()">
-                        <option value="Present">Present</option>
-                        <option value="Date">Date</option>
-                    </select>
-
-                    <input id="dateInput" class="hidden" type="month" name="eDate">
-                </div>
+                <label for="tSpan">Timespan:*</label>
+                <input type="text" id="tSpan" name="tSpan" placeholder="Enter your time period" required>
             </div>
             <div class="item">
                 <label for="about">About:</label>
@@ -77,29 +65,21 @@
  
             // Show the appropriate form based on the 'id' parameter
             if (action === "add") {
-                $("#header_div").append("<h1>Add New Experience</h1>");
+                $("#header_div").append("<h1>Add New Education</h1>");
  
-                $.getJSON("../../res/data/experience.json", function (data) {
+                $.getJSON("../../res/data/education.json", function (data) {
                     $("#submit").click(function () {
                         alert("Not finished this function");
                     });
                 });
             } else { 
-                $.getJSON("../../res/data/experience.json", function (data) { 
-                    $("#header_div").append("<h1>Edit "+data[id].organization+"</h1>");
+                $.getJSON("../../res/data/education.json", function (data) { 
+                    $("#header_div").append("<h1>Edit "+data[id].type+" in "+data[id].subject+"</h1>");
                     
-                    $("#oName").val(data[id].organization);
-                    $("#wLink").val(data[id].link);
-                    $("#role").val(data[id].role);
-                    $("#sDate").val(data[id].start);
-                    if(data[id].end === "Present"){
-                        $("#options").val('Present');
-                    }
-                    else{
-                        $("#options").val('Date');
-                        $("#dateInput").show();
-                        $("#dateInput").val(data[id].end);
-                    }
+                    $("#cType").val(data[id].type);
+                    $("#iName").val(data[id].institution);
+                    $("#subject").val(data[id].subject);
+                    $("#tSpan").val(data[id].time);
                     $("#about").val(data[id].about);
 
                     $("#submit").click(function () {
@@ -108,15 +88,6 @@
                 });
             }
         });
-
-        // for toggling user input about date
-        function toggleInput() {
-            if ($("#options").value === "Date") {
-                $("#dateInput").show();
-            } else {
-                $("#dateInput").hide();
-            }
-        }
     </script>
 </body>
 

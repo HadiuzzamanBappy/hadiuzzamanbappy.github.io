@@ -1,42 +1,38 @@
-{
-    "educations":[
-        {
-            "id": 1,
-            "visible":true,
-            "type": "M.Sc",
-            "institution": "Khulna University",
-            "subject": "Computer Science & Engineering",
-            "time": "2020 - Present",
-            "about": "In 1991, Computer Science and Engineering (CSE) Discipline of Khulna University (KU) started its academic activities with only 20 undergraduate students. Since then, around 800undergraduate students (of 18 batches) graduated from this Discipline."
-        }, 
-        {
-            "id": 2,
-            "visible":true,
-            "type": "B.Sc",
-            "institution": "Khulna University",
-            "subject": "Computer Science & Engineering",
-            "time": "2016 - 2020",
-            "about": "In 1991, Computer Science and Engineering (CSE) Discipline of Khulna University (KU) started its academic activities with only 20 undergraduate students. Since then, around 800undergraduate students (of 18 batches) graduated from this Discipline."
-        }
-    ],
-    "education_prev":[ 
-        {
-            "id": 3,
-            "visible":true,
-            "type": "Higher-secondary School Certificate",
-            "institution": "Hamidpur Al-Hera Degree College, Jashore",
-            "subject":"Science",
-            "time": "2013 - 2015",
-            "about": "It is a non-government college . This institute's EIIN number is 116102. This institute is located in hamidpur, jessore, khulna division. It offers classes upto Degree (Honors) level."
-        }, 
-        {
-            "id": 4,
-            "visible":true,
-            "type": "Secondary School Certificate",
-            "institution": "Jessore Zilla School, Jashore",
-            "subject":"Science",
-            "time": "2008 - 2013",
-            "about": "Jashore Zilla School is the fifth oldest school in Asia, the second oldest in Bangladesh, and the oldest school in Jessore District southwest of Bangladesh. It was established on 3 February 1838 and named Jessore Zilla School after 1872."
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "visible": true,
+        "type": "M.Sc",
+        "institution": "Khulna University",
+        "subject": "Computer Science & Engineering",
+        "time": "2020 - Present",
+        "about": "In 1991, Computer Science and Engineering (CSE) Discipline of Khulna University (KU) started its academic activities with only 20 undergraduate students. Since then, around 800undergraduate students (of 18 batches) graduated from this Discipline."
+    },
+    {
+        "id": 2,
+        "visible": true,
+        "type": "B.Sc",
+        "institution": "Khulna University",
+        "subject": "Computer Science & Engineering",
+        "time": "2016 - 2020",
+        "about": "In 1991, Computer Science and Engineering (CSE) Discipline of Khulna University (KU) started its academic activities with only 20 undergraduate students. Since then, around 800undergraduate students (of 18 batches) graduated from this Discipline."
+    },
+    {
+        "id": 3,
+        "visible": false,
+        "type": "Higher-secondary School Certificate",
+        "institution": "Hamidpur Al-Hera Degree College, Jashore",
+        "subject": "Science",
+        "time": "2013 - 2015",
+        "about": "It is a non-government college . This institute's EIIN number is 116102. This institute is located in hamidpur, jessore, khulna division. It offers classes upto Degree (Honors) level."
+    },
+    {
+        "id": 4,
+        "visible": false,
+        "type": "Secondary School Certificate",
+        "institution": "Jessore Zilla School, Jashore",
+        "subject": "Science",
+        "time": "2008 - 2013",
+        "about": "Jashore Zilla School is the fifth oldest school in Asia, the second oldest in Bangladesh, and the oldest school in Jessore District southwest of Bangladesh. It was established on 3 February 1838 and named Jessore Zilla School after 1872."
+    }
+]

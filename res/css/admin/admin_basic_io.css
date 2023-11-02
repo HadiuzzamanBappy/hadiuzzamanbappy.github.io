@@ -108,7 +108,7 @@ form .item input[type="text"],textarea,input[type="month"],select{
 }
 form .item img{
     border: 1px solid #cb7028;
-    border-radius: 50%;
+    border-radius: 8px;
     width: 6rem;
 }
 form .item .portfolio{
