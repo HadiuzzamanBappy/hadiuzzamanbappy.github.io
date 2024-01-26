@@ -82,6 +82,14 @@ header .banner-text hr {
    border-color: rgba(150, 150, 150, .1);
 }
 
+header .button{
+   margin-top: 6px;
+   background: #ac613f;
+   -webkit-transition: all .4s ease-in-out;
+   -moz-transition: all .4s ease-in-out;
+   -o-transition: all .4s ease-in-out;
+   transition: all .4s ease-in-out;
+}
 /* header social links */
 header .social {
    margin: 24px 0;
@@ -805,7 +813,7 @@ call-to-action .button {
     margin: 0 6px;
     display: inline-block;
     zoom: 1;
-    *display: inline;
+    display: inline;
 }
 .flex-control-paging li a {
     width: 12px;

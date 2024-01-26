@@ -132,51 +132,6 @@
       animationSpeed: 600,
       randomize: false,
    });
-
-/*----------------------------------------------------*/
-/*	contact form
-------------------------------------------------------*/
-
-   $('form#contactForm button.submit').click(function() {
-
-      $('#image-loader').fadeIn();
-
-      var contactName = $('#contactForm #contactName').val();
-      var contactEmail = $('#contactForm #contactEmail').val();
-      var contactSubject = $('#contactForm #contactSubject').val();
-      var contactMessage = $('#contactForm #contactMessage').val();
-
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
-
-      $.ajax({
-
-	      type: "POST",
-	      url: "inc/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
-
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
-
-	      }
-
-      });
-      return false;
-   });
-
-
 });
 
 function callbackFunc(entries)
@@ -209,29 +164,29 @@ function callbackFunc(entries)
       }
    }
    else{
-//       switch(entry.target.id){
-//          case 'figma':
-//             $('#figma').removeClass('figma-start');
-//             break;
-//          case 'adobexd':
-//             $('#adobexd').removeClass('adobexd-start');
-//             break;
-//          case 'photoshop':
-//             $('#photoshop').removeClass('photoshop-start');
-//             break;
-//          case 'illustrator':
-//             $('#illustrator').removeClass('illustrator-start');
-//             break;
-//          case 'css':
-//             $('#css').removeClass('css-start');
-//             break;
-//          case 'html5':
-//             $('#html5').removeClass('html5-start');
-//             break;
-//          case 'javascript':
-//             $('#javascript').removeClass('javascript-start');
-//             break;
-//       }
+      switch(entry.target.id){
+         case 'figma':
+            $('#figma').removeClass('figma-start');
+            break;
+         case 'adobexd':
+            $('#adobexd').removeClass('adobexd-start');
+            break;
+         case 'photoshop':
+            $('#photoshop').removeClass('photoshop-start');
+            break;
+         case 'illustrator':
+            $('#illustrator').removeClass('illustrator-start');
+            break;
+         case 'css':
+            $('#css').removeClass('css-start');
+            break;
+         case 'html5':
+            $('#html5').removeClass('html5-start');
+            break;
+         case 'javascript':
+            $('#javascript').removeClass('javascript-start');
+            break;
+      }
    }
     
    //  document.getElementById('log').appendChild(document.createTextNode(txt));
