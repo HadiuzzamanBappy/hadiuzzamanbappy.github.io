@@ -368,10 +368,6 @@ ul#nav li.current a { color: #F06000; }
    width: 90%;
    animation: figma 2s ease;
 }
-.adobexd-start{
-   width: 85%;
-   animation: adobexd 2s ease;
-}
 .photoshop-start{
   	width: 75%;
   	animation: photoshop 2s ease;
@@ -397,11 +393,6 @@ ul#nav li.current a { color: #F06000; }
   0%   { width: 0px;  }
   100% { width: 90%;  }
 }
-
-@keyframes adobexd {
-   0%   { width: 0px;  }
-   100% { width: 85%;  }
- }
 
  @keyframes photoshop {
    0%   { width: 0px;  }
@@ -804,10 +795,11 @@ call-to-action .button {
 
 /* Control Nav */
 .flex-control-nav {
-    width: 100%;
-    position: absolute;
-    bottom: -20px;
-    text-align: left;
+   display: flex;
+   width: 100%;
+   position: absolute;
+   bottom: -20px;
+   text-align: left;
 }
 .flex-control-nav li {
     margin: 0 6px;
