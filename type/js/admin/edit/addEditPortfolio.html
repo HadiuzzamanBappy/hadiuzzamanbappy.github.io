@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin | Testimonials</title>
+    <meta name="description" content="Personal Portfolio">
+    <meta name="author" content="Md. Hadiuzzaman Bappy">
+
+    <!-- Mobile Specific Metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../res/css/admin/admin_basic_io.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="../../res/images/favicon.ico">
+</head>
+
+<body>
+    <main>
+        <div class="header" id="add_div" style="display:none;">
+            <h1>Add New Project</h1>
+        </div>
+
+        <div class="header" id="edit_div" style="display:none;">
+            <h1>Edit Project</h1>
+        </div>
+
+        <form method="post" enctype="multipart/form-data">
+            <div class="item">
+                <label for="pName">Project name:*</label>
+                <input type="text" id="pName" name="pName" placeholder="Enter project name" required>
+            </div>
+            <div class="item">
+                <label for="pType">Project type:</label>
+                <input type="text" id="pType" name="pType" placeholder="Enter project type" required>
+            </div>
+            <div class="item">
+                <label for="pLink">Project Link:</label>
+                <input type="text" id="pLink" name="pLink" placeholder="Enter project link">
+            </div>
+            <div class="item">
+                <label for="thumbnail">Thumbnail Photo:</label>
+                <div class="horizontal">
+                    <img src="" id="thumbnail_dis" alt="Thumbnail Photo" style="display:none;">
+                    <input type="file" id="thumbnail" name="thumbnail" id="thumbnail" accept="image/*" required>
+                </div>
+            </div>
+            <div class="item">
+                <label for="coverphoto">Cover Photo:</label>
+                <div class="horizontal">
+                    <img src="" id="coverphoto_dis" alt="Cover Photo" style="display:none;">
+                    <input type="file" id="coverphoto" name="coverphoto" id="coverphoto" accept="image/*" required>
+                </div>
+            </div>
+            <div class="item">
+                <label for="details">About:*</label>
+                <textarea name="details" id="details" rows="4" placeholder="Write details about this project" required></textarea>
+            </div>
+
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+    </main>
+
+    <!-- Java Script
+   ================================================== -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
+
+   <script>
+       $(document).ready(function () {
+           // Parse the URL and get the value of 'id' parameter
+           const urlParams = new URLSearchParams(window.location.search);
+           const action = urlParams.get('action');
+           const id = urlParams.get('id')-1;
+
+           // Show the appropriate form based on the 'id' parameter
+           if (action === "add") {
+               $('#add_div').show();
+
+               $.getJSON("../../res/data/portfolio.json", function (data) {
+                   $("#submit").click(function () {
+                    alert("Not finished this function");
+                   });
+               });
+           } else {
+               $('#edit_div').show();
+
+               $.getJSON("../../res/data/portfolio.json", function (data) {
+                    $('#thumbnail_dis').show();
+                    $('#coverphoto_dis').show();
+
+                    $("#pName").val(data[id].name);
+                    $("#pType").val(data[id].type);
+                    $("#pLink").val(data[id].link);
+                    $("#thumbnail_dis").attr("src", "../../"+data[id].thumbnail);
+                    $("#coverphoto_dis").attr("src", "../../"+data[id].coverphoto);
+                    $("#details").val(data[id].details);
+
+                    $("#submit").click(function () {
+                    alert("Not finished this function");
+                   });
+               });
+           }
+       });
+   </script>
+</body>
+
+</html>

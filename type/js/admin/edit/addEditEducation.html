@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin | Education</title>
+    <meta name="description" content="Personal Portfolio">
+    <meta name="author" content="Md. Hadiuzzaman Bappy">
+
+    <!-- Mobile Specific Metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../res/css/admin/admin_basic_io.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="../../res/images/favicon.ico">
+</head>
+
+<body>
+    <main>
+        <div id="header_div" class="header">
+            
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="item">
+                <label for="cType">Certification Type:*</label>
+                <input type="text" id="cType" name="cType" placeholder="Enter organization name" required>
+            </div>
+            <div class="item">
+                <label for="iName">Institution name:</label>
+                <input type="text" id="iName" name="iName" placeholder="Enter website link">
+            </div>
+            <div class="item">
+                <label for="subject">Subject:*</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter your role" required>
+            </div>
+            <div class="item">
+                <label for="tSpan">Timespan:*</label>
+                <input type="text" id="tSpan" name="tSpan" placeholder="Enter your time period" required>
+            </div>
+            <div class="item">
+                <label for="about">About:</label>
+                <textarea name="about" id="about" rows="5" placeholder="Write about yourself"></textarea>
+            </div>
+
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+    </main>
+
+     <!-- Java Script
+   ================================================== -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // Parse the URL and get the value of 'id' parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const action = urlParams.get('action');
+            const id = urlParams.get('id')-1;
+ 
+            // Show the appropriate form based on the 'id' parameter
+            if (action === "add") {
+                $("#header_div").append("<h1>Add New Education</h1>");
+ 
+                $.getJSON("../../res/data/education.json", function (data) {
+                    $("#submit").click(function () {
+                        alert("Not finished this function");
+                    });
+                });
+            } else { 
+                $.getJSON("../../res/data/education.json", function (data) { 
+                    $("#header_div").append("<h1>Edit "+data[id].type+" in "+data[id].subject+"</h1>");
+                    
+                    $("#cType").val(data[id].type);
+                    $("#iName").val(data[id].institution);
+                    $("#subject").val(data[id].subject);
+                    $("#tSpan").val(data[id].time);
+                    $("#about").val(data[id].about);
+
+                    $("#submit").click(function () {
+                        alert("Not finished this function");
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin | Edit Basic</title>
+    <meta name="description" content="Personal Portfolio">
+    <meta name="author" content="Md. Hadiuzzaman Bappy">
+
+    <!-- Mobile Specific Metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../res/css/admin/admin_basic_io.css">
+
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="../../res/images/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <h1>Edit Basic Information</h1>
+    </header>
+    <main>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <div class="border_round">
+                <h4>Basic Info</h4>
+
+                <div class="item">
+                    <label for="profile_photo">Profile Picture:</label>
+                    <div class="horizontal">
+                        <img src="" id="photo" alt="Profile Photo">
+                        <input type="file" name="profile_photo" id="profile_photo" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="item">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your Name">
+                </div>
+
+                <div class="item">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your Email">
+                </div>
+
+                <div class="item">
+                    <label for="phone">Phone:</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your Phone number">
+                </div>
+
+                <div class="item">
+                    <label for="resume">Resume:</label>
+                    <div class="item_list">
+                        <input type="file" id="resume" name="resume" accept=".pdf">
+                        <a id="resume_pdf" href="">HadiuzzamanBappy.pdf</a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <label for="about">About:</label>
+                    <textarea id="about" name="about" rows="5" placeholder="Write about yourself"></textarea>
+                </div>
+            </div>
+
+            <div class="address border_round">
+                <h4>Address</h4>
+
+                <div class="item">
+                    <label for="village">Village:</label>
+                    <input type="text" id="village" name="village" placeholder="Enter your Village name">
+                </div>
+
+                <div class="item">
+                    <label for="po">Post Office:</label>
+                    <input type="text" id="po" name="po" placeholder="Enter your Post office">
+                </div>
+
+                <div class="item">
+                    <label for="pcode">Post Code:</label>
+                    <input type="text" id="pcode" name="pcode" placeholder="Enter your Post code">
+                </div>
+
+                <div class="item">
+                    <label for="thana">Thana:</label>
+                    <input type="text" id="thana" name="thana" placeholder="Enter your Thana">
+                </div>
+
+                <div class="item">
+                    <label for="upojila">Upojila:</label>
+                    <input type="text" id="upojila" name="upojila" placeholder="Enter your Upojila">
+                </div>
+
+                <div class="item">
+                    <label for="district">District:</label>
+                    <input type="text" id="district" name="district" placeholder="Enter your District">
+                </div>
+
+                <div class="item">
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" placeholder="Enter your State">
+                </div>
+
+                <div class="item">
+                    <label for="country">Country:</label>
+                    <input type="text" id="country" name="country" placeholder="Enter your Country">
+                </div>
+            </div>
+
+            <div class="role border_round item">
+                <h4>Role</h4>
+
+                <div class="item">
+                    <label for="role1">Primary:</label>
+                    <input type="text" id="role1" name="role1" placeholder="Enter your primary role">
+                </div>
+
+                <div class="item">
+                    <label for="role2">Secondary:</label>
+                    <input type="text" id="role2" name="role2" placeholder="Enter your secondary role">
+                </div>
+
+            </div>
+
+            <div class="social border_round">
+                <h4>Social Link</h4>
+
+                <div class="item">
+                    <label for="facebook">Facebook:</label>
+                    <input type="text" id="facebook" name="facebook">
+                </div>
+
+                <div class="item">
+                    <label for="github">Github:</label>
+                    <input type="text" id="github" name="github">
+                </div>
+
+                <div class="item">
+                    <label for="linkedin">Linkedin:</label>
+                    <input type="text" id="linkedin" name="linkedin">
+                </div>
+
+                <div class="item">
+                    <label for="behance">Behance:</label>
+                    <input type="text" id="behance" name="behance">
+                </div>
+
+                <div class="item">
+                    <label for="dribble">Dribble:</label>
+                    <input type="text" id="dribble" name="dribble">
+                </div>
+            </div>
+
+            <input type="submit" id="submit" name="submit" value="Submit">
+        </form>
+    </main>
+    <!-- Java Script
+   ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
+
+    <script>
+        $.getJSON("../../res/data/basic.json", function (data) {
+            // basic data
+            $("#photo").attr("src", "../../"+data.photo);
+            $("#name").val(data.name);
+            $("#email").val(data.email);
+            $("#phone").val(data.phone);
+            $("#resume_pdf").attr("src", "../../"+data.resume);
+            $("#about").val(data.about);
+
+            //adress data
+            $("#village").val(data.address.village);
+            $("#po").val(data.address.PO);
+            $("#pcode").val(data.address.pcode);
+            $("#thana").val(data.address.thana);
+            $("#upojila").val(data.address.upojila);
+            $("#district").val(data.address.district);
+            $("#state").val(data.address.state);
+            $("#country").val(data.address.country);
+
+            //role
+            $("#role1").val(data.roles.role_1);
+            $("#role2").val(data.roles.role_2);
+
+            //social links
+            $("#facebook").val(data.social.facebook);
+            $("#github").val(data.social.github);
+            $("#linkedin").val(data.social.linkedin);
+            $("#behance").val(data.social.behance);
+            $("#dribble").val(data.social.dribble);
+
+            $("#submit").click(function () {
+                alert("Not finished this function");
+            });
+        });
+    </script>
+</body>
+
+</html>

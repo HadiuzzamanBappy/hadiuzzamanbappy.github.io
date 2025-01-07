@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #161415 url(../../images/header-background.jpg) no-repeat top center;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    text-align: center;
+    font-family: "Varela Round", Nunito, Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    color: white;
+}
+a{
+    color: rgb(198 124 0);
+    font-size: .8rem;
+    font-weight: 500;
+}
+main{
+    padding-bottom: 24px;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+form{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.horizontal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vertical{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+form .border_round{
+    padding: 2rem;
+    border: 1px solid rgb(205, 201, 201);
+    border-radius: 16px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    margin-top: 24px;
+}
+form .border_round h4{
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    padding: 10px;
+    background: #5c3e30;
+    border-radius: 16px;
+    border: 1px solid gray;
+}
+form .item{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 16px;
+    align-items: center;
+}
+
+form .item .item_list{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    flex: 1;
+}
+
+form .item label{
+    width: 20%;
+    text-align: start;
+    font-size: .8rem;
+    color: rgba(240,240,240,0.7);
+}
+
+form .item input[type="text"],textarea,input[type="month"],select{
+    flex: 1;
+    padding: 12px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background: none;
+    color: white;
+}
+form .item img{
+    border: 1px solid #cb7028;
+    border-radius: 8px;
+    width: 6rem;
+}
+form .item .portfolio{
+    height: 4rem;
+    background-size: cover;
+    border-radius: unset;
+}
+
+form .role{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: auto;
+}
+
+input[type="submit"]{
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: rgb(198 124 0);
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.hidden {
+    display: none;
+}
+
+.dropdown{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: .5rem;
+}
+.dropdown option{
+    color: black;
+    padding: 1rem;
+}
+
+@media (max-width: 900px) {
+    form{
+        width: 70%;
+    }
+}
+
+@media (max-width: 750px) {
+    form{
+        width: 90%;
+    }
+}

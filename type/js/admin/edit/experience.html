@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Admin | Experiences</title>
+    <meta name="description" content="Personal Portfolio">
+    <meta name="author" content="Md. Hadiuzzaman Bappy">
+
+    <!-- Mobile Specific Metas
+   ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../res/css/admin/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="../../res/images/favicon.ico">
+</head>
+
+<body>
+    <main>
+        <div class="header">
+            <h1>Experiences</h1>
+            <a class="button add" href="addEditExperience.html?action=add"><i class="fas fa-plus"></i> Add New</a>
+        </div>
+
+        <div id="listBody" class="body">
+
+        </div> <!-- main-col end -->
+    </main>
+    <!-- Java Script
+   ================================================== -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://kit.fontawesome.com/b4aa6a0739.js" crossorigin="anonymous"></script>
+
+   <script>
+    $.getJSON("../../res/data/experience.json", function (data) {
+        $.each(data, function (index, item) {
+            var html = `
+            <div class="item">
+                <div class="item-body">
+                    <h3> <a href="${item.link}" target="_blank"> ${item.organization}</a></h3>
+                    <p class="info"> ${item.role} <span>&bull;</span> <em class="date">${item.start} to ${item.end}</em></p>
+                    <p>
+                        ${item.about}
+                    </p>
+                </div>
+                <div class="vl"></div>
+                <div class="cta">`;
+                if(item.visible){
+                    html=html+`<a class="button hide" href="?action=hide&id=${item.id}"><i class="fas fa-eye-slash"></i></a>`;
+                }else {
+                    html=html+`<a class="button hide" href="?action=hide&id=${item.id}"><i class="fas fa-eye"></i></a>`;
+                }
+                html+=`
+                    <a class="button edit" href="addEditExperience.html?action=edit&id=${item.id}"><i class="fas fa-edit"></i></a>
+                    <a class="button delete" href="?action=delete&id=${item.id}"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </div> <!-- item end -->
+            `;
+            $("#listBody").append(html);
+        });
+    });
+   </script>
+</body>
+
+</html>

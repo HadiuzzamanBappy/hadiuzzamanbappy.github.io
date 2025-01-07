@@ -1,0 +1,31 @@
+{
+    "name": "Md. Hadiuzzaman Bappy",
+    "email": "hbappy79@gmail.com",
+    "phone": "(+880) 1521-318670",
+    "about": "After completeing my college education, i admitted to Khulna University as a Computer Science Student. During those years, I have tried to learn a variety of things. In which, Developing and Designing attracted me mostly. I have done so many frontend work both on web and mobile platform. I have also done some qualitiful brand idendity designing. Later designing and developing intrigued me to have enthusiasm to become a Product designer.Also known as User Interface(UI)/ User Experience(UX) designer.",
+    "resume": "res\/pdf/HadiuzzamanBappy.pdf",
+    "photo": "res\/images\/profilepic.jpg",
+    "address": {
+        "village": "Raymanik",
+        "PO": "Kacua",
+        "pcode": "7400",
+        "thana": "Katwali",
+        "upojila": "Sadar",
+        "district": "Jashore",
+        "state": "Khulna",
+        "country": "Bangladesh"
+    },
+    "roles": {
+        "role_1": "UI\/UX Designer",
+        "role_2": "Frontend and CMS Developer"
+    },
+    "social": {
+        "facebook": "https:\/\/www.facebook.com\/hadiuzzaman.bappy.79\/",
+        "github": "https:\/\/github.com\/HadiuzzamanBappy",
+        "linkedin": "https:\/\/bd.linkedin.com\/in\/hadiuzzamanbappy",
+        "behance": "https:\/\/www.behance.net\/hbappy79",
+        "dribble": "https:\/\/dribbble.com\/hadiuzzamanbappy",
+        "upwork": "https:\/\/www.upwork.com\/freelancers\/~0135d357b96cf71d7b",
+        "fiver": "https:\/\/www.fiverr.com\/users\/bappy79"
+    }
+}

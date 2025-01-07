@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "visible": true,
+        "organization": "Janata Bank PLC.",
+        "link": "https://www.jb.com.bd/",
+        "role": "Senior Officer (IT) - AHME",
+        "start": "2022-09",
+        "end": "Present",
+        "about": "Janata Bank PLC. a corporate body trusted over the years, the 2nd largest (in respect of Deposits/Assets) commercial bank in Bangladesh, has been playing pivotal role in overall financial activities of the country and is possessing a long heritage of discharging laudable services to the society since her embankment immediately after the emergence of this verdant rich alluvial soil as a sovereign, independent state."
+    },
+    {
+        "id": 2,
+        "visible": true,
+        "organization": "Sunrise Dev",
+        "link": "#",
+        "role": "UI & UX Designer",
+        "start": "2021-10",
+        "end": "2022-08",
+        "about": "Sunrise Dev is a software company for those professionals who seek passion in the world of IT. TechAbout integrates technology and human potential to provide intelligent business solutions for entrepreneurs and enterprises."
+    }
+]
