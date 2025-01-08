@@ -236,11 +236,10 @@ function callbackFunc(entries) {
 let observer = new IntersectionObserver(callbackFunc);
 
 observer.observe(document.getElementById('figma'));
-observer.observe(document.getElementById('adobexd'));
 observer.observe(document.getElementById('photoshop'));
 observer.observe(document.getElementById('illustrator'));
 observer.observe(document.getElementById('css'));
-observer.observe(document.getElementById('html5'));
+observer.observe(document.getElementById('html'));
 observer.observe(document.getElementById('javascript'));
 
 
