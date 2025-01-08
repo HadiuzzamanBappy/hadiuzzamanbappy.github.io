@@ -187,7 +187,6 @@ function callbackFunc(entries) {
          switch (entry.target.id) {
             case 'figma':
                $('#figma').addClass('figma-start');
-               $('#html').addClass('html-start');
                break;
             case 'html':
                $('#html').addClass('html-start');
