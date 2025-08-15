@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 const initialImages = [
   "images/gallery/photo1.jpg",
   "images/gallery/photo2.jpg",
-  "images/gallery/photo3.jpg",
   "images/gallery/photo4.jpg",
   "images/gallery/photo5.jpg",
+  "images/gallery/photo3.jpg",
 ];
 
 // Reusable Card component for each image
