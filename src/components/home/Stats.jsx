@@ -38,9 +38,9 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
 const Stats = () => {
   return (
     <div className="grid grid-cols-3 gap-6">
-      <AnimatedStat to={17} label="Projects" icon={FiLayout} />
-      <AnimatedStat to={11} label="Clients" icon={FiStar} />
       <AnimatedStat to={3} label="Years XP" icon={FiTrendingUp} />
+      <AnimatedStat to={11} label="Clients" icon={FiStar} />
+      <AnimatedStat to={17} label="Projects" icon={FiLayout} />
     </div>
   );
 };

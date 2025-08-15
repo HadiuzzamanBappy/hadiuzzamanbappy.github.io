@@ -51,13 +51,13 @@ const ProjectCard = ({ project }) => {
                 alt={project.title}
                 className="w-full h-auto object-cover transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:brightness-75"
             />
-            
+
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl
-                      bg-white/70 dark:bg-black/50 backdrop-blur-lg
+                      bg-white/60 dark:bg-black/40 backdrop-blur-lg
                       border border-white/20 dark:border-white/10 shadow-xl
                       transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
                       group-hover:bottom-6 group-hover:left-6 group-hover:right-6">
-                
+
                 <div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
                     <div className="flex flex-wrap gap-2">
@@ -71,7 +71,7 @@ const ProjectCard = ({ project }) => {
 
                 <div className="max-h-0 group-hover:max-h-48 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] mt-0 group-hover:mt-4">
                     <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">{project.description}</p>
-                    
+
                     <div className="flex items-center gap-3">
                         {project.links && Object.entries(project.links).map(([key, url]) => (
                             // These are standard <a> tags and are perfectly valid here

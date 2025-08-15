@@ -99,7 +99,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                 // THE CHANGE: Added `hidden` and `md:flex`
                 // `hidden` - Hides the element by default (on mobile).
                 // `md:flex` - Displays the element as flex on medium screens (768px) and wider.
-                className="absolute bottom-10 z-20 hidden md:flex"
+                className="absolute bottom-6 z-20"
             >
                 <motion.button
                     onClick={scrollToProjects}

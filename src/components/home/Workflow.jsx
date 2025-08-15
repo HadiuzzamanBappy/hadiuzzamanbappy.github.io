@@ -17,11 +17,11 @@ const WorkflowItem = ({ item }) => (
       </span>
       <span className="text-gray-700 dark:text-gray-200">{item.title}</span>
     </div>
-    {/* Tooltip doesn't need dark mode classes as it's already dark */}
-    <div className="absolute right-full top-1/2 -translate-y-1/2 ml-4 w-64 p-3 bg-gray-200 dark:bg-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
+    {/* Tooltip positioned on top */}
+    <div className="absolute left-1/2 bottom-full -translate-x-1/2 mb-4 w-64 p-3 bg-gray-200 dark:bg-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
       <h5 className="font-bold text-base text-slate-700 dark:text-white mb-1">{item.title}</h5>
       <p className="text-sm text-slate-600 dark:text-slate-300">{item.description}</p>
-      <div className="absolute top-1/2 -translate-y-1/2 -right-2 w-4 h-4 bg-gray-200 dark:bg-gray-600 transform rotate-45"></div>
+      <div className="absolute left-1/2 top-full -translate-x-1/2 -mt-2 w-4 h-4 bg-gray-200 dark:bg-gray-600 transform rotate-45"></div>
     </div>
   </li>
 );
