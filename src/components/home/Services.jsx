@@ -50,7 +50,7 @@ const Services = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg">
+    <div className="bg-white/50 dark:bg-purple-800/20 p-4 rounded-2xl shadow-lg">
       <div className="text-center mb-4">
         <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-300">
           <FiBookmark /><span>Services</span>

@@ -8,17 +8,24 @@ import { FiArrowDown, FiHome } from 'react-icons/fi';
 import Galaxy from '../common/Galaxy';
 import AnimatedText from '../common/AnimatedText';
 import { ThemeToggle } from '../common/ThemeToggle';
-import { CursorContext } from '../../context/CursorContext'; // Import the new cursor context
+import { CursorContext } from '../../context/CursorContext';
+
+// --- NEW: Define social links as a list of objects ---
+// This makes it easy to add, remove, or reorder links in one place.
+const socialLinks = [
+    { href: "https://linkedin.com/in/hadiuzzamanbappy", label: "LinkedIn", Icon: FaLinkedinIn },
+    { href: "https://behance.net/hbappy79", label: "Behance", Icon: FaBehance },
+    { href: "https://github.com/HadiuzzamanBappy", label: "GitHub", Icon: FaGithub },
+    { href: "https://vercel.com/hadiuzzamanbappy", label: "Vercel", Icon: SiVercel },
+    { href: "https://app.netlify.com/teams/hadiuzzamanbappy/overview", label: "Netlify", Icon: SiNetlify },
+];
 
 const Hero = ({ scrollToContact, scrollToProjects }) => {
-    // Get the function to change the cursor variant from the context
     const { setCursorVariant } = useContext(CursorContext);
 
-    // Create reusable handlers to switch cursor styles
     const handleLinkEnter = () => setCursorVariant('link');
     const handleDefaultEnter = () => setCursorVariant('default');
 
-    // Animation variants (no changes here)
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } }
@@ -32,13 +39,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
         <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
             <Galaxy />
 
-            {/* --- Right Side Fixed Buttons --- */}
             <div className="fixed top-6 right-6 z-50 flex flex-col gap-4">
-                {/* 
-                  Note: For the best effect, your ThemeToggle component should also use these 
-                  onMouseEnter/onMouseLeave handlers on its internal button.
-                */}
-
                 <Link
                     to="/"
                     onMouseEnter={handleLinkEnter}
@@ -52,7 +53,6 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                 </div>
             </div>
 
-            {/* --- Main Content --- */}
             <motion.div
                 className="relative z-10 flex flex-col items-center text-center p-4 max-w-3xl"
                 variants={containerVariants}
@@ -85,22 +85,26 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                     </button>
                 </motion.div>
 
+                {/* --- THE CHANGE: Social links are now rendered dynamically from the list --- */}
                 <motion.div variants={itemVariants} className="flex gap-4 mt-12">
-                    <a href="#" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} aria-label="LinkedIn" className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"><FaLinkedinIn size={20} /></a>
-                    <a href="#" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} aria-label="Behance" className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"><FaBehance size={20} /></a>
-                    <a href="#" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} aria-label="GitHub" className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"><FaGithub size={20} /></a>
-                    <a href="#" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} aria-label="Vercel" className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"><SiVercel size={20} /></a>
-                    <a href="#" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} aria-label="Netlify" className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"><SiNetlify size={20} /></a>
+                    {socialLinks.map((link) => (
+                        <a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onMouseEnter={handleLinkEnter}
+                            onMouseLeave={handleDefaultEnter}
+                            aria-label={link.label}
+                            className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"
+                        >
+                            <link.Icon size={20} />
+                        </a>
+                    ))}
                 </motion.div>
             </motion.div>
 
-            {/* --- Scroll Down Indicator --- */}
-            <div
-                // THE CHANGE: Added `hidden` and `md:flex`
-                // `hidden` - Hides the element by default (on mobile).
-                // `md:flex` - Displays the element as flex on medium screens (768px) and wider.
-                className="absolute bottom-6 z-20"
-            >
+            <div className="absolute bottom-6 z-20">
                 <motion.button
                     onClick={scrollToProjects}
                     onMouseEnter={handleLinkEnter}

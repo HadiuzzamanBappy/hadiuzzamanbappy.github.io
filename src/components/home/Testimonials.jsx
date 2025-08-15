@@ -43,7 +43,7 @@ const Testimonials = () => {
 
   return (
     <div
-      className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg flex flex-col h-full w-full"
+      className="bg-white/50 dark:bg-purple-800/10 p-6 rounded-2xl shadow-lg flex flex-col h-full w-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -93,7 +93,7 @@ const Testimonials = () => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className="w-8 h-1 rounded-full bg-gray-200 dark:bg-slate-700 relative overflow-hidden"
+              className="w-8 h-1 rounded-full bg-gray-200 dark:bg-purple-800/30 relative overflow-hidden"
               aria-label={`Go to testimonial ${index + 1}`}
             >
               <motion.div

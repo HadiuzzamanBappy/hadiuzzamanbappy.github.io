@@ -83,7 +83,7 @@ const Projects = () => {
   const handleMouseEnter = () => setCursorVariant('link');
   const handleMouseLeave = () => setCursorVariant('default');
   return (
-    <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg flex-grow flex flex-col h-full w-full">
+    <div className="bg-white/50 dark:bg-purple-800/10 p-4 rounded-2xl shadow-lg flex-grow flex flex-col h-full w-full">
       <div className="text-center mb-4">
         <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-300">
           <FiLayout /><span>Projects</span>
@@ -96,15 +96,15 @@ const Projects = () => {
           ))}
         </div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="bg-white dark:bg-slate-800 p-3 rounded-xl shadow-2xl hover:shadow-xl transition-shadow pointer-events-auto">
+          <div className="bg-white dark:bg-purple-800/20 backdrop-blur-sm p-3 rounded-xl shadow-2xl hover:shadow-xl transition-shadow pointer-events-auto">
             <Link
               to="/projects"
               // 5. Apply handlers to each individual link as well
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="relative block bg-gray-100 dark:bg-slate-700 py-2 px-5 rounded-lg border border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-200 font-semibold transition-transform hover:scale-105"
+              className="relative block bg-gray-100 dark:bg-purple-800/50 py-2 px-5 rounded-lg border border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-200 font-semibold transition-transform hover:scale-105"
             >
-              <span className="absolute inset-0 scale-105 bg-purple-800/20 rounded-lg blur-md animate-pulse"></span>
+              <span className="absolute inset-0 scale-105 bg-purple-500/20 dark:bg-purple-900 rounded-lg blur-md animate-pulse"></span>
               <span className="relative">View Projects</span>
             </Link>
           </div>

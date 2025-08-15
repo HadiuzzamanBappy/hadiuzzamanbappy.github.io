@@ -65,12 +65,12 @@ const About = () => {
   const handleMouseLeave = () => setCursorVariant('default');
   return (
     <div
-      className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg flex flex-col h-full w-full"
+      className="bg-white/50 dark:bg-purple-800/10 p-6 rounded-2xl shadow-lg flex flex-col h-full w-full"
       // 5. Apply handlers to the main container for a better UX
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
       <div className="flex justify-between items-center mb-4">
-        <div className="flex items-center bg-gray-100 dark:bg-slate-700 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-full text-sm">
+        <div className="flex items-center bg-gray-100 dark:bg-purple-800/30 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-full text-sm">
           <span className="mr-2 w-2.5 h-2.5 bg-green-500 rounded-full"></span>
           Available
         </div>

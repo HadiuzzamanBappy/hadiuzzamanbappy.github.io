@@ -16,17 +16,27 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   --background-color: #f1f1f1;
-  --dot-color: rgba(0, 0, 0, 0.1)
-
-  font-synthesis: none;
+  --dot-color: rgba(0, 0, 0, 0.1) font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --scrollbar-track-color: transparent;
+  --scrollbar-thumb-color: #a8a8a8;
+  --scrollbar-thumb-hover-color: #7d7d7d;
 }
 
 [prefers-color-scheme='dark'] {
-  --background-color: #0f172a; /* This is slate-900 from Tailwind */
+  --background-color: #0f172a;
+  /* This is slate-900 from Tailwind */
   --dot-color: #4e468552;
+
+  --scrollbar-track-color: transparent;
+  /* Tailwind gray-800 */
+  --scrollbar-thumb-color: #4b5563;
+  /* Tailwind gray-600 */
+  --scrollbar-thumb-hover-color: #374151;
+  /* Tailwind gray-700 */
 }
 
 body {
@@ -37,7 +47,8 @@ body {
 .skills-sphere-html {
   pointer-events: none;
 }
-.skills-sphere-html > div {
+
+.skills-sphere-html>div {
   pointer-events: auto;
   position: relative !important;
   transform-style: preserve-3d !important;
@@ -51,14 +62,59 @@ body {
   height: 100%;
   background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 20px 20px;
-  z-index: -1; /* Place it behind all other content */
+  z-index: -1;
+  /* Place it behind all other content */
 }
 
 body {
-    cursor: none;
+  cursor: none;
 }
 
-a, button {
-    /* Ensure interactive elements don't show the default pointer */
-    cursor: none;
+a,
+button {
+  /* Ensure interactive elements don't show the default pointer */
+  cursor: none;
+}
+
+/* --- Styles for WebKit Browsers (Chrome, Safari, Edge) --- */
+
+/* 1. The scrollbar container */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Width of the vertical scrollbar */
+  height: 12px;
+  /* Height of the horizontal scrollbar */
+}
+
+/* 2. The track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+}
+
+/* 3. The thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 10px;
+  /* Rounded corners */
+  border: 3px solid var(--scrollbar-track-color);
+  /* Creates a nice padding effect */
+  transition: background-color 0.3s ease;
+}
+
+/* 4. The thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover-color);
+  transition: background-color 0.3s ease;
+}
+
+/* --- Styles for Firefox --- */
+
+/* 
+  Firefox uses a different, simpler set of properties.
+  It supports `scrollbar-width` and `scrollbar-color`.
+*/
+html {
+  scrollbar-width: thin;
+  /* Can be 'auto', 'thin', or 'none' */
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }

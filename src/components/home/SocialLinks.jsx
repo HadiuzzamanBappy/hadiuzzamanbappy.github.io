@@ -19,7 +19,7 @@ const SocialLinks = () => {
 
   return (
     <div 
-      className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg flex justify-between items-center group [perspective:800px] transition-transform duration-500 hover:[transform:rotateX(5deg)_rotateY(-5deg)]"
+      className="bg-white/50 dark:bg-purple-800/10 p-4 rounded-2xl shadow-lg flex justify-between items-center group [perspective:800px] transition-transform duration-500 hover:[transform:rotateX(5deg)_rotateY(-5deg)]"
       // 5. Apply handlers to the main container for a better UX
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

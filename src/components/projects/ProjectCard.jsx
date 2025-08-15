@@ -53,7 +53,7 @@ const ProjectCard = ({ project }) => {
             />
 
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl
-                      bg-white/60 dark:bg-black/40 backdrop-blur-lg
+                      bg-white/60 dark:bg-purple-900/40 backdrop-blur-lg
                       border border-white/20 dark:border-white/10 shadow-xl
                       transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
                       group-hover:bottom-6 group-hover:left-6 group-hover:right-6">

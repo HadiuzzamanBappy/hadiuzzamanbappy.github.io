@@ -24,7 +24,7 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
   }, [inView, to]);
 
   return (
-    <div ref={ref} className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg text-center flex-grow flex flex-col justify-center items-center">
+    <div ref={ref} className="bg-white/50 dark:bg-purple-800/10 p-4 rounded-2xl shadow-lg text-center flex-grow flex flex-col justify-center items-center">
       <h5 className="text-3xl font-semibold text-gray-800 dark:text-gray-200">
         <span>{displayValue}</span>+
       </h5>

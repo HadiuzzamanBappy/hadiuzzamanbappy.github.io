@@ -41,7 +41,7 @@ const Home = () => {
 
         {/* --- Second Row --- */}
         <div className="lg:col-span-4 flex flex-col gap-6">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex flex-col flex-grow min-h-[300px]">
+          <div className="bg-white/50 dark:bg-purple-800/10 backdrop-blur-sm/20 backdrop-blur-sm rounded-2xl shadow-lg p-4 flex flex-col flex-grow min-h-[300px]">
             <SkillsSphere />
           </div>
           <SocialLinks />
@@ -55,7 +55,7 @@ const Home = () => {
         </div>
 
         <div className="lg:col-span-4 flex flex-col gap-6">
-          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex-grow min-h-[240px] flex flex-col items-center justify-center">
+          <div className="bg-white/50 dark:bg-purple-800/10 rounded-2xl shadow-lg p-4 flex-grow min-h-[240px] flex flex-col items-center justify-center">
             <ImageStack />
           </div>
           <div className="flex-shrink-0">

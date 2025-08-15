@@ -20,7 +20,7 @@ const CustomCursor = () => {
       y: position.y - 8,
       height: 16,
       width: 16,
-      backgroundColor: '#0ea5e9',
+      backgroundColor: '#b044ee',
       mixBlendMode: 'difference',
     },
     link: {
@@ -28,7 +28,7 @@ const CustomCursor = () => {
       y: position.y - 24,
       height: 48,
       width: 48,
-      backgroundColor: '#fff',
+      backgroundColor: '#b044ee',
       mixBlendMode: 'difference',
     },
     view: {
