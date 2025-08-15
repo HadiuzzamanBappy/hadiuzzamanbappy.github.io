@@ -1,0 +1,44 @@
+import React from 'react';
+import { FiArrowRight, FiBox } from 'react-icons/fi';
+
+const workflowItems = [
+  { title: "Goals & Objective", description: "Define clear goals and objectives to align the team and project scope." },
+  { title: "Research", description: "Analyze user needs and industry trends to build a solid foundation." },
+  { title: "Wireframe", description: "Create structured wireframes to visualize the project's layout." },
+  { title: "Prototyping", description: "Develop interactive prototypes to test usability and refine functionality." },
+  { title: "Finalize Design", description: "Incorporate feedback and finalize the design for implementation." },
+];
+
+const WorkflowItem = ({ item }) => (
+  <li className="relative group">
+    <div className="flex items-center p-1.5 rounded-lg border bg-white dark:bg-slate-700 dark:border-slate-600 shadow-sm gap-3">
+      <span className="bg-gray-100 dark:bg-slate-600 p-1 rounded-md text-gray-600 dark:text-gray-300">
+        <FiArrowRight />
+      </span>
+      <span className="text-gray-700 dark:text-gray-200">{item.title}</span>
+    </div>
+    {/* Tooltip doesn't need dark mode classes as it's already dark */}
+    <div className="absolute right-full top-1/2 -translate-y-1/2 ml-4 w-64 p-3 bg-gray-200 dark:bg-slate-600 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
+      <h5 className="font-bold text-base text-slate-700 dark:text-white mb-1">{item.title}</h5>
+      <p className="text-sm text-slate-600 dark:text-slate-300">{item.description}</p>
+      <div className="absolute top-1/2 -translate-y-1/2 -right-2 w-4 h-4 bg-gray-200 dark:bg-gray-600 transform rotate-45"></div>
+    </div>
+  </li>
+);
+
+const Workflow = () => {
+  return (
+    <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg flex flex-col h-full w-full">
+      <div className="text-center mb-4">
+        <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-300">
+          <FiBox /><span>Work Process</span>
+        </div>
+      </div>
+      <ul className="space-y-1 flex-grow flex flex-col justify-around">
+        {workflowItems.map(item => <WorkflowItem key={item.title} item={item} />)}
+      </ul>
+    </div>
+  );
+};
+
+export default Workflow;

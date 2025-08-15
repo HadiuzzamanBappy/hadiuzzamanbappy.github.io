@@ -1,0 +1,70 @@
+import React, { useContext } from 'react'; // Import useContext
+
+// Import all the components
+import About from '../components/home/About';
+import Testimonials from '../components/home/Testimonials';
+import Workflow from '../components/home/Workflow';
+import SkillsSphere from '../components/home/SkillsSphere';
+import SocialLinks from '../components/home/SocialLinks';
+import Stats from '../components/home/Stats';
+import Projects from '../components/home/Projects';
+import ImageStack from '../components/home/ImageStack';
+import Services from '../components/home/Services';
+import { CursorContext } from '../context/CursorContext'; // Import the cursor context
+
+const Home = () => {
+  // Get the function to change the cursor's state
+  const { setCursorVariant } = useContext(CursorContext);
+
+  // Handler to set the cursor to its default state
+  const handleMouseEnter = () => setCursorVariant('default');
+
+  return (
+    <main 
+      className="container mx-auto max-w-screen-xl p-4" 
+      style={{ fontFamily: "'Poppins', sans-serif" }}
+      // THE FIX: This ensures the cursor resets to default when moving over the page background
+      onMouseEnter={handleMouseEnter}
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        {/* --- First Row --- */}
+        <div className="lg:col-span-5 flex">
+          <About />
+        </div>
+        <div className="lg:col-span-4 flex">
+          <Testimonials />
+        </div>
+        <div className="lg:col-span-3 flex">
+          <Workflow />
+        </div>
+
+        {/* --- Second Row --- */}
+        <div className="lg:col-span-4 flex flex-col gap-6">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex flex-col flex-grow min-h-[200px]">
+            <SkillsSphere />
+          </div>
+          <SocialLinks />
+        </div>
+
+        <div className="lg:col-span-4 flex flex-col gap-6">
+          <Stats />
+          <div className="flex-grow flex">
+            <Projects />
+          </div>
+        </div>
+
+        <div className="lg:col-span-4 flex flex-col gap-6">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-4 flex-grow min-h-[200px] flex flex-col items-center justify-center">
+            <ImageStack />
+          </div>
+          <div className="flex-shrink-0">
+            <Services />
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default Home;
