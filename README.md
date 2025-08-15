@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal portfolio, built from the ground up with a modern, interactive, and component-based architecture using **React**, **Vite**, and **Tailwind CSS**. The project features a host of advanced animations and dynamic functionalities to create an engaging user experience.
 
-▶️ **[View the Live Demo](<-- Add your deployment link here -->)**  
+▶️ **[View the Live Demo](https://hbappy79.vercel.app/)**  
 
 ![Home Preview](/public/images/demo/home.png)
 ![Project Preview](/public/images/demo/projects.png)
@@ -101,7 +101,7 @@ VITE_APP_EMAILJS_PUBLIC_KEY=your_public_key
 npm run dev
 ```
 
-Visit: [http://localhost:5173](http://localhost:5173)
+Visit: [http://localhost:port](http://localhost:port)
 
 5. **Build for Production**
 

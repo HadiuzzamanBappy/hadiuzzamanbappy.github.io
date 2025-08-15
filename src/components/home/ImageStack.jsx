@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // CORRECTED: First image link is now fixed.
 const initialImages = [
-  "/public/images/gallery/photo1.jpg",
-  "/public/images/gallery/photo2.jpg",
-  "/public/images/gallery/photo3.jpg",
-  "/public/images/gallery/photo4.jpg",
-  "/public/images/gallery/photo5.jpg",
+  "images/gallery/photo1.jpg",
+  "images/gallery/photo2.jpg",
+  "images/gallery/photo3.jpg",
+  "images/gallery/photo4.jpg",
+  "images/gallery/photo5.jpg",
 ];
 
 // Reusable Card component for each image

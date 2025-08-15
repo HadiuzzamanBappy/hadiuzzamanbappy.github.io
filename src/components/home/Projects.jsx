@@ -8,19 +8,19 @@ import { CursorContext } from '../../context/CursorContext'; // 2. Import the Cu
 const projectData = [
   {
     title: "Mountain Sunrise",
-    imgSrc: "/public/images/project/pf1.jpg"
+    imgSrc: "images/project/pf1.jpg"
   },
   {
     title: "Lakeside Retreat",
-    imgSrc: "/public/images/project/pf2.jpg"
+    imgSrc: "images/project/pf2.jpg"
   },
   {
     title: "Coastal Getaway",
-    imgSrc: "/public/images/project/pf3.jpg"
+    imgSrc: "images/project/pf3.jpg"
   },
   {
     title: "Forest Trail",
-    imgSrc: "/public/images/project/pf4.jpg"
+    imgSrc: "images/project/pf4.jpg"
   },
 ];
 
