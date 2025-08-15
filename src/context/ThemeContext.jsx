@@ -8,7 +8,7 @@ const getInitialTheme = () => {
       return storedPrefs;
     }
   }
-  return 'light'; // Default to light if no preference is saved
+  return 'dark'; // Default to light if no preference is saved
 };
 
 export const ThemeContext = createContext();

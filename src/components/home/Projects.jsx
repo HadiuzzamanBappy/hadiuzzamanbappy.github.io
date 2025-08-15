@@ -7,19 +7,19 @@ import { CursorContext } from '../../context/CursorContext'; // 2. Import the Cu
 // Expanded project data to include titles for the hover captions
 const projectData = [
   {
-    title: "Mountain Sunrise",
+    title: "BookMore",
     imgSrc: "images/project/pf1.jpg"
   },
   {
-    title: "Lakeside Retreat",
+    title: "CryptoWire",
     imgSrc: "images/project/pf2.jpg"
   },
   {
-    title: "Coastal Getaway",
+    title: "E-commerce",
     imgSrc: "images/project/pf3.jpg"
   },
   {
-    title: "Forest Trail",
+    title: "DMV Driver",
     imgSrc: "images/project/pf4.jpg"
   },
 ];
