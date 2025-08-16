@@ -78,6 +78,18 @@
 
 <body>
   <div id="root"></div>
+  <script type="text/javascript">
+    (function() {
+      // Check if we were redirected from the 404 page
+      var redirect = sessionStorage.redirect;
+      // If so, delete the stored path and update the browser history
+      delete sessionStorage.redirect;
+      if (redirect && redirect != window.location.pathname) {
+        // This command updates the URL in the browser without reloading the page
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
 </body>
 
 </html>
