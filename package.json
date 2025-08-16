@@ -1,9 +1,9 @@
 {
-  "name": "my-portfolio",
+  "name": "hadiuzzamanbappy",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://HadiuzzamanBappy.github.io/gh-pages",
+  "homepage": "https://hadiuzzamanbappy.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
