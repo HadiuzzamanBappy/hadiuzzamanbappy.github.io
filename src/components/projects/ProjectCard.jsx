@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 // THE CHANGE: Import useNavigate instead of Link
 import { useNavigate } from 'react-router-dom';
-import { FaGithub, FaBehance } from 'react-icons/fa';
-import { SiNetlify, SiVercel } from 'react-icons/si';
+import { FaGithub, FaBehance, FaDribbble, FaYoutube, FaLinkedin, FaTwitter, FaFacebook, FaSlack, FaMedium } from 'react-icons/fa';
+import { SiNetlify, SiVercel, SiFigma, SiNotion, SiDevdotto } from 'react-icons/si';
 import { FiExternalLink } from 'react-icons/fi';
+import { FaDiscord } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 import { CursorContext } from '../../context/CursorContext';
 
 const ProjectCard = ({ project }) => {
@@ -17,7 +19,7 @@ const ProjectCard = ({ project }) => {
 
     // THE CHANGE: This function will handle the navigation when the card is clicked
     const handleCardClick = () => {
-        navigate(`/projects/${project.id}`);
+        navigate(`/projects/${project.previewUrl}`);
     };
 
     const renderIcon = (key) => {
@@ -27,6 +29,22 @@ const ProjectCard = ({ project }) => {
             case 'netlify': return <SiNetlify />;
             case 'vercel': return <SiVercel />;
             case 'live': return <FiExternalLink />;
+            case 'website': return <FiExternalLink />;
+            case 'demo': return <FiExternalLink />;
+            case 'code': return <FaGithub />;
+            case 'figma': return <SiFigma />;
+            case 'dribbble': return <FaDribbble />;
+            case 'youtube': return <FaYoutube />;
+            case 'linkedin': return <FaLinkedin />;
+            case 'twitter': return <FaTwitter />;
+            case 'facebook': return <FaFacebook />;
+            case 'slack': return <FaSlack />;
+            case 'notion': return <SiNotion />;
+            case 'medium': return <FaMedium />;
+            case 'devto': return <SiDevdotto />;
+            case 'discord': return <FaDiscord />;
+            case 'email': return <MdEmail />;
+            case 'portfolio': return <FiExternalLink />;
             default: return null;
         }
     };
@@ -59,19 +77,18 @@ const ProjectCard = ({ project }) => {
                       group-hover:bottom-6 group-hover:left-6 group-hover:right-6">
 
                 <div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <h6 className="font-medium text-gray-900 dark:text-white mb-2">{project.title}</h6>
+                </div>
+
+                <div className="max-h-0 group-hover:max-h-48 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] mt-0 group-hover:mt-4">
+                    <div className="flex flex-wrap gap-2 mb-2">
                         {project.tags.map((tag, index) => (
                             <span key={index} className="bg-black/10 dark:bg-white/10 text-gray-800 dark:text-gray-200 text-xs font-semibold px-3 py-1 rounded-full">
                                 {tag}
                             </span>
                         ))}
                     </div>
-                </div>
-
-                <div className="max-h-0 group-hover:max-h-48 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] mt-0 group-hover:mt-4">
-                    <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">{project.description}</p>
-
+                    <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">{project.description}</p>
                     <div className="flex items-center gap-3">
                         {project.links && Object.entries(project.links).map(([key, url]) => (
                             // These are standard <a> tags and are perfectly valid here

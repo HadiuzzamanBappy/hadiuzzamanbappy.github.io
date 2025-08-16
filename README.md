@@ -1,7 +1,12 @@
 # Portfolio - Hadiuzzaman Bappy
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Vite](https://img.shields.io/badge/vite-%5E4.0.0-brightgreen)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/react-%5E18.2.0-blue)](https://react.dev/)
+
 This repository contains the source code for my personal portfolio, built from the ground up with a modern, interactive, and component-based architecture using **React**, **Vite**, and **Tailwind CSS**. The project features a host of advanced animations and dynamic functionalities to create an engaging user experience.
 
+▶️ **[View the Live Github](https://hadiuzzamanbappy.github.io/)**  
 ▶️ **[View the Live Vercel](https://hadiuzzamanbappy.vercel.app/)**  
 ▶️ **[View the Live Netlify](https://hadiuzzamanbappy.netlify.app/)**  
 
@@ -34,7 +39,7 @@ This project goes beyond a standard portfolio by integrating several advanced fe
 | **State**        | React Context API |
 | **Icons**        | React Icons |
 | **Services**     | EmailJS |
-| **Deployment**   | Vercel / Netlify |
+| **Deployment**   | Github / Vercel / Netlify |
 
 ---
 

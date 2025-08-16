@@ -9,16 +9,7 @@ import Galaxy from '../common/Galaxy';
 import AnimatedText from '../common/AnimatedText';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { CursorContext } from '../../context/CursorContext';
-
-// --- NEW: Define social links as a list of objects ---
-// This makes it easy to add, remove, or reorder links in one place.
-const socialLinks = [
-    { href: "https://linkedin.com/in/hadiuzzamanbappy", label: "LinkedIn", Icon: FaLinkedinIn },
-    { href: "https://behance.net/hbappy79", label: "Behance", Icon: FaBehance },
-    { href: "https://github.com/HadiuzzamanBappy", label: "GitHub", Icon: FaGithub },
-    { href: "https://vercel.com/hadiuzzamanbappy", label: "Vercel", Icon: SiVercel },
-    { href: "https://app.netlify.com/teams/hadiuzzamanbappy/overview", label: "Netlify", Icon: SiNetlify },
-];
+import { socialLinks } from '../../data/social'; // Adjust the path as necessary
 
 const Hero = ({ scrollToContact, scrollToProjects }) => {
     const { setCursorVariant } = useContext(CursorContext);
