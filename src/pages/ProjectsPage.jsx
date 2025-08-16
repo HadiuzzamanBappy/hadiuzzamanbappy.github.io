@@ -6,7 +6,7 @@ import Hero from '../components/projects/Hero';
 import ContactForm from '../components/projects/ContactForm';
 
 // Added "E-commerce" and "Branding" to match the new data
-const categories = ["All", "Web Development", "UI/UX Design", "Branding"];
+const categories = ["All", "UI/UX Design", "Web Development", "Others"];
 
 const ProjectsPage = () => {
     const [activeFilter, setActiveFilter] = useState("All");

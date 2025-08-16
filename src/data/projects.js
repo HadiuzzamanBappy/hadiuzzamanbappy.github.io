@@ -1,6 +1,15 @@
 // src/data/projects.js
 
-export const projects = [
+function shuffleArray(array) {
+    // Fisher-Yates shuffle
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+export const projects = shuffleArray([
     {
         "id": "landing-page-cryptowire-cryptocurrency",
         "title": "Landing Page : CryptoWire - Cryptocurrency",
@@ -30,7 +39,7 @@ export const projects = [
     {
         "id": "logo-design-cryptowire-cryptocurrency",
         "title": "Logo Design : CryptoWire - Cryptocurrency",
-        "category": "Branding",
+        "category": "Others",
         "previewImage": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/280345134145281.61cf0b18bf3ce.jpg",
         "tags": ["Branding", "Graphic Design", "Industrial Design"],
         "description": "Logo design for a platform facilitating cryptocurrency and NFT transactions.",
@@ -233,8 +242,21 @@ export const projects = [
             "github": "https://github.com/HadiuzzamanBappy/SCASL",
             "vercel": "https://scasl-iota.vercel.app/"
         }
+    },
+    {
+        "id": "todo-management-system",
+        "title": "Todo Management System",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Todo-Management/raw/master/uploads/demo/admin.png",
+        "tags": ["Java", "Spring Boot", "HTML", "JavaScript"],
+        "description": "A robust Todo Management System with role-based access control and notifications.",
+        "previewUrl": "https://github.com/HadiuzzamanBappy/Todo-Management",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Todo-Management",
+            "vercel": ""
+        }
     }
-]
+]);
 
 export const archivedProjects = [
     {
