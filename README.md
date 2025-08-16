@@ -2,7 +2,8 @@
 
 This repository contains the source code for my personal portfolio, built from the ground up with a modern, interactive, and component-based architecture using **React**, **Vite**, and **Tailwind CSS**. The project features a host of advanced animations and dynamic functionalities to create an engaging user experience.
 
-▶️ **[View the Live Demo](https://hbappy79.vercel.app/)**  
+▶️ **[View the Live Vercel](https://hadiuzzamanbappy.vercel.app/)**  
+▶️ **[View the Live Netlify](https://hadiuzzamanbappy.netlify.app/)**  
 
 ![Home Preview](/public/images/demo/home.png)
 ![Project Preview](/public/images/demo/projects.png)
