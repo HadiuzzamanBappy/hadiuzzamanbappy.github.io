@@ -6,7 +6,7 @@ import { SiVercel, SiNetlify } from 'react-icons/si';
 import { FiArrowDown, FiHome } from 'react-icons/fi';
 
 import Galaxy from '../common/Galaxy';
-import AnimatedText from '../common/AnimatedText';
+import AnimatedText from './AnimatedText';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { CursorContext } from '../../context/CursorContext';
 import { socialLinks } from '../../data/social'; // Adjust the path as necessary

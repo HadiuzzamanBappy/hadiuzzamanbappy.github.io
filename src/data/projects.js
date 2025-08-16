@@ -88,19 +88,6 @@ export const projects = shuffleArray([
         }
     },
     {
-        "id": "crystal-app-login-signup",
-        "title": "Crystal App : login/signup",
-        "category": "UI/UX Design",
-        "previewImage": "https://cdn.dribbble.com/userupload/35196998/file/original-eac3ae4b6011fe8535c07b0854939449.jpg?resize=1024x728&vertical=center",
-        "tags": ["Figma", "Mobile Screen"],
-        "description": "Vibrant red-themed login and sign-up screens for a mobile application.",
-        "previewUrl": "https://dribbble.com/shots/17359690-Crystal-App-login-signup",
-        "links": {
-            "github": "",
-            "vercel": ""
-        }
-    },
-    {
         "id": "cryptowire-app-login-signup",
         "title": "CryptoWire App Login/Signup",
         "category": "UI/UX Design",
@@ -127,19 +114,6 @@ export const projects = shuffleArray([
         }
     },
     {
-        "id": "developers-multi-tool-dashboard",
-        "title": "Developer's Multi-Tool Dashboard",
-        "category": "Web Development",
-        "previewImage": "https://github.com/HadiuzzamanBappy/Dev-Tools/raw/main/res/img/image.png",
-        "tags": ["JavaScript", "CSS", "Developer Tools", "Dashboard"],
-        "description": "An all-in-one toolkit dashboard designed for frontend developers and designers.",
-        "previewUrl": "https://dev-tools-bro.vercel.app",
-        "links": {
-            "github": "https://github.com/HadiuzzamanBappy/Dev-Tools",
-            "vercel": "https://dev-tools-bro.vercel.app"
-        }
-    },
-    {
         "id": "dynamic-currency-converter",
         "title": "Dynamic Currency Converter",
         "category": "Web Development",
@@ -153,45 +127,6 @@ export const projects = shuffleArray([
         }
     },
     {
-        "id": "advanced-font-previewer",
-        "title": "Advanced Font Previewer",
-        "category": "Web Development",
-        "previewImage": "https://github.com/HadiuzzamanBappy/Font-Previewer/raw/main/res/image/image.png",
-        "tags": ["JavaScript", "HTML", "CSS", "Google Fonts API"],
-        "description": "A web app for designers and developers to discover and compare Google Fonts.",
-        "previewUrl": "https://font-previewer-bro.vercel.app",
-        "links": {
-            "github": "https://github.com/HadiuzzamanBappy/Font-Previewer",
-            "vercel": "https://font-previewer-bro.vercel.app"
-        }
-    },
-    {
-        "id": "neomorphic-markdown-previewer",
-        "title": "Neomorphic Markdown Previewer",
-        "category": "Web Development",
-        "previewImage": "https://github.com/HadiuzzamanBappy/Markdown-Previewer/raw/main/res/image/image.png",
-        "tags": ["CSS", "JavaScript", "HTML", "Neomorphic"],
-        "description": "A stylish, real-time Markdown editor with a side-by-side preview.",
-        "previewUrl": "",
-        "links": {
-            "github": "https://github.com/HadiuzzamanBappy/Markdown-Previewer",
-            "vercel": ""
-        }
-    },
-    {
-        "id": "cleancoder-website",
-        "title": "CleanCoder Website",
-        "category": "Web Development",
-        "previewImage": "https://github.com/HadiuzzamanBappy/Clean-Coder/raw/main/res/image/image.png",
-        "tags": ["JavaScript", "CSS", "HTML", "Developer Tools"],
-        "description": "A suite of free developer tools, including formatters, minifiers, and code converters.",
-        "previewUrl": "",
-        "links": {
-            "github": "https://github.com/HadiuzzamanBappy/Clean-Coder",
-            "vercel": ""
-        }
-    },
-    {
         "id": "asset-bundler",
         "title": "Asset Bundler",
         "category": "Web Development",
@@ -201,19 +136,6 @@ export const projects = shuffleArray([
         "previewUrl": "",
         "links": {
             "github": "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web",
-            "vercel": ""
-        }
-    },
-    {
-        "id": "unit-converter",
-        "title": "Unit Converter",
-        "category": "Web Development",
-        "previewImage": "https://github.com/HadiuzzamanBappy/Unit-Converter/raw/main/res/image/image.png",
-        "tags": ["JavaScript", "CSS", "HTML", "Bootstrap"],
-        "description": "A responsive unit converter with light/dark modes and real-time conversions.",
-        "previewUrl": "",
-        "links": {
-            "github": "https://github.com/HadiuzzamanBappy/Unit-Converter",
             "vercel": ""
         }
     },
@@ -243,19 +165,6 @@ export const projects = shuffleArray([
             "vercel": "https://scasl-iota.vercel.app/"
         }
     },
-    {
-        "id": "todo-management-system",
-        "title": "Todo Management System",
-        "category": "Web Development",
-        "previewImage": "https://github.com/HadiuzzamanBappy/Todo-Management/raw/master/uploads/demo/admin.png",
-        "tags": ["Java", "Spring Boot", "HTML", "JavaScript"],
-        "description": "A robust Todo Management System with role-based access control and notifications.",
-        "previewUrl": "https://github.com/HadiuzzamanBappy/Todo-Management",
-        "links": {
-            "github": "https://github.com/HadiuzzamanBappy/Todo-Management",
-            "vercel": ""
-        }
-    }
 ]);
 
 export const archivedProjects = [
@@ -269,6 +178,97 @@ export const archivedProjects = [
         "previewUrl": "https://dribbble.com/shots/17359757-GoTravel-App-Onboard-to-Explore",
         "links": {
             "github": "",
+            "vercel": ""
+        }
+    },
+    {
+        "id": "unit-converter",
+        "title": "Unit Converter",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Unit-Converter/raw/main/res/image/image.png",
+        "tags": ["JavaScript", "CSS", "HTML", "Bootstrap"],
+        "description": "A responsive unit converter with light/dark modes and real-time conversions.",
+        "previewUrl": "",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Unit-Converter",
+            "vercel": ""
+        }
+    },
+    {
+        "id": "todo-management-system",
+        "title": "Todo Management System",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Todo-Management/raw/master/uploads/demo/admin.png",
+        "tags": ["Java", "Spring Boot", "HTML", "JavaScript"],
+        "description": "A robust Todo Management System with role-based access control and notifications.",
+        "previewUrl": "https://github.com/HadiuzzamanBappy/Todo-Management",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Todo-Management",
+            "vercel": ""
+        }
+    },
+    {
+        "id": "cleancoder-website",
+        "title": "CleanCoder Website",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Clean-Coder/raw/main/res/image/image.png",
+        "tags": ["JavaScript", "CSS", "HTML", "Developer Tools"],
+        "description": "A suite of free developer tools, including formatters, minifiers, and code converters.",
+        "previewUrl": "",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Clean-Coder",
+            "vercel": ""
+        }
+    },
+    {
+        "id": "crystal-app-login-signup",
+        "title": "Crystal App : login/signup",
+        "category": "UI/UX Design",
+        "previewImage": "https://cdn.dribbble.com/userupload/35196998/file/original-eac3ae4b6011fe8535c07b0854939449.jpg?resize=1024x728&vertical=center",
+        "tags": ["Figma", "Mobile Screen"],
+        "description": "Vibrant red-themed login and sign-up screens for a mobile application.",
+        "previewUrl": "https://dribbble.com/shots/17359690-Crystal-App-login-signup",
+        "links": {
+            "github": "",
+            "vercel": ""
+        }
+    },
+    {
+        "id": "advanced-font-previewer",
+        "title": "Advanced Font Previewer",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Font-Previewer/raw/main/res/image/image.png",
+        "tags": ["JavaScript", "HTML", "CSS", "Google Fonts API"],
+        "description": "A web app for designers and developers to discover and compare Google Fonts.",
+        "previewUrl": "https://font-previewer-bro.vercel.app",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Font-Previewer",
+            "vercel": "https://font-previewer-bro.vercel.app"
+        }
+    },
+    {
+        "id": "developers-multi-tool-dashboard",
+        "title": "Developer's Multi-Tool Dashboard",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Dev-Tools/raw/main/res/img/image.png",
+        "tags": ["JavaScript", "CSS", "Developer Tools", "Dashboard"],
+        "description": "An all-in-one toolkit dashboard designed for frontend developers and designers.",
+        "previewUrl": "https://dev-tools-bro.vercel.app",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Dev-Tools",
+            "vercel": "https://dev-tools-bro.vercel.app"
+        }
+    },
+    {
+        "id": "neomorphic-markdown-previewer",
+        "title": "Neomorphic Markdown Previewer",
+        "category": "Web Development",
+        "previewImage": "https://github.com/HadiuzzamanBappy/Markdown-Previewer/raw/main/res/image/image.png",
+        "tags": ["CSS", "JavaScript", "HTML", "Neomorphic"],
+        "description": "A stylish, real-time Markdown editor with a side-by-side preview.",
+        "previewUrl": "",
+        "links": {
+            "github": "https://github.com/HadiuzzamanBappy/Markdown-Previewer",
             "vercel": ""
         }
     },
