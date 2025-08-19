@@ -73,7 +73,7 @@ function IconCloud() {
 export default function SkillsSphere() {
   return (
     <div className="w-full h-full">
-        <Canvas camera={{ position: [0, 0, 10], fov: 75 }}>
+        <Canvas camera={{ position: [0, 0, 10], fov: 70 }}>
             <Suspense fallback={null}>
                 <ambientLight intensity={Math.PI} />
                 <IconCloud />
@@ -83,8 +83,8 @@ export default function SkillsSphere() {
                 // THE CHANGE #1: Enable zooming.
                 enableZoom={true} 
                 // THE CHANGE #2: Add constraints for a better user experience.
-                minDistance={7}   // Prevents zooming in too close
-                maxDistance={20}  // Prevents zooming out too far
+                minDistance={8}   // Prevents zooming in too close
+                maxDistance={18}  // Prevents zooming out too far
                 
                 // --- Existing functions are preserved ---
                 enablePan={false} 

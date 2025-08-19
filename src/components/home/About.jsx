@@ -79,7 +79,11 @@ const About = () => {
           <a // 5. Apply handlers to each individual link as well
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            href="/Resume.pdf" download className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition">
+            href="pdf/Resume.pdf" 
+            download="Hadiuzzaman_Bappy.pdf"
+            target='_blank'
+            rel="noopener noreferrer"
+            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition">
             <FiDownload />
           </a>
         </div>

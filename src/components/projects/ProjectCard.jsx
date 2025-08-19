@@ -17,9 +17,15 @@ const ProjectCard = ({ project }) => {
     const handleMouseEnter = () => setCursorVariant('view');
     const handleMouseLeave = () => setCursorVariant('default');
 
-    // THE CHANGE: This function will handle the navigation when the card is clicked
     const handleCardClick = () => {
-        navigate(`/projects/${project.previewUrl}`);
+        if (project.linkType === 'external') {
+            // If the linkType is external, open the project.url in a new tab
+            window.open(project.url, '_blank', 'noopener,noreferrer');
+        } else {
+            // Otherwise, assume it's an internal link and navigate to a detail page
+            // using the project's unique id for the route.
+            navigate(`/projects/${project.id}`);
+        }
     };
 
     const renderIcon = (key) => {
@@ -50,24 +56,21 @@ const ProjectCard = ({ project }) => {
     };
 
     return (
-        // THE CHANGE: The wrapper is now a motion.div with an onClick handler.
-        // It's no longer a <Link> component.
         <motion.div
             layout
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative mb-8 break-inside-avoid rounded-2xl overflow-hidden cursor-none"
-            onClick={handleCardClick} // Navigate when this div is clicked
+            className="group relative mb-8 break-inside-avoid overflow-visible cursor-none"
+            onClick={handleCardClick} // Use the updated click handler
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            {/* The inner structure remains the same */}
             <img
                 src={project.previewImage}
                 alt={project.title}
-                className="w-full h-auto object-cover transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:brightness-75"
+                className="w-full h-auto object-cover rounded-2xl overflow-hidden transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:brightness-75"
             />
 
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl
@@ -91,13 +94,12 @@ const ProjectCard = ({ project }) => {
                     <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">{project.description}</p>
                     <div className="flex items-center gap-3">
                         {project.links && Object.entries(project.links).map(([key, url]) => (
-                            // These are standard <a> tags and are perfectly valid here
                             <a
                                 key={key}
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()} // This is still crucial
+                                onClick={(e) => e.stopPropagation()} // This remains crucial to prevent card click
                                 className="w-9 h-9 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10 text-gray-800 dark:text-gray-200 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110"
                                 aria-label={`Link to ${key}`}
                             >

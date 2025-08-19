@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import ProjectsPage from './pages/ProjectsPage';
 import MouseFollower from './components/common/MouseFollower'; // Import the new component
 import CustomCursor from './components/common/CustomCursor';
+import ProjectDetailPage from './pages/ProjectDetailPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
         </Routes>
       </main>
     </div>

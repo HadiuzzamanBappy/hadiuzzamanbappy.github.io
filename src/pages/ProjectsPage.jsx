@@ -5,7 +5,6 @@ import ProjectCard from '../components/projects/ProjectCard';
 import Hero from '../components/projects/Hero';
 import ContactForm from '../components/projects/ContactForm';
 
-// Added "E-commerce" and "Branding" to match the new data
 const categories = ["All", "UI/UX Design", "Web Development", "Others"];
 
 const ProjectsPage = () => {
@@ -58,11 +57,8 @@ const ProjectsPage = () => {
                     ))}
                 </div>
 
-                {/* --- MASONRY GRID --- */}
                 <motion.div
                     layout
-                    // THE CHANGE: Added `lg:columns-3` for better layout on large screens.
-                    // This improves the masonry effect.
                     className="columns-1 md:columns-2 lg:columns-3 gap-8"
                 >
                     <AnimatePresence>
@@ -76,7 +72,6 @@ const ProjectsPage = () => {
             <footer id="contact-section" className="pt-20">
                 <ContactForm />
 
-                {/* --- NEW: Copyright Section --- */}
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 py-8 border-t border-slate-200 dark:border-slate-700">
                     <p className="text-center text-sm text-slate-500 dark:text-gray-400">
                         © {new Date().getFullYear()} Hadiuzzaman Bappy. All Rights Reserved.
