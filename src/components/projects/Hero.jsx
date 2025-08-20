@@ -11,9 +11,6 @@ import { ThemeToggle } from '../common/ThemeToggle';
 import { CursorContext } from '../../context/CursorContext';
 import { socialLinks } from '../../data/social'; // Adjust the path as necessary
 
-import { DesignVector } from '../common/DesignVector';
-import { CodeVector } from '../common/CodeVector';
-
 const Hero = ({ scrollToContact, scrollToProjects }) => {
     const { setCursorVariant } = useContext(CursorContext);
 
@@ -32,14 +29,6 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
     return (
         <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
             <Galaxy />
-
-            <div className="absolute bottom-0 left-0 w-1/4 h-1/2 z-0 hidden lg:block">
-                <DesignVector />
-            </div>
-            
-            <div className="absolute bottom-0 right-0 w-1/4 h-1/2 z-0 hidden lg:block">
-                <CodeVector />
-            </div>
 
             <div className="fixed top-6 right-6 z-50 flex flex-col gap-4">
                 <Link
