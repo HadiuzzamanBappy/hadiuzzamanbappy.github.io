@@ -22,17 +22,17 @@
   <meta name="author" content="Hadiuzzaman Bappy" />
 
   <!-- Theme Color for Browser UI (especially on mobile) -->
-  <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
 
   <!-- ======================================================= -->
   <!--! Favicons and Icons -->
   <!-- ======================================================= -->
-<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- ======================================================= -->
   <!--! SEO & Social Sharing (Open Graph / Twitter Cards) -->
@@ -59,6 +59,11 @@
   <!--! Third-Party Scripts & Styles -->
   <!-- ======================================================= -->
 
+  <!-- Poppins Font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <!-- Performance: Preconnect to external domains to speed up loading -->
   <link rel="preconnect" href="https://assets.calendly.com">
   <link rel="preconnect" href="https://chatling.ai">
@@ -72,23 +77,22 @@
   <script async data-id="4163145962" id="chtl-script" type="text/javascript"
     src="https://chatling.ai/js/embed.js"></script>
 
-  <script type="module" crossorigin src="/assets/index-CWyXeQ30.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BtwmPsgJ.css">
+  <script type="module" crossorigin src="/assets/index-Cipj9L4e.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DTv7N77H.css">
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"></div>
   <script type="text/javascript">
-    (function() {
-      // Check if we were redirected from the 404 page
-      var redirect = sessionStorage.redirect;
-      // If so, delete the stored path and update the browser history
-      delete sessionStorage.redirect;
-      if (redirect && redirect != window.location.pathname) {
-        // This command updates the URL in the browser without reloading the page
-        history.replaceState(null, null, redirect);
-      }
-    })();
+      (function () {
+        // Check if we were redirected from the 404 page
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != window.location.pathname) {
+          // This command updates the URL in the browser without reloading the page
+          history.replaceState(null, null, redirect);
+        }
+      })();
   </script>
 </body>
 
