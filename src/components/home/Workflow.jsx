@@ -9,6 +9,7 @@ const workflowItems = [
   { title: "Finalize Design", description: "Incorporate feedback and finalize the design for implementation." },
 ];
 
+// Single workflow step with tooltip
 const WorkflowItem = ({ item }) => (
   <li className="relative group">
     <div className="flex items-center p-1.5 rounded-lg border bg-white dark:bg-purple-800/10 dark:border-purple-800/70 shadow-sm gap-3">
@@ -17,10 +18,11 @@ const WorkflowItem = ({ item }) => (
       </span>
       <span className="text-gray-700 dark:text-gray-200">{item.title}</span>
     </div>
-    {/* Tooltip positioned on top */}
+    {/* Tooltip appears on hover */}
     <div className="absolute left-1/2 bottom-full -translate-x-1/2 mb-4 w-64 p-3 bg-gray-200 dark:bg-purple-900/90 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 pointer-events-none z-10">
       <h5 className="font-bold text-base text-slate-700 dark:text-white mb-1">{item.title}</h5>
       <p className="text-sm text-slate-600 dark:text-slate-300">{item.description}</p>
+      {/* Tooltip arrow */}
       <div className="absolute left-1/2 top-full -translate-x-1/2 -mt-2 w-4 h-4 bg-gray-200 dark:bg-purple-900/90 transform rotate-45"></div>
     </div>
   </li>
@@ -35,6 +37,7 @@ const Workflow = () => {
         </div>
       </div>
       <ul className="space-y-1 flex-grow flex flex-col justify-around">
+        {/* Render each workflow step */}
         {workflowItems.map(item => <WorkflowItem key={item.title} item={item} />)}
       </ul>
     </div>

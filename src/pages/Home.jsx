@@ -1,6 +1,4 @@
-import React, { useContext } from 'react'; // Import useContext
-
-// Import all the components
+import React, { useContext } from 'react';
 import About from '../components/home/About';
 import Testimonials from '../components/home/Testimonials';
 import Workflow from '../components/home/Workflow';
@@ -10,25 +8,22 @@ import Stats from '../components/home/Stats';
 import Projects from '../components/home/Projects';
 import ImageStack from '../components/home/ImageStack';
 import Services from '../components/home/Services';
-import { CursorContext } from '../context/CursorContext'; // Import the cursor context
+import { CursorContext } from '../context/CursorContext';
 
 const Home = () => {
-  // Get the function to change the cursor's state
   const { setCursorVariant } = useContext(CursorContext);
 
-  // Handler to set the cursor to its default state
+  // Reset cursor to default when mouse enters main area
   const handleMouseEnter = () => setCursorVariant('default');
 
   return (
-    <main 
-      className="container mx-auto max-w-screen-xl p-4" 
+    <main
+      className="container mx-auto max-w-screen-xl p-4"
       style={{ fontFamily: "'Poppins', sans-serif" }}
-      // THE FIX: This ensures the cursor resets to default when moving over the page background
       onMouseEnter={handleMouseEnter}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-        {/* --- First Row --- */}
+        {/* First Row */}
         <div className="lg:col-span-5 flex">
           <About />
         </div>
@@ -39,7 +34,7 @@ const Home = () => {
           <Workflow />
         </div>
 
-        {/* --- Second Row --- */}
+        {/* Second Row */}
         <div className="lg:col-span-4 flex flex-col gap-6">
           <div className="bg-white/50 dark:bg-purple-800/10 backdrop-blur-sm/20 backdrop-blur-sm rounded-2xl shadow-lg p-4 flex flex-col flex-grow min-h-[300px]">
             <SkillsSphere />

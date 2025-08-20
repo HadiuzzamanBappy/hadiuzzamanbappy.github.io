@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const MouseFollower = () => {
-    // THE FIX: Use `matchMedia` to reliably check if the primary input is coarse (touch).
+    // Detect if the device uses a coarse pointer (touch)
     const [isCoarsePointer, setIsCoarsePointer] = useState(() => {
         if (typeof window !== 'undefined') {
             return window.matchMedia('(pointer: coarse)').matches;
@@ -11,12 +11,11 @@ const MouseFollower = () => {
     });
 
     const [position, setPosition] = useState({ x: -100, y: -100 });
-    const [isMouseInViewport, setIsMouseInViewport] = useState(true); // Default to true
+    const [isMouseInViewport, setIsMouseInViewport] = useState(true);
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
-        // If it's a coarse pointer device (touch), don't run the effect.
-        if (isCoarsePointer) return;
+        if (isCoarsePointer) return; // Skip effect on touch devices
 
         const handleMouseMove = (e) => setPosition({ x: e.clientX, y: e.clientY });
         const handleMouseEnter = () => setIsMouseInViewport(true);
@@ -35,9 +34,8 @@ const MouseFollower = () => {
 
     const pointerColor = theme === 'dark' ? 'rgba(173, 113, 255, 0.2)' : 'rgba(173, 113, 255, 0.3)';
 
-    // THE FIX: This guard clause now correctly renders nothing only on touch-primary devices.
     if (isCoarsePointer) {
-        return null;
+        return null; // Hide follower on touch devices
     }
 
     return (

@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar, FaAward, FaQuoteLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { testimonials } from '../../data/testimonials'; // Make sure this path is correct
+import { testimonials } from '../../data/testimonials';
 
-// A small helper component for rendering the star rating
-const StarRating = ({ rating }) => {
-  return (
-    <div className="flex text-xs">
-      {[...Array(5)].map((_, i) => (
-        <FaStar key={i} className={i < rating ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'} />
-      ))}
-    </div>
-  );
-};
+// Renders star rating
+const StarRating = ({ rating }) => (
+  <div className="flex text-xs">
+    {[...Array(5)].map((_, i) => (
+      <FaStar key={i} className={i < rating ? 'text-yellow-400' : 'text-gray-300 dark:text-gray-600'} />
+    ))}
+  </div>
+);
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Autoplay effect that respects hover state
+  // Autoplay, pauses on hover
   useEffect(() => {
     let interval;
     if (!isHovered) {
@@ -29,7 +27,7 @@ const Testimonials = () => {
     return () => clearInterval(interval);
   }, [isHovered]);
 
-  // Handler for the drag gesture
+  // Handles swipe gesture for carousel
   const handleDragEnd = (event, info) => {
     const swipeThreshold = 50;
     const swipeVelocity = 0.3;
@@ -54,7 +52,7 @@ const Testimonials = () => {
       </div>
 
       <div className="relative flex-grow flex flex-col justify-between overflow-hidden">
-        
+        {/* Carousel with swipe/drag support */}
         <motion.div
           className="flex cursor-grab active:cursor-grabbing"
           drag="x"
@@ -66,15 +64,11 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="flex-shrink-0 w-full px-2">
               <div className="flex flex-col items-center text-center">
-                
                 <FaQuoteLeft className="text-2xl text-gray-200 dark:text-slate-600 mb-2" />
-                
-                {/* --- THIS IS THE MODIFIED LINE --- */}
-                {/* We remove the fixed height (h-28) and add `line-clamp-3` */}
+                {/* Clamp quote to 3 lines */}
                 <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed line-clamp-3">
                   "{testimonial.quote}"
                 </p>
-
                 <div className="mt-4 text-center">
                   <p className="font-bold text-sm text-gray-800 dark:text-gray-200">{testimonial.name}</p>
                   <p className="text-xs text-gray-500 dark:text-gray-400">{testimonial.title}</p>
@@ -82,12 +76,12 @@ const Testimonials = () => {
                     <StarRating rating={testimonial.rating} />
                   </div>
                 </div>
-
               </div>
             </div>
           ))}
         </motion.div>
 
+        {/* Carousel navigation dots */}
         <div className="flex justify-center gap-2 mt-4">
           {testimonials.map((_, index) => (
             <button

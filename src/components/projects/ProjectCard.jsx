@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
-// THE CHANGE: Import useNavigate instead of Link
 import { useNavigate } from 'react-router-dom';
 import { FaGithub, FaBehance, FaDribbble, FaYoutube, FaLinkedin, FaTwitter, FaFacebook, FaSlack, FaMedium } from 'react-icons/fa';
 import { SiNetlify, SiVercel, SiFigma, SiNotion, SiDevdotto } from 'react-icons/si';
@@ -11,32 +10,31 @@ import { CursorContext } from '../../context/CursorContext';
 
 const ProjectCard = ({ project }) => {
     const { setCursorVariant } = useContext(CursorContext);
-    // THE CHANGE: Initialize the navigate function from React Router
     const navigate = useNavigate();
 
     const handleMouseEnter = () => setCursorVariant('view');
     const handleMouseLeave = () => setCursorVariant('default');
 
+    // Handles card click: external links open in new tab, internal navigates
     const handleCardClick = () => {
         if (project.linkType === 'external') {
-            // If the linkType is external, open the project.url in a new tab
             window.open(project.url, '_blank', 'noopener,noreferrer');
         } else {
-            // Otherwise, assume it's an internal link and navigate to a detail page
-            // using the project's unique id for the route.
             navigate(`/projects/${project.id}`);
         }
     };
 
+    // Returns appropriate icon for each link type
     const renderIcon = (key) => {
         switch (key) {
             case 'github': return <FaGithub />;
             case 'behance': return <FaBehance />;
             case 'netlify': return <SiNetlify />;
             case 'vercel': return <SiVercel />;
-            case 'live': return <FiExternalLink />;
-            case 'website': return <FiExternalLink />;
-            case 'demo': return <FiExternalLink />;
+            case 'live':
+            case 'website':
+            case 'demo':
+            case 'portfolio': return <FiExternalLink />;
             case 'code': return <FaGithub />;
             case 'figma': return <SiFigma />;
             case 'dribbble': return <FaDribbble />;
@@ -50,7 +48,6 @@ const ProjectCard = ({ project }) => {
             case 'devto': return <SiDevdotto />;
             case 'discord': return <FaDiscord />;
             case 'email': return <MdEmail />;
-            case 'portfolio': return <FiExternalLink />;
             default: return null;
         }
     };
@@ -63,7 +60,7 @@ const ProjectCard = ({ project }) => {
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="group relative mb-8 break-inside-avoid overflow-visible cursor-none"
-            onClick={handleCardClick} // Use the updated click handler
+            onClick={handleCardClick}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -92,13 +89,14 @@ const ProjectCard = ({ project }) => {
                     </div>
                     <p className="text-gray-700 dark:text-gray-300 text-sm mb-2">{project.description}</p>
                     <div className="flex items-center gap-3">
+                        {/* Individual link icons; stopPropagation prevents card click */}
                         {project.links && Object.entries(project.links).map(([key, url]) => (
                             <a
                                 key={key}
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()} // This remains crucial to prevent card click
+                                onClick={(e) => e.stopPropagation()}
                                 className="w-9 h-9 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10 text-gray-800 dark:text-gray-200 hover:bg-purple-600 hover:text-white transition-all transform hover:scale-110"
                                 aria-label={`Link to ${key}`}
                             >

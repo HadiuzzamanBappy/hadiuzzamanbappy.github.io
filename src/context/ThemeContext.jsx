@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
 
-// This helper function remains the same. It correctly gets the initial theme.
 const getInitialTheme = () => {
   if (typeof window !== 'undefined' && window.localStorage) {
     const storedPrefs = window.localStorage.getItem('theme');
@@ -8,7 +7,7 @@ const getInitialTheme = () => {
       return storedPrefs;
     }
   }
-  return 'light'; // Default to light if no preference is saved
+  return 'light';
 };
 
 export const ThemeContext = createContext();
@@ -16,25 +15,17 @@ export const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(getInitialTheme);
 
-  // This effect is now modified to set the data-theme attribute.
   useEffect(() => {
-    const root = window.document.documentElement; // The <html> tag
-    
-    // Clean up any old classes just in case
+    const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
-
-    // THE FIX:
+    // Set or remove theme attribute on <html>
     if (theme === 'dark') {
-      // If the theme is dark, set the attribute.
       root.setAttribute('prefers-color-scheme', 'dark');
     } else {
-      // If the theme is light, remove the attribute.
       root.removeAttribute('prefers-color-scheme');
     }
-    
-    // Save the preference to localStorage as before.
     localStorage.setItem('theme', theme);
-  }, [theme]); // Rerun this effect whenever the theme changes.
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));

@@ -3,7 +3,6 @@ import { FiSun, FiMoon } from 'react-icons/fi';
 import { ThemeContext } from '../../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// THE FIX: Add the `export` keyword directly here.
 export const ThemeToggle = () => {
     const { theme, toggleTheme } = useContext(ThemeContext);
 
@@ -13,6 +12,7 @@ export const ThemeToggle = () => {
             className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-700 rounded-full text-xl text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-100 dark:hover:bg-slate-700"
             aria-label="Toggle theme"
         >
+            {/* Animate icon transition on theme change */}
             <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                     key={theme}

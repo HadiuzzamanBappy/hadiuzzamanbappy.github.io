@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'; // 1. Import useContext
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiMail, FiPhone } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-// THE FIX: Import ThemeToggle using curly braces for a named import.
 import { ThemeToggle } from '../common/ThemeToggle';
-import { CursorContext } from '../../context/CursorContext'; // 2. Import the CursorContext
+import { CursorContext } from '../../context/CursorContext';
 
-// This function calls the Calendly API, which should be loaded from public/index.html
+// Opens Calendly popup widget
 const openCalendly = () => {
   if (window.Calendly) {
     window.Calendly.initPopupWidget({ url: 'https://calendly.com/hbappy79/contact-me' });
@@ -15,6 +14,7 @@ const openCalendly = () => {
   }
 };
 
+// Animated SVG for the name "Bappy"
 const BappyNameSvg = () => {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -57,15 +57,15 @@ const BappyNameSvg = () => {
 };
 
 const About = () => {
-  // 3. Get the function to change the cursor's variant
+  // Cursor variant context
   const { setCursorVariant } = useContext(CursorContext);
 
-  // 4. Create the event handlers
+  // Cursor handlers for interactive elements
   const handleMouseEnter = () => setCursorVariant('link');
   const handleMouseLeave = () => setCursorVariant('default');
+
   return (
-    <div
-      className="bg-white/50 dark:bg-purple-800/10 p-6 rounded-2xl shadow-lg flex flex-col h-full w-full">
+    <div className="bg-white/50 dark:bg-purple-800/10 p-6 rounded-2xl shadow-lg flex flex-col h-full w-full">
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center bg-gray-100 dark:bg-purple-800/30 text-gray-800 dark:text-gray-200 px-3 py-2 rounded-full text-sm">
           <span className="mr-2 w-2.5 h-2.5 bg-green-500 rounded-full"></span>
@@ -73,14 +73,15 @@ const About = () => {
         </div>
         <div className="flex items-center text-gray-700 dark:text-gray-300">
           <span className="mr-2">Resume</span>
-          <a // 5. Apply handlers to each individual link as well
+          <a
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             href="pdf/Resume.pdf"
             download="Hadiuzzaman_Bappy.pdf"
             target='_blank'
             rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition">
+            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition"
+          >
             <FiDownload />
           </a>
         </div>
@@ -91,31 +92,36 @@ const About = () => {
       </p>
 
       <div className="flex justify-between items-center mt-4">
-        {/* The ThemeToggle button on the bottom-left */}
-        <div onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>
+        {/* Theme toggle button */}
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <ThemeToggle />
         </div>
-
-        {/* The contact icons on the bottom-right */}
+        {/* Contact icons */}
         <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
-          <a href="mailto:hbappy79@gmail.com" className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition"
-            // 5. Apply handlers to each individual link as well
+          <a
+            href="mailto:hbappy79@gmail.com"
+            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition"
             onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}>
+            onMouseLeave={handleMouseLeave}
+          >
             <FiMail />
           </a>
-          <a href="https://wa.me/1521318670" target="_blank" // 5. Apply handlers to each individual link as well
+          <a
+            href="https://wa.me/1521318670"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition">
+          >
             <FaWhatsapp />
           </a>
-          <button onClick={openCalendly}
-            // 5. Apply handlers to each individual link as well
+          <button
+            onClick={openCalendly}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition">
+            className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full hover:bg-gray-100 dark:hover:bg-slate-700 transition"
+          >
             <FiPhone />
           </button>
         </div>

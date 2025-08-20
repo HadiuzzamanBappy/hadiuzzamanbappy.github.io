@@ -3,11 +3,13 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 
+// Starfield renders animated points in a sphere
 const Starfield = (props) => {
     const ref = useRef();
-
+    // Generate random positions for stars inside a sphere
     const sphere = useMemo(() => random.inSphere(new Float32Array(5000 * 3), { radius: 1.2 }), []);
 
+    // Animate rotation of the starfield
     useFrame((state, delta) => {
         ref.current.rotation.x -= delta / 10;
         ref.current.rotation.y -= delta / 15;
@@ -22,9 +24,7 @@ const Starfield = (props) => {
                     size={0.003}
                     sizeAttenuation={true}
                     depthWrite={false}
-                    // --- THE CHANGE IS HERE ---
-                    // Add the opacity prop. A value between 0.4 and 0.7 works well.
-                    opacity={0.6}
+                    opacity={0.6} // Controls star opacity
                 />
             </Points>
         </group>

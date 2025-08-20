@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { animate } from 'framer-motion';
 import { FiLayout, FiStar, FiTrendingUp } from 'react-icons/fi';
 
+// AnimatedStat animates the number when the component comes into view
 const AnimatedStat = ({ to, label, icon: Icon }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -13,6 +14,7 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
 
   useEffect(() => {
     if (inView) {
+      // Animate from 0 to 'to' when in view
       const controls = animate(0, to, {
         duration: 2,
         onUpdate(value) {
@@ -24,7 +26,10 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
   }, [inView, to]);
 
   return (
-    <div ref={ref} className="bg-white/50 dark:bg-purple-800/10 p-4 rounded-2xl shadow-lg text-center flex-grow flex flex-col justify-center items-center">
+    <div
+      ref={ref}
+      className="bg-white/50 dark:bg-purple-800/10 p-4 rounded-2xl shadow-lg text-center flex-grow flex flex-col justify-center items-center"
+    >
       <h5 className="text-3xl font-semibold text-gray-800 dark:text-gray-200">
         <span>{displayValue}</span>+
       </h5>

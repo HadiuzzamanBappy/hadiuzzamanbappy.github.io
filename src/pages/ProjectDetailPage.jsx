@@ -13,7 +13,7 @@ import { CursorContext } from '../context/CursorContext';
 
 const allProjects = [...projects, ...archivedProjects];
 
-// This helper function remains unchanged
+// Maps link keys to icons
 const renderIcon = (key) => {
     switch (key) {
         case 'github': return <FaGithub />;
@@ -41,7 +41,7 @@ const renderIcon = (key) => {
     }
 };
 
-// --- NEW: A reusable component for a link button with a tooltip ---
+// Button for external links with tooltip
 const LinkButton = ({ href, label, iconKey, onMouseEnter, onMouseLeave }) => (
     <div className="relative group">
         <a
@@ -62,7 +62,6 @@ const LinkButton = ({ href, label, iconKey, onMouseEnter, onMouseLeave }) => (
     </div>
 );
 
-
 const ProjectDetailPage = () => {
     const { projectId } = useParams();
     const [project, setProject] = useState(null);
@@ -77,6 +76,7 @@ const ProjectDetailPage = () => {
     const handleLinkEnter = () => setCursorVariant('link');
     const handleDefaultEnter = () => setCursorVariant('default');
 
+    // Determines main link label and icon
     const getMainUrlInfo = (urlString) => {
         if (!urlString) return null;
         if (urlString.includes('behance.net')) return { label: 'View on Behance', key: 'behance' };
@@ -93,11 +93,11 @@ const ProjectDetailPage = () => {
     const itemVariants = { hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1, transition: { ease: "easeOut", duration: 0.4 } } };
 
     if (!project) {
-        // Error handling page remains the same
+        // Show error if project not found
         return (
             <div className="flex flex-col items-center justify-center min-h-screen text-center">
                 <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-4">Project Not Found</h2>
-                <Link to="/projects" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} className="flex items-center gap-2 px-6 py-3 bg-purple-700 text-white font-semibold rounded-full /* ... */">
+                <Link to="/projects" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} className="flex items-center gap-2 px-6 py-3 bg-purple-700 text-white font-semibold rounded-full">
                     <FiArrowLeft /> Back to Projects
                 </Link>
             </div>
@@ -110,7 +110,7 @@ const ProjectDetailPage = () => {
             variants={containerVariants} initial="hidden" animate="visible" onMouseEnter={handleDefaultEnter}
         >
             <motion.div variants={itemVariants} className="mb-12">
-                <Link to="/projects" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} className="inline-flex items-center gap-2 /* ... */">
+                <Link to="/projects" onMouseEnter={handleLinkEnter} onMouseLeave={handleDefaultEnter} className="inline-flex items-center gap-2">
                     <FiArrowLeft className="transform group-hover:-translate-x-1 transition-transform" />
                     <span>Back to Projects</span>
                 </Link>
@@ -131,12 +131,11 @@ const ProjectDetailPage = () => {
                         </div>
                     </div>
 
-                    {/* --- THIS IS THE REVISED LINKS SECTION --- */}
+                    {/* Links section */}
                     {(mainUrlInfo || additionalLinks.length > 0) && (
                         <div className="mt-8">
                             <h3 className="text-lg font-semibold text-slate-800 dark:text-gray-200 mb-4 flex items-center gap-2"><FiLink /> Links</h3>
                             <div className="flex flex-wrap gap-3 items-center">
-                                {/* Render the main project URL button */}
                                 {mainUrlInfo && (
                                     <LinkButton
                                         href={project.url}
@@ -146,12 +145,11 @@ const ProjectDetailPage = () => {
                                         onMouseLeave={handleDefaultEnter}
                                     />
                                 )}
-                                {/* Render any additional link buttons */}
                                 {additionalLinks.map(([key, url]) => (
                                     <LinkButton
                                         key={key}
                                         href={url}
-                                        label={key.charAt(0).toUpperCase() + key.slice(1)} // Capitalize key for tooltip
+                                        label={key.charAt(0).toUpperCase() + key.slice(1)}
                                         iconKey={key}
                                         onMouseEnter={handleLinkEnter}
                                         onMouseLeave={handleDefaultEnter}

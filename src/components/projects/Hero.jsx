@@ -9,7 +9,7 @@ import Galaxy from '../common/Galaxy';
 import AnimatedText from './AnimatedText';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { CursorContext } from '../../context/CursorContext';
-import { socialLinks } from '../../data/social'; // Adjust the path as necessary
+import { socialLinks } from '../../data/social';
 
 const Hero = ({ scrollToContact, scrollToProjects }) => {
     const { setCursorVariant } = useContext(CursorContext);
@@ -17,6 +17,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
     const handleLinkEnter = () => setCursorVariant('link');
     const handleDefaultEnter = () => setCursorVariant('default');
 
+    // Animation variants for container and items
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } }
@@ -30,6 +31,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
         <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden">
             <Galaxy />
 
+            {/* Top right: Home link and theme toggle */}
             <div className="fixed top-6 right-6 z-50 flex flex-col gap-4">
                 <Link
                     to="/"
@@ -76,7 +78,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                     </button>
                 </motion.div>
 
-                {/* --- THE CHANGE: Social links are now rendered dynamically from the list --- */}
+                {/* Social links rendered dynamically */}
                 <motion.div variants={itemVariants} className="flex gap-4 mt-12">
                     {socialLinks.map((link) => (
                         <a
@@ -95,6 +97,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                 </motion.div>
             </motion.div>
 
+            {/* Scroll down button at the bottom */}
             <div className="absolute bottom-6 z-20">
                 <motion.button
                     onClick={scrollToProjects}

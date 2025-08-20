@@ -27,8 +27,8 @@ export const projects = shuffleArray([
     linkType: "external", //internal, external
     url: "https://www.behance.net/gallery/135767829/Landing-Page-CryptoWire-Cryptocurrency",
     links: {
-      behance: "",
-      figma: "",
+      behance: "https://www.behance.net/gallery/135767829/Landing-Page-CryptoWire-Cryptocurrency",
+      figma: "https://www.figma.com/proto/VG1gKDaeaZQFxByAnNOaI4?node-id=23-1743&t=FTs8ORBsqndIqkIT-6",
     },
   },
   {
@@ -43,8 +43,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://www.behance.net/gallery/142361495/Case-Study-Bookmore-Buy-Sell-and-Share-book",
     links: {
-      behance: "",
-      figma: "",
+      behance: "https://www.behance.net/gallery/142361495/Case-Study-Bookmore-Buy-Sell-and-Share-book",
+      figma: "https://www.figma.com/proto/BO6yQgX4gLG44XnSl00BCf/App---Bookmore?page-id=7%3A574&node-id=193-10264&p=f&viewport=470%2C557%2C0.07&t=7seUEC3jeyFjEpBX-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=193%3A13804&show-proto-sidebar=1",
     },
   },
   {
@@ -59,8 +59,7 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
     links: {
-      behance: "",
-      figma: "",
+      behance: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
     },
   },
   {
@@ -75,8 +74,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://www.behance.net/gallery/133577211/Landing-Page-TFL-Tech-Fusion-Limited",
     links: {
-      behance: "",
-      figma: "",
+      behance: "https://www.behance.net/gallery/133577211/Landing-Page-TFL-Tech-Fusion-Limited",
+      figma: "https://www.figma.com/proto/HHBmz5HG5S1rJvfepszEUO/Landing-page---TFL---Tech-Fusion-Limited?page-id=501%3A1022&node-id=501-1023&viewport=483%2C40%2C0.19&t=m5oSTSMIAZmCKMLC-1&scaling=min-zoom&content-scaling=fixed",
     },
   },
   {
@@ -88,11 +87,10 @@ export const projects = shuffleArray([
     tags: ["Figma", "Mobile Screen"],
     description:
       "An application screen for browsing, filtering, and viewing property listings.",
-    linkType: "external",
+    linkType: "internal",
     url: "https://dribbble.com/shots/17359768-Properties-Buy-Sell-App-Screen",
     links: {
-      dribbble: "",
-      figma: "",
+      dribbble: "https://dribbble.com/shots/17359768-Properties-Buy-Sell-App-Screen",
     },
   },
   {
@@ -106,8 +104,7 @@ export const projects = shuffleArray([
     linkType: "internal",
     url: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
     links: {
-      dribbble: "",
-      figma: "",
+      dribbble: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
     },
   },
   {
@@ -119,11 +116,10 @@ export const projects = shuffleArray([
     tags: ["Figma", "Mobile Screen"],
     description:
       "Sleek and dark-themed login and sign-up screens for a cryptocurrency app.",
-    linkType: "external",
+    linkType: "internal",
     url: "https://dribbble.com/shots/17359670-CryptoWire-App-Login-Signup",
     links: {
-      dribbble: "",
-      figma: "",
+      dribbble: "https://dribbble.com/shots/17359670-CryptoWire-App-Login-Signup",
     },
   },
   {
@@ -136,10 +132,12 @@ export const projects = shuffleArray([
     description:
       "A personal portfolio website deployed on Vercel to showcase projects and skills.",
     linkType: "external",
-    url: "https://hbappydesign.vercel.app",
+    url: "https://hadiuzzamanbappy.vercel.app",
     links: {
+      figma: "https://www.figma.com/design/pR3HaL04hXj4NskRl5cwGi/Portfolio?node-id=0-1&t=cHjMja2zub1aJoCr-1",
       github: "https://hadiuzzamanbappy.github.io",
       vercel: "https://hadiuzzamanbappy.vercel.app",
+      netlify: "https://hadiuzzamanbappy.netlify.app",
     },
   },
   {
@@ -168,7 +166,7 @@ export const projects = shuffleArray([
     description:
       "A lightweight, client-side tool for combining and minifying JS and CSS in the browser.",
     linkType: "external",
-    url: "",
+    url: "https://asset-bundle-bro.vercel.app",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web",
       vercel: "https://asset-bundle-bro.vercel.app",
@@ -200,10 +198,11 @@ export const projects = shuffleArray([
     description:
       "A professional services frontend project with clean navigation and responsive design.",
     linkType: "external",
-    url: "https://scasl-iota.vercel.app/",
+    url: "https://scasl.vercel.app/",
     links: {
       github: "https://github.com/HadiuzzamanBappy/SCASL",
       vercel: "https://scasl.vercel.app/",
+      figma: "https://www.figma.com/design/VxeHCmdzGI2Lf4IMt63uG3/SCASL---Refined?node-id=2701-9298&t=IfyQsrcovklxSipo-1"
     },
   },
 ]);
@@ -221,8 +220,7 @@ export const archivedProjects = [
     linkType: "external",
     url: "https://dribbble.com/shots/17359757-GoTravel-App-Onboard-to-Explore",
     links: {
-      github: "",
-      vercel: "",
+      dribble: "https://dribbble.com/shots/17359757-GoTravel-App-Onboard-to-Explore",
     },
   },
   {
@@ -235,10 +233,10 @@ export const archivedProjects = [
     description:
       "A responsive unit converter with light/dark modes and real-time conversions.",
     linkType: "external",
-    url: "",
+    url: "https://unit-converter-bro.vercel.app/",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Unit-Converter",
-      vercel: "",
+      vercel: "https://unit-converter-bro.vercel.app/",
     },
   },
   {
@@ -254,7 +252,6 @@ export const archivedProjects = [
     url: "https://github.com/HadiuzzamanBappy/Todo-Management",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Todo-Management",
-      vercel: "",
     },
   },
   {
@@ -267,10 +264,10 @@ export const archivedProjects = [
     description:
       "A suite of free developer tools, including formatters, minifiers, and code converters.",
     linkType: "external",
-    url: "",
+    url: "https://clean-coder.vercel.app/",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Clean-Coder",
-      vercel: "",
+      vercel: "https://clean-coder.vercel.app/",
     },
   },
   {
@@ -285,8 +282,7 @@ export const archivedProjects = [
     linkType: "external",
     url: "https://dribbble.com/shots/17359690-Crystal-App-login-signup",
     links: {
-      github: "",
-      vercel: "",
+      dribble: "https://dribbble.com/shots/17359690-Crystal-App-login-signup",  
     },
   },
   {
@@ -331,10 +327,10 @@ export const archivedProjects = [
     description:
       "A stylish, real-time Markdown editor with a side-by-side preview.",
     linkType: "external",
-    url: "",
+    url: "https://markdown-bro.vercel.app",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Markdown-Previewer",
-      vercel: "",
+      vercel: "https://markdown-bro.vercel.app",
     },
   },
 ];

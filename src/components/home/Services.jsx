@@ -22,32 +22,14 @@ const services = [
 ];
 
 const Services = () => {
-  // We still duplicate the content for the seamless loop effect
+  // Duplicate services for seamless loop
   const duplicatedServices = [...services, ...services];
 
-  // --- Framer Motion Animation Logic ---
-
-  // A motion value to track the drag position.
   const x = useMotionValue(0);
-
-  // We need to know the full width of one set of cards to create the loop.
-  // Card width (w-36 = 144px) + margin (mx-2 = 16px) = 160px per card
   const oneSetWidth = services.length * 160;
 
-  // `useTransform` is the key to the infinite loop.
-  // It takes the continuously changing `x` value and wraps it between 0 and -oneSetWidth.
-  // When x becomes -161, this will output -1. When x is -320, this outputs 0 again.
-  const xWrapped = useTransform(x, (latest) => {
-    // Ensure the value wraps around using the modulo operator
-    return (latest % oneSetWidth);
-  });
-
-  // A simple spring transition for a natural feel when dragging
-  const transition = {
-    type: "spring",
-    stiffness: 300,
-    damping: 50,
-  };
+  // Wrap x value for infinite scroll effect
+  const xWrapped = useTransform(x, (latest) => (latest % oneSetWidth));
 
   return (
     <div className="bg-white/50 dark:bg-purple-800/20 p-4 rounded-2xl shadow-lg">
@@ -56,18 +38,13 @@ const Services = () => {
           <FiBookmark /><span>Services</span>
         </div>
       </div>
-
-      {/* The main container that handles the infinite scroll and hides the overflow */}
       <div className="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-
-        {/* The motion.div is the draggable and animated track */}
+        {/* Draggable and animated track */}
         <motion.div
-          className="flex gap-4" // Use gap for spacing instead of margin
-          style={{ x: xWrapped }} // Apply the wrapped motion value
-          drag="x" // Enable horizontal dragging
-          // Set constraints so you can't drag past the end of the content
+          className="flex gap-4"
+          style={{ x: xWrapped }}
+          drag="x"
           dragConstraints={{ left: -oneSetWidth, right: 0 }}
-          // Animate the base `x` value to create the continuous scroll
           animate={{ x: -oneSetWidth }}
           transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "loop" }}
         >

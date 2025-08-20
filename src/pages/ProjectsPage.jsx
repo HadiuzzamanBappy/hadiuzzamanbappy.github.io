@@ -6,20 +6,33 @@ import Hero from '../components/projects/Hero';
 import ContactForm from '../components/projects/ContactForm';
 
 const categories = ["All", "UI/UX Design", "Web Development", "Others"];
+const INITIAL_LOAD = 9;
+const LOAD_MORE_COUNT = 3;
 
 const ProjectsPage = () => {
     const [activeFilter, setActiveFilter] = useState("All");
     const [filteredProjects, setFilteredProjects] = useState(allProjects);
+    const [visibleCount, setVisibleCount] = useState(INITIAL_LOAD);
 
+    // Filter projects when category changes
     useEffect(() => {
-        if (activeFilter === "All") {
-            setFilteredProjects(allProjects);
-        } else {
-            const filtered = allProjects.filter(p => p.category === activeFilter);
-            setFilteredProjects(filtered);
-        }
+        const newFiltered = activeFilter === "All"
+            ? allProjects
+            : allProjects.filter(p => p.category === activeFilter);
+
+        setFilteredProjects(newFiltered);
+        setVisibleCount(INITIAL_LOAD);
     }, [activeFilter]);
 
+    // Projects to render
+    const projectsToShow = filteredProjects.slice(0, visibleCount);
+
+    // Load more projects
+    const handleLoadMore = () => {
+        setVisibleCount(prevCount => prevCount + LOAD_MORE_COUNT);
+    };
+
+    // Scroll helpers
     const scrollToProjects = () => {
         const projectsSection = document.getElementById('projects-list');
         if (projectsSection) {
@@ -42,6 +55,7 @@ const ProjectsPage = () => {
             />
 
             <main id="projects-list" className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                {/* Category filter buttons */}
                 <div className="flex justify-center flex-wrap gap-3 mb-12">
                     {categories.map(category => (
                         <button
@@ -57,16 +71,31 @@ const ProjectsPage = () => {
                     ))}
                 </div>
 
+                {/* Projects grid */}
                 <motion.div
                     layout
                     className="columns-1 md:columns-2 lg:columns-3 gap-8"
                 >
                     <AnimatePresence>
-                        {filteredProjects.map(project => (
+                        {projectsToShow.map(project => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
                     </AnimatePresence>
                 </motion.div>
+
+                {/* Load More button */}
+                {visibleCount < filteredProjects.length && (
+                    <div className="flex justify-center mt-12">
+                        <motion.button
+                            onClick={handleLoadMore}
+                            className="px-8 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Load More
+                        </motion.button>
+                    </div>
+                )}
             </main>
 
             <footer id="contact-section" className="pt-20">

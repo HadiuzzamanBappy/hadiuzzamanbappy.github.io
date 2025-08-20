@@ -2,17 +2,16 @@ import React, { useState, useRef, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { FiMail, FiPhone, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
-import { CursorContext } from '../../context/CursorContext'; // 2. Import the CursorContext
+import { CursorContext } from '../../context/CursorContext';
 
 const ContactForm = () => {
     const formRef = useRef();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [errors, setErrors] = useState({});
-    const [formStatus, setFormStatus] = useState('idle'); // 'idle', 'sending', 'success', 'error'
-    // 3. Get the function to change the cursor's variant
+    const [formStatus, setFormStatus] = useState('idle');
     const { setCursorVariant } = useContext(CursorContext);
 
-    // 4. Create the event handlers
+    // Cursor variant handlers
     const handleMouseEnter = () => setCursorVariant('link');
     const handleMouseLeave = () => setCursorVariant('default');
 
@@ -21,6 +20,7 @@ const ContactForm = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    // Basic form validation
     const validate = () => {
         let tempErrors = {};
         if (!formData.name) tempErrors.name = "Name is required.";
@@ -45,17 +45,15 @@ const ContactForm = () => {
             import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
             formData,
             import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-        ).then((result) => {
-            console.log(result.text);
+        ).then(() => {
             setFormStatus('success');
-            setFormData({ name: '', email: '', message: '' }); // Clear form
-        }, (error) => {
-            console.log(error.text);
+            setFormData({ name: '', email: '', message: '' });
+        }, () => {
             setFormStatus('error');
         });
     };
 
-    // Animation Variants
+    // Animation variants for framer-motion
     const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2 } } };
     const itemVariants = { hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } };
 
@@ -66,7 +64,6 @@ const ContactForm = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            // 5. Apply handlers to each individual link as well
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -75,9 +72,8 @@ const ContactForm = () => {
                 Have a project in mind? Let's connect! I’d love to hear from you.
             </motion.p>
 
-            {/* NEW: Wrapper to center the content and control its max-width */}
+            {/* Centered content and info cards */}
             <div className="max-w-5xl mx-auto">
-                {/* NEW: Info cards are now in a horizontal row above the form */}
                 <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
                     <div className="flex items-start gap-4 p-6 rounded-lg bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
                         <div className="shrink-0 w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
@@ -101,31 +97,55 @@ const ContactForm = () => {
                     </div>
                 </motion.div>
 
-                {/* Form is now below the info cards, taking up the full width of the centered container */}
+                {/* Contact form */}
                 <motion.form ref={formRef} onSubmit={handleSubmit} variants={itemVariants} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" className={`form-input ${errors.name ? 'border-red-500' : ''}`} />
+                            <input
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                placeholder="Your Name"
+                                className={`form-input ${errors.name ? 'border-red-500' : ''}`}
+                            />
                             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                         </div>
                         <div>
-                            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Your Email" className={`form-input ${errors.email ? 'border-red-500' : ''}`} />
+                            <input
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                placeholder="Your Email"
+                                className={`form-input ${errors.email ? 'border-red-500' : ''}`}
+                            />
                             {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                         </div>
                     </div>
                     <div>
-                        <textarea name="message" value={formData.message} onChange={handleChange} placeholder="Your Message" rows="6" className={`form-input ${errors.message ? 'border-red-500' : ''}`}></textarea>
+                        <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            placeholder="Your Message"
+                            rows="6"
+                            className={`form-input ${errors.message ? 'border-red-500' : ''}`}
+                        ></textarea>
                         {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                     </div>
                     <div className="flex items-center gap-4">
-                        <button type="submit" disabled={formStatus === 'sending'}
-                            // 5. Apply handlers to each individual link as well
+                        <button
+                            type="submit"
+                            disabled={formStatus === 'sending'}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
-                            className="w-full px-6 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:scale-100">
+                            className="w-full px-6 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:scale-100"
+                        >
                             {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                         </button>
                     </div>
+                    {/* Status messages */}
                     <AnimatePresence>
                         {formStatus === 'success' && (
                             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }} className="flex items-center gap-2 p-3 rounded-lg bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-300 border border-green-200 dark:border-green-700">

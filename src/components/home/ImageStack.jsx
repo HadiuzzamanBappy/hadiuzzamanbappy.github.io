@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BsMouse } from 'react-icons/bs'; // Import the icon
+import { BsMouse } from 'react-icons/bs';
 import { IoClose } from 'react-icons/io5';
 
 const initialImages = [
@@ -11,30 +11,28 @@ const initialImages = [
   "images/gallery/photo3.jpg",
 ];
 
-// NEW: The DragHint component (this part is correct)
-const DragHint = () => {
-  return (
+// Shows a drag hint overlay until user interacts
+const DragHint = () => (
+  <motion.div
+    className="absolute inset-0 flex flex-col items-center justify-center text-purple-200/50 pointer-events-none z-50"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.5 } }}
+    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+  >
     <motion.div
-      className="absolute inset-0 flex flex-col items-center justify-center text-purple-200/50 pointer-events-none z-50"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { delay: 0.5, duration: 0.5 } }}
-      exit={{ opacity: 0, transition: { duration: 0.3 } }}
+      animate={{ y: [-10, 10] }}
+      transition={{ repeat: Infinity, repeatType: 'reverse', duration: 1, ease: 'easeInOut' }}
     >
-      <motion.div
-        animate={{ y: [-10, 10] }}
-        transition={{ repeat: Infinity, repeatType: 'reverse', duration: 1, ease: 'easeInOut' }}
-      >
-        <BsMouse size={32} />
-      </motion.div>
-      <p className="mt-4 text-xs uppercase tracking-widest">Drag</p>
+      <BsMouse size={32} />
     </motion.div>
-  );
-};
+    <p className="mt-4 text-xs uppercase tracking-widest">Drag</p>
+  </motion.div>
+);
 
-// NEW: A component for the full-screen image viewer modal
+// Full-screen image viewer modal
 const ImageViewer = ({ imgSrc, onClose }) => {
   const handleClose = (e) => {
-    e.stopPropagation(); // This is the crucial line
+    e.stopPropagation();
     onClose();
   };
 
@@ -71,9 +69,7 @@ const ImageViewer = ({ imgSrc, onClose }) => {
   );
 };
 
-
-// THE FIX: The Card component does NOT need to be changed at all.
-// It remains exactly as you originally wrote it.
+// Individual draggable image card
 const Card = ({ imgSrc, index, totalCards, onDismiss }) => {
   const randomRotation = useMemo(() => Math.random() * 20 - 10, []);
   const randomX = useMemo(() => Math.random() * 20 - 10, []);
@@ -123,46 +119,34 @@ const Card = ({ imgSrc, index, totalCards, onDismiss }) => {
 
 const ImageStack = () => {
   const [images, setImages] = useState(initialImages);
-  // NEW: State to track if the user has interacted
   const [hasInteracted, setHasInteracted] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // THE FIX: The interaction logic now lives inside the functions that handle dismissal.
+  // Move dismissed image to bottom of stack
   const handleDismiss = (dismissedImage, direction) => {
-    // This function now also handles setting the interaction state
-    if (!hasInteracted) {
-      setHasInteracted(true);
-    }
+    if (!hasInteracted) setHasInteracted(true);
     const remainingImages = images.filter(img => img !== dismissedImage);
     const newImageOrder = [dismissedImage, ...remainingImages];
     setImages(newImageOrder);
   };
 
+  // Show full-screen viewer for top card
   const handleTopCardClick = () => {
-    // Hide the drag hint if it's still visible
-    if (!hasInteracted) {
-      setHasInteracted(true);
-    }
-    // Set the top card's image to be viewed
+    if (!hasInteracted) setHasInteracted(true);
     const topCard = images[images.length - 1];
     setSelectedImage(topCard);
   };
 
-  const handleCloseViewer = () => {
-    setSelectedImage(null);
-  };
+  const handleCloseViewer = () => setSelectedImage(null);
 
   return (
     <div
       className="relative w-56 h-56 pt-8"
-      // Your original onClick handler is perfect.
       onClick={handleTopCardClick}
     >
-      {/* NEW: Conditionally render the hint based on the interaction state */}
       <AnimatePresence>
         {!hasInteracted && <DragHint />}
       </AnimatePresence>
-
       <AnimatePresence>
         {images.map((img, index) => (
           <Card
@@ -170,12 +154,10 @@ const ImageStack = () => {
             imgSrc={img}
             index={index}
             totalCards={images.length}
-            // Pass the updated handleDismiss function
             onDismiss={handleDismiss}
           />
         ))}
       </AnimatePresence>
-
       <AnimatePresence>
         {selectedImage && (
           <ImageViewer imgSrc={selectedImage} onClose={handleCloseViewer} />

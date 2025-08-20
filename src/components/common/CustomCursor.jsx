@@ -17,6 +17,7 @@ const CustomCursor = () => {
 
   useEffect(() => {
     // If it's a coarse pointer device (touch), don't run the effect.
+    // Skip effect on touch devices
     if (isCoarsePointer) return;
 
     const handleMouseMove = (e) => setPosition({ x: e.clientX, y: e.clientY });

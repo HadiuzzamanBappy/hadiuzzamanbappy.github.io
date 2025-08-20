@@ -1,12 +1,11 @@
-import React, { useContext, useMemo } from 'react'; // 1. Import useMemo
+import React, { useContext, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { FiLayout } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import { CursorContext } from '../../context/CursorContext';
-// 2. Import the project data sources
 import { projects, featuredProjects } from '../../data/projects';
 
-// ProjectImage component remains the same, with one small addition for truncation.
+// Renders a single project image with overlay title
 const ProjectImage = ({ title, imgSrc, index }) => {
   let positionClasses = '';
   let gradientClasses = '';
@@ -47,7 +46,7 @@ const ProjectImage = ({ title, imgSrc, index }) => {
         />
       </div>
       <div className={`absolute inset-0 flex p-4 opacity-0 group-hover:opacity-100 transition-opacity ${positionClasses} ${gradientClasses}`}>
-        {/* THE CHANGE: Added the 'truncate' class for overflow */}
+        {/* Truncate long titles */}
         <h3 className="text-white text-sm font-semibold truncate">{title}</h3>
       </div>
     </motion.div>
@@ -56,16 +55,14 @@ const ProjectImage = ({ title, imgSrc, index }) => {
 
 const Projects = () => {
   const { setCursorVariant } = useContext(CursorContext);
+
   const handleMouseEnter = () => setCursorVariant('link');
   const handleMouseLeave = () => setCursorVariant('default');
 
-  // 3. Create the dynamic data source for the grid
+  // Select first 4 featured projects from main projects array
   const displayedProjects = useMemo(() => {
-    // Take the first 4 IDs from featuredProjects
     const featuredIds = featuredProjects.slice(0, 4).map(p => p.id);
-    
-    // Find the full project object for each ID from the main projects array
-    return featuredIds.map(id => projects.find(p => p.id === id)).filter(Boolean); // .filter(Boolean) removes any null/undefined results
+    return featuredIds.map(id => projects.find(p => p.id === id)).filter(Boolean);
   }, []);
 
   return (
@@ -77,12 +74,11 @@ const Projects = () => {
       </div>
       <div className="relative flex-grow flex items-center justify-center">
         <div className="grid grid-cols-2 gap-4">
-          {/* 4. Map over the new, dynamic data */}
           {displayedProjects.map((project, index) => (
             <ProjectImage 
               key={project.id} 
               title={project.title} 
-              imgSrc={project.previewImage} // Use 'previewImage' from your data file
+              imgSrc={project.previewImage}
               index={index} 
             />
           ))}

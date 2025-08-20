@@ -1,11 +1,11 @@
-import React, { useMemo, Suspense, useState } from 'react'; // NEW: Import useState
+import React, { useMemo, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Html, Preload } from '@react-three/drei';
 import * as THREE from 'three';
-import { motion, AnimatePresence } from 'framer-motion'; // NEW: Import motion and AnimatePresence
+import { motion, AnimatePresence } from 'framer-motion';
 import { TbZoomPan } from "react-icons/tb";
 
-// Icon mapping and Icon component remain exactly the same.
+// Icon name to file mapping
 const icons = {
   'CSS': '/icons/css.svg',
   'Figma': '/icons/figma.svg',
@@ -27,6 +27,7 @@ const icons = {
   'Wordpress': '/icons/wordpress.svg',
 };
 
+// Renders a single icon with tooltip
 function Icon({ position, name, file }) {
   return (
     <Html position={position} center wrapperClass="skills-sphere-html">
@@ -44,6 +45,7 @@ function Icon({ position, name, file }) {
   );
 }
 
+// Arranges icons in a sphere using Fibonacci lattice
 function IconCloud() {
   const count = Object.keys(icons).length;
   const radius = 4;
@@ -71,20 +73,17 @@ function IconCloud() {
   );
 }
 
-const ZoomHint = () => {
-  return (
-    <motion.div
-      // Positioned at the top-right of the container
-      className="absolute top-4 right-4 text-purple-500/25 pointer-events-none z-10"
-      // Animation for the hint itself
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1, transition: { delay: 0.7, duration: 0.4 } }}
-      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
-    >
-      <TbZoomPan size={32} />
-    </motion.div>
-  );
-};
+// Animated zoom hint icon
+const ZoomHint = () => (
+  <motion.div
+    className="absolute top-4 right-4 text-purple-500/25 pointer-events-none z-10"
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1, transition: { delay: 0.7, duration: 0.4 } }}
+    exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
+  >
+    <TbZoomPan size={32} />
+  </motion.div>
+);
 
 // The final export that wraps everything
 export default function SkillsSphere() {
