@@ -1,7 +1,9 @@
-import React, { useMemo, Suspense } from 'react';
+import React, { useMemo, Suspense, useState } from 'react'; // NEW: Import useState
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Html, Preload } from '@react-three/drei';
 import * as THREE from 'three';
+import { motion, AnimatePresence } from 'framer-motion'; // NEW: Import motion and AnimatePresence
+import { TbZoomPan } from "react-icons/tb";
 
 // Icon mapping and Icon component remain exactly the same.
 const icons = {
@@ -29,10 +31,10 @@ function Icon({ position, name, file }) {
   return (
     <Html position={position} center wrapperClass="skills-sphere-html">
       <div className="group relative">
-        <img 
-          src={file} 
-          alt={name} 
-          className="w-8 h-8 transition-transform group-hover:scale-125" 
+        <img
+          src={file}
+          alt={name}
+          className="w-8 h-8 transition-transform group-hover:scale-125"
         />
         <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity whitespace-nowrap">
           {name}
@@ -69,29 +71,47 @@ function IconCloud() {
   );
 }
 
+const ZoomHint = () => {
+  return (
+    <motion.div
+      // Positioned at the top-right of the container
+      className="absolute top-4 right-4 text-purple-500/25 pointer-events-none z-10"
+      // Animation for the hint itself
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1, transition: { delay: 0.7, duration: 0.4 } }}
+      exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
+    >
+      <TbZoomPan size={24} />
+    </motion.div>
+  );
+};
+
 // The final export that wraps everything
 export default function SkillsSphere() {
   return (
-    <div className="w-full h-full">
-        <Canvas camera={{ position: [0, 0, 10], fov: 70 }}>
-            <Suspense fallback={null}>
-                <ambientLight intensity={Math.PI} />
-                <IconCloud />
-                <Preload all />
-            </Suspense>
-            <OrbitControls 
-                // THE CHANGE #1: Enable zooming.
-                enableZoom={true} 
-                // THE CHANGE #2: Add constraints for a better user experience.
-                minDistance={8}   // Prevents zooming in too close
-                maxDistance={18}  // Prevents zooming out too far
-                
-                // --- Existing functions are preserved ---
-                enablePan={false} 
-                autoRotate 
-                autoRotateSpeed={0.8} 
-            />
-        </Canvas>
+    // The parent div must be 'relative' to position the hint
+    <div className="w-full h-full relative">
+
+      {/* Conditionally render the hint */}
+      <AnimatePresence>
+        <ZoomHint />
+      </AnimatePresence>
+
+      <Canvas camera={{ position: [0, 0, 10], fov: 70 }}>
+        <Suspense fallback={null}>
+          <ambientLight intensity={Math.PI} />
+          <IconCloud />
+          <Preload all />
+        </Suspense>
+        <OrbitControls
+          enableZoom={true}
+          minDistance={8}
+          maxDistance={18}
+          enablePan={false}
+          autoRotate
+          autoRotateSpeed={0.8}
+        />
+      </Canvas>
     </div>
   );
 }

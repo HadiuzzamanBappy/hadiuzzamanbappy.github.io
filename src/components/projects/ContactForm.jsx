@@ -80,23 +80,23 @@ const ContactForm = () => {
                 {/* NEW: Info cards are now in a horizontal row above the form */}
                 <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
                     <div className="flex items-start gap-4 p-6 rounded-lg bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
-                        <div className="shrink-0 w-12 h-12 rounded-full bg-blue-100 dark:bg-purple-900/50 flex items-center justify-center">
-                            <FiMail className="text-blue-600 dark:text-purple-300 text-2xl" />
+                        <div className="shrink-0 w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
+                            <FiMail className="text-purple-600 dark:text-purple-300 text-2xl" />
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Email</h3>
-                            <a href="mailto:hadiuzzaman.bappy@example.com" className="text-blue-600 dark:text-purple-400 font-medium hover:underline break-all">
+                            <a href="mailto:hadiuzzaman.bappy@example.com" className="text-purple-600 dark:text-purple-400 font-medium hover:underline break-all">
                                 hbappy79@gmail.com
                             </a>
                         </div>
                     </div>
                     <div className="flex items-start gap-4 p-6 rounded-lg bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm">
-                        <div className="shrink-0 w-12 h-12 rounded-full bg-blue-100 dark:bg-purple-900/50 flex items-center justify-center">
-                            <FiPhone className="text-blue-600 dark:text-purple-300 text-2xl" />
+                        <div className="shrink-0 w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
+                            <FiPhone className="text-purple-600 dark:text-purple-300 text-2xl" />
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Phone</h3>
-                            <a href="tel:+1234567890" className="text-blue-600 dark:text-purple-400 font-medium">(+880) 1521-318670</a>
+                            <a href="tel:+1234567890" className="text-purple-600 dark:text-purple-400 font-medium">(+880) 1521-318670</a>
                         </div>
                     </div>
                 </motion.div>
@@ -122,7 +122,7 @@ const ContactForm = () => {
                             // 5. Apply handlers to each individual link as well
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
-                            className="w-full px-6 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 disabled:opacity-50 disabled:scale-100">
+                            className="w-full px-6 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-all transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-50 disabled:scale-100">
                             {formStatus === 'sending' ? 'Sending...' : 'Send Message'}
                         </button>
                     </div>

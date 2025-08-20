@@ -76,14 +76,13 @@ const ProjectCard = ({ project }) => {
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl
                       bg-white/60 dark:bg-purple-900/40 backdrop-blur-lg
                       border border-white/20 dark:border-white/10 shadow-xl
-                      transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-                      group-hover:bottom-6 group-hover:left-6 group-hover:right-6">
+                      transform transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ">
 
                 <div>
                     <h6 className="font-medium text-gray-900 dark:text-white mb-2">{project.title}</h6>
                 </div>
 
-                <div className="max-h-0 group-hover:max-h-48 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] mt-0 group-hover:mt-4">
+                <div className="max-h-0 group-hover:max-h-48 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] mt-0 group-hover:mt-4 group-hover:overflow-visible">
                     <div className="flex flex-wrap gap-2 mb-2">
                         {project.tags.map((tag, index) => (
                             <span key={index} className="bg-black/10 dark:bg-white/10 text-gray-800 dark:text-gray-200 text-xs font-semibold px-3 py-1 rounded-full">
@@ -100,7 +99,7 @@ const ProjectCard = ({ project }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()} // This remains crucial to prevent card click
-                                className="w-9 h-9 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10 text-gray-800 dark:text-gray-200 hover:bg-blue-600 hover:text-white transition-all transform hover:scale-110"
+                                className="w-9 h-9 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10 text-gray-800 dark:text-gray-200 hover:bg-purple-600 hover:text-white transition-all transform hover:scale-110"
                                 aria-label={`Link to ${key}`}
                             >
                                 {renderIcon(key)}

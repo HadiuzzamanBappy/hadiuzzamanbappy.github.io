@@ -35,7 +35,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                     to="/"
                     onMouseEnter={handleLinkEnter}
                     onMouseLeave={handleDefaultEnter}
-                    className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all"
+                    className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-purple-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all"
                 >
                     <FiHome size={20} />
                 </Link>
@@ -70,7 +70,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                         onClick={scrollToContact}
                         onMouseEnter={handleLinkEnter}
                         onMouseLeave={handleDefaultEnter}
-                        className="px-8 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                        className="px-8 py-3 bg-purple-700 text-white font-semibold rounded-full shadow-lg hover:bg-purple-800 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50"
                     >
                         Let's Connect
                     </button>
@@ -87,7 +87,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                             onMouseEnter={handleLinkEnter}
                             onMouseLeave={handleDefaultEnter}
                             aria-label={link.label}
-                            className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-blue-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"
+                            className="w-12 h-12 flex items-center justify-center rounded-full text-slate-700 dark:text-gray-300 bg-white/50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 backdrop-blur-sm hover:text-purple-500 dark:hover:text-white hover:bg-white/75 dark:hover:bg-slate-700/75 transition-all transform hover:scale-110"
                         >
                             <link.Icon size={20} />
                         </a>
@@ -105,7 +105,7 @@ const Hero = ({ scrollToContact, scrollToProjects }) => {
                     transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                 >
                     <div className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm">
-                        <span className="absolute h-10 w-10 rounded-full bg-blue-500/50 dark:bg-purple-500/50 opacity-75 animate-ping"></span>
+                        <span className="absolute h-10 w-10 rounded-full bg-purple-500/50 dark:bg-purple-500/50 opacity-75 animate-ping"></span>
                         <FiArrowDown size={24} className="relative text-slate-800 dark:text-gray-300" />
                     </div>
                 </motion.button>

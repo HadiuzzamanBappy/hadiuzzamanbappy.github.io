@@ -1,5 +1,3 @@
-// src/data/projects.js
-
 function shuffleArray(array) {
   // Fisher-Yates shuffle
   for (let i = array.length - 1; i > 0; i--) {
@@ -8,6 +6,13 @@ function shuffleArray(array) {
   }
   return array;
 }
+
+export const featuredProjects = shuffleArray([
+  { id: "landing-page-cryptowire-cryptocurrency" },
+  { id: "case-study-bookmore-buy-sell-and-share-book" },
+  { id: "landing-page-tfl-tech-fusion-limited" },
+  { id: "properties-buy-sell-app-screen" },
+]);
 
 export const projects = shuffleArray([
   {
@@ -19,7 +24,7 @@ export const projects = shuffleArray([
     tags: ["UI/UX", "Interaction Design", "Graphic Design"],
     description:
       "A landing page for a platform to buy and sell cryptocurrency and NFT products.",
-    linkType: "external",
+    linkType: "external", //internal, external
     url: "https://www.behance.net/gallery/135767829/Landing-Page-CryptoWire-Cryptocurrency",
     links: {
       github: "",
