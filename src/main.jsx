@@ -5,12 +5,16 @@ import { ThemeProvider } from './context/ThemeContext';
 import { CursorProvider } from './context/CursorContext';
 import App from './App.jsx';
 import './index.css';
+import CustomCursor from './components/common/CustomCursor';
+import MouseFollower from './components/common/MouseFollower.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
         <CursorProvider>
+          <MouseFollower />
+          <CustomCursor />
           <App />
         </CursorProvider>
       </ThemeProvider>

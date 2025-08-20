@@ -28,7 +28,7 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
       <h5 className="text-3xl font-semibold text-gray-800 dark:text-gray-200">
         <span>{displayValue}</span>+
       </h5>
-      <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center justify-center gap-1 mt-1">
+      <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center justify-center gap-1 mt-1">
         <Icon />{label}
       </span>
     </div>

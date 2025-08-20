@@ -60,7 +60,7 @@ body {
   z-index: -1;
 }
 
-body.no-cursor {
+body {
   cursor: none;
 }
 

@@ -1,24 +1,44 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext'; // Adjust path if necessary
+import { ThemeContext } from '../../context/ThemeContext';
 
 const MouseFollower = () => {
+    // THE FIX: Use `matchMedia` to reliably check if the primary input is coarse (touch).
+    const [isCoarsePointer, setIsCoarsePointer] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.matchMedia('(pointer: coarse)').matches;
+        }
+        return false;
+    });
+
     const [position, setPosition] = useState({ x: -100, y: -100 });
+    const [isMouseInViewport, setIsMouseInViewport] = useState(true); // Default to true
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
-        const handleMouseMove = (e) => {
-            setPosition({ x: e.clientX, y: e.clientY });
-        };
+        // If it's a coarse pointer device (touch), don't run the effect.
+        if (isCoarsePointer) return;
+
+        const handleMouseMove = (e) => setPosition({ x: e.clientX, y: e.clientY });
+        const handleMouseEnter = () => setIsMouseInViewport(true);
+        const handleMouseLeave = () => setIsMouseInViewport(false);
 
         window.addEventListener('mousemove', handleMouseMove);
+        document.documentElement.addEventListener('mouseenter', handleMouseEnter);
+        document.documentElement.addEventListener('mouseleave', handleMouseLeave);
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
+            document.documentElement.removeEventListener('mouseenter', handleMouseEnter);
+            document.documentElement.removeEventListener('mouseleave', handleMouseLeave);
         };
-    }, []);
+    }, [isCoarsePointer]);
 
-    // Define colors based on the theme
     const pointerColor = theme === 'dark' ? 'rgba(173, 113, 255, 0.2)' : 'rgba(173, 113, 255, 0.3)';
+
+    // THE FIX: This guard clause now correctly renders nothing only on touch-primary devices.
+    if (isCoarsePointer) {
+        return null;
+    }
 
     return (
         <div
@@ -33,8 +53,9 @@ const MouseFollower = () => {
                 filter: 'blur(100px)',
                 transform: 'translate(-50%, -50%)',
                 zIndex: 0,
-                pointerEvents: 'none', // Allows clicking through the element
-                transition: 'background-color 0.3s ease-in-out', // Smooth transition for theme changes
+                pointerEvents: 'none',
+                opacity: isMouseInViewport ? 1 : 0,
+                transition: 'opacity 0.2s ease-out, background-color 0.3s ease-in-out',
             }}
         />
     );
