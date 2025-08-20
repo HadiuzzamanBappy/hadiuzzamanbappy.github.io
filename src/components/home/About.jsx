@@ -88,8 +88,7 @@ const About = () => {
       </div>
 
       <p className="flex-grow leading-relaxed text-justify text-gray-700 dark:text-gray-300">
-        Hi, I'm <BappyNameSvg /> — a passionate designer with a knack for front-end development across web and mobile platforms. I specialize in creating intuitive, user-friendly designs that don’t just look great but truly connect with people. Let’s team up to craft something amazing together!
-      </p>
+        Hi, I'm <BappyNameSvg /> — the bridge between beautiful design and clean code. I craft seamless digital experiences by shaping pixels and writing the code that brings them to life. Have a vision? Let's build it together.</p>
 
       <div className="flex justify-between items-center mt-4">
         {/* Theme toggle button */}

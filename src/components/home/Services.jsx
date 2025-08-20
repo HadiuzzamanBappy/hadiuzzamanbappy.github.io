@@ -12,8 +12,8 @@ const services = [
     img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80'
   },
   {
-    name: 'Branding & Identity',
-    img: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop&q=80'
+    name: 'Product Solution',
+    img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop&q=80'
   },
   {
     name: 'Mobile App Design',
