@@ -54,7 +54,7 @@ const CustomCursor = () => {
       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
     >
       {cursorVariant === 'view' && (
-        <span className="text-black font-bold text-sm">View</span>
+        <span className="text-purple-200 font-bold text-sm">View</span>
       )}
     </motion.div>
   );

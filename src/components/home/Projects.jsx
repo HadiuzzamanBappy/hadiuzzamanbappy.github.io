@@ -1,54 +1,34 @@
-import React, { useContext } from 'react'; // 1. Import useContext
+import React, { useContext, useMemo } from 'react'; // 1. Import useMemo
 import { Link } from 'react-router-dom';
 import { FiLayout } from 'react-icons/fi';
 import { motion } from 'framer-motion';
-import { CursorContext } from '../../context/CursorContext'; // 2. Import the CursorContext
+import { CursorContext } from '../../context/CursorContext';
+// 2. Import the project data sources
+import { projects, featuredProjects } from '../../data/projects';
 
-// Expanded project data to include titles for the hover captions
-const projectData = [
-  {
-    title: "BookMore",
-    imgSrc: "images/project/pf1.jpg"
-  },
-  {
-    title: "CryptoWire",
-    imgSrc: "images/project/pf2.jpg"
-  },
-  {
-    title: "E-commerce",
-    imgSrc: "images/project/pf3.jpg"
-  },
-  {
-    title: "DMV Driver",
-    imgSrc: "images/project/pf4.jpg"
-  },
-];
-
-// MODIFIED: This component now accepts an `index` prop to determine its caption's position.
+// ProjectImage component remains the same, with one small addition for truncation.
 const ProjectImage = ({ title, imgSrc, index }) => {
-
-  // Determine position and gradient classes based on the image's index in the grid.
   let positionClasses = '';
   let gradientClasses = '';
 
   switch (index) {
-    case 0: // Top-Left
+    case 0:
       positionClasses = 'items-start text-left';
       gradientClasses = 'bg-gradient-to-b from-black/60 to-transparent';
       break;
-    case 1: // Top-Right
+    case 1:
       positionClasses = 'items-start text-right';
       gradientClasses = 'bg-gradient-to-b from-black/60 to-transparent';
       break;
-    case 2: // Bottom-Left
+    case 2:
       positionClasses = 'items-end text-left';
       gradientClasses = 'bg-gradient-to-t from-black/60 to-transparent';
       break;
-    case 3: // Bottom-Right
+    case 3:
       positionClasses = 'items-end text-right';
       gradientClasses = 'bg-gradient-to-t from-black/60 to-transparent';
       break;
-    default: // A fallback for any additional images
+    default:
       positionClasses = 'items-end text-left';
       gradientClasses = 'bg-gradient-to-t from-black/60 to-transparent';
   }
@@ -66,22 +46,28 @@ const ProjectImage = ({ title, imgSrc, index }) => {
           className="w-full h-full object-cover"
         />
       </div>
-
-      {/* The caption now uses the dynamic classes for positioning and gradients */}
       <div className={`absolute inset-0 flex p-4 opacity-0 group-hover:opacity-100 transition-opacity ${positionClasses} ${gradientClasses}`}>
-        <h3 className="text-white text-sm font-semibold">{title}</h3>
+        {/* THE CHANGE: Added the 'truncate' class for overflow */}
+        <h3 className="text-white text-sm font-semibold truncate">{title}</h3>
       </div>
     </motion.div>
   );
 };
 
 const Projects = () => {
-  // 3. Get the function to change the cursor's variant
   const { setCursorVariant } = useContext(CursorContext);
-
-  // 4. Create the event handlers
   const handleMouseEnter = () => setCursorVariant('link');
   const handleMouseLeave = () => setCursorVariant('default');
+
+  // 3. Create the dynamic data source for the grid
+  const displayedProjects = useMemo(() => {
+    // Take the first 4 IDs from featuredProjects
+    const featuredIds = featuredProjects.slice(0, 4).map(p => p.id);
+    
+    // Find the full project object for each ID from the main projects array
+    return featuredIds.map(id => projects.find(p => p.id === id)).filter(Boolean); // .filter(Boolean) removes any null/undefined results
+  }, []);
+
   return (
     <div className="bg-white/50 dark:bg-purple-800/10 p-4 rounded-2xl shadow-lg flex-grow flex flex-col h-full w-full">
       <div className="text-center mb-4">
@@ -91,15 +77,20 @@ const Projects = () => {
       </div>
       <div className="relative flex-grow flex items-center justify-center">
         <div className="grid grid-cols-2 gap-4">
-          {projectData.map((project, index) => (
-            <ProjectImage key={project.title} title={project.title} imgSrc={project.imgSrc} index={index} />
+          {/* 4. Map over the new, dynamic data */}
+          {displayedProjects.map((project, index) => (
+            <ProjectImage 
+              key={project.id} 
+              title={project.title} 
+              imgSrc={project.previewImage} // Use 'previewImage' from your data file
+              index={index} 
+            />
           ))}
         </div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="bg-white dark:bg-purple-800/20 backdrop-blur-sm p-3 rounded-xl shadow-2xl hover:shadow-xl transition-shadow pointer-events-auto">
             <Link
               to="/projects"
-              // 5. Apply handlers to each individual link as well
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className="relative block bg-gray-100 dark:bg-purple-800/50 py-2 px-5 rounded-lg border border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-200 font-semibold transition-transform hover:scale-105"
@@ -113,4 +104,5 @@ const Projects = () => {
     </div>
   );
 };
+
 export default Projects;

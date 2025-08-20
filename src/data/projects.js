@@ -27,8 +27,8 @@ export const projects = shuffleArray([
     linkType: "external", //internal, external
     url: "https://www.behance.net/gallery/135767829/Landing-Page-CryptoWire-Cryptocurrency",
     links: {
-      github: "",
-      vercel: "",
+      behance: "",
+      figma: "",
     },
   },
   {
@@ -43,8 +43,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://www.behance.net/gallery/142361495/Case-Study-Bookmore-Buy-Sell-and-Share-book",
     links: {
-      github: "",
-      vercel: "",
+      behance: "",
+      figma: "",
     },
   },
   {
@@ -59,6 +59,7 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
     links: {
+      behance: "",
       figma: "",
     },
   },
@@ -74,8 +75,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://www.behance.net/gallery/133577211/Landing-Page-TFL-Tech-Fusion-Limited",
     links: {
-      github: "",
-      vercel: "",
+      behance: "",
+      figma: "",
     },
   },
   {
@@ -90,8 +91,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://dribbble.com/shots/17359768-Properties-Buy-Sell-App-Screen",
     links: {
-      github: "",
-      vercel: "",
+      dribbble: "",
+      figma: "",
     },
   },
   {
@@ -105,8 +106,8 @@ export const projects = shuffleArray([
     linkType: "internal",
     url: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
     links: {
-      github: "https://github.com/HadiuzzamanBappy/Color-Craft",
-      vercel: "https://color-craft-hb.vercel.app/",
+      dribbble: "",
+      figma: "",
     },
   },
   {
@@ -121,8 +122,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://dribbble.com/shots/17359670-CryptoWire-App-Login-Signup",
     links: {
-      github: "",
-      vercel: "",
+      dribbble: "",
+      figma: "",
     },
   },
   {
@@ -137,8 +138,8 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "https://hbappydesign.vercel.app",
     links: {
-      github: "https://github.com/HadiuzzamanBappy/hadiuzzamanbappy.github.io",
-      vercel: "https://hbappydesign.vercel.app",
+      github: "https://hadiuzzamanbappy.github.io",
+      vercel: "https://hadiuzzamanbappy.vercel.app",
     },
   },
   {
@@ -170,7 +171,7 @@ export const projects = shuffleArray([
     url: "",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web",
-      vercel: "",
+      vercel: "https://asset-bundle-bro.vercel.app",
     },
   },
   {
@@ -186,7 +187,7 @@ export const projects = shuffleArray([
     url: "https://color-craft-hb.vercel.app/",
     links: {
       github: "https://github.com/HadiuzzamanBappy/Color-Craft",
-      vercel: "https://color-craft-hb.vercel.app/",
+      vercel: "https://color-craft-bro.vercel.app/",
     },
   },
   {
@@ -202,7 +203,7 @@ export const projects = shuffleArray([
     url: "https://scasl-iota.vercel.app/",
     links: {
       github: "https://github.com/HadiuzzamanBappy/SCASL",
-      vercel: "https://scasl-iota.vercel.app/",
+      vercel: "https://scasl.vercel.app/",
     },
   },
 ]);
