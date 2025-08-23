@@ -5,7 +5,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { CursorContext } from '../../context/CursorContext';
 
-// Opens Calendly popup widget
+// Opens Calendly popup widget for scheduling meetings
 const openCalendly = () => {
   if (window.Calendly) {
     window.Calendly.initPopupWidget({ url: 'https://calendly.com/hbappy79/contact-me' });
@@ -14,7 +14,12 @@ const openCalendly = () => {
   }
 };
 
-// Animated SVG for the name "Bappy"
+/**
+ * BappyNameSvg Component
+ * 
+ * Animated SVG signature that draws and redraws the name "Bappy" continuously.
+ * Features smooth path animation with infinite repeat cycle.
+ */
 const BappyNameSvg = () => {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -56,8 +61,14 @@ const BappyNameSvg = () => {
   );
 };
 
+/**
+ * About Component
+ * 
+ * Main introduction section featuring personal information, availability status,
+ * contact methods, and downloadable resume. Includes animated signature and
+ * interactive elements with custom cursor support.
+ */
 const About = () => {
-  // Cursor variant context
   const { setCursorVariant } = useContext(CursorContext);
 
   // Cursor handlers for interactive elements

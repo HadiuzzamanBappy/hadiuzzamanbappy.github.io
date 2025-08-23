@@ -4,6 +4,12 @@ import emailjs from '@emailjs/browser';
 import { FiMail, FiPhone, FiCheckCircle, FiAlertCircle } from 'react-icons/fi';
 import { CursorContext } from '../../context/CursorContext';
 
+/**
+ * ContactForm Component
+ * 
+ * Interactive contact form with validation, EmailJS integration, and animated feedback.
+ * Features staggered animations, form validation, and status messaging with custom cursor support.
+ */
 const ContactForm = () => {
     const formRef = useRef();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -11,7 +17,6 @@ const ContactForm = () => {
     const [formStatus, setFormStatus] = useState('idle');
     const { setCursorVariant } = useContext(CursorContext);
 
-    // Cursor variant handlers
     const handleMouseEnter = () => setCursorVariant('link');
     const handleMouseLeave = () => setCursorVariant('default');
 
@@ -20,7 +25,7 @@ const ContactForm = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    // Basic form validation
+    // Validates form fields with email pattern checking
     const validate = () => {
         let tempErrors = {};
         if (!formData.name) tempErrors.name = "Name is required.";
@@ -53,7 +58,7 @@ const ContactForm = () => {
         });
     };
 
-    // Animation variants for framer-motion
+    // Staggered animation variants for form elements
     const containerVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2 } } };
     const itemVariants = { hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } };
 

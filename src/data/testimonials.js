@@ -1,3 +1,10 @@
+/**
+ * Client Testimonials
+ * 
+ * Collection of authentic client feedback and reviews showcasing
+ * work quality, professionalism, and project success. Used in
+ * testimonial carousel components across the portfolio.
+ */
 export const testimonials = [
     {
         id: 1,

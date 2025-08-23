@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+/**
+ * AnimatedText Component
+ * 
+ * Creates a typewriter effect that cycles through different professional roles.
+ * Features realistic typing speed with pause intervals and smooth character transitions.
+ */
 const AnimatedText = () => {
     const roles = [
         "am An UX Designer & Developer",
@@ -13,7 +19,7 @@ const AnimatedText = () => {
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
-        // Handles typing and deleting animation
+        // Controls typewriter animation with realistic timing
         const handleTyping = () => {
             const currentRole = roles[roleIndex];
             const updatedText = isDeleting
@@ -26,7 +32,6 @@ const AnimatedText = () => {
                 // Pause before starting to delete
                 setTimeout(() => setIsDeleting(true), 2000);
             } else if (isDeleting && updatedText === '') {
-                // Move to next role after deleting
                 setIsDeleting(false);
                 setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
             }

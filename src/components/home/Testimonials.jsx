@@ -3,7 +3,12 @@ import { FaStar, FaAward, FaQuoteLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { testimonials } from '../../data/testimonials';
 
-// Renders star rating
+/**
+ * StarRating Component
+ * 
+ * Displays a 5-star rating with filled and empty stars
+ * based on the provided rating value.
+ */
 const StarRating = ({ rating }) => (
   <div className="flex text-xs">
     {[...Array(5)].map((_, i) => (
@@ -12,11 +17,17 @@ const StarRating = ({ rating }) => (
   </div>
 );
 
+/**
+ * Testimonials Component
+ * 
+ * Auto-rotating testimonial carousel with swipe support and hover pause.
+ * Features smooth transitions and interactive navigation dots.
+ */
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Autoplay, pauses on hover
+  // Auto-advance testimonials, pause on hover
   useEffect(() => {
     let interval;
     if (!isHovered) {
@@ -27,7 +38,7 @@ const Testimonials = () => {
     return () => clearInterval(interval);
   }, [isHovered]);
 
-  // Handles swipe gesture for carousel
+  // Handle swipe gestures for mobile navigation
   const handleDragEnd = (event, info) => {
     const swipeThreshold = 50;
     const swipeVelocity = 0.3;

@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TbZoomPan } from "react-icons/tb";
 
-// Icon name to file mapping
+// Icon name to file mapping for skill visualization
 const icons = {
   'CSS': '/icons/css.svg',
   'Figma': '/icons/figma.svg',
@@ -27,7 +27,12 @@ const icons = {
   'Wordpress': '/icons/wordpress.svg',
 };
 
-// Renders a single icon with tooltip
+/**
+ * IconNode Component
+ * 
+ * Individual skill icon positioned in 3D space with hover tooltip.
+ * Displays technology/tool icons with interactive feedback.
+ */
 function Icon({ position, name, file }) {
   return (
     <Html position={position} center wrapperClass="skills-sphere-html">
@@ -73,7 +78,12 @@ function IconCloud() {
   );
 }
 
-// Animated zoom hint icon
+/**
+ * ZoomHint Component
+ * 
+ * Visual indicator showing users they can interact with the 3D sphere.
+ * Displays zoom/pan icon with delayed fade-in animation.
+ */
 const ZoomHint = () => (
   <motion.div
     className="absolute top-4 right-4 text-purple-500/25 pointer-events-none z-10"
@@ -85,13 +95,16 @@ const ZoomHint = () => (
   </motion.div>
 );
 
-// The final export that wraps everything
+/**
+ * SkillsSphere Component
+ * 
+ * Interactive 3D visualization of technical skills and tools.
+ * Features auto-rotating sphere with zoom/pan controls and hover tooltips.
+ * Icons are distributed spherically for optimal viewing angles.
+ */
 export default function SkillsSphere() {
   return (
-    // The parent div must be 'relative' to position the hint
     <div className="w-full h-full relative">
-
-      {/* Conditionally render the hint */}
       <AnimatePresence>
         <ZoomHint />
       </AnimatePresence>

@@ -3,7 +3,12 @@ import { useInView } from 'react-intersection-observer';
 import { animate } from 'framer-motion';
 import { FiLayout, FiStar, FiTrendingUp } from 'react-icons/fi';
 
-// AnimatedStat animates the number when the component comes into view
+/**
+ * AnimatedStat Component
+ * 
+ * Individual statistic that animates its number from 0 to target value
+ * when it enters the viewport. Features smooth counting animation.
+ */
 const AnimatedStat = ({ to, label, icon: Icon }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -14,7 +19,7 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
 
   useEffect(() => {
     if (inView) {
-      // Animate from 0 to 'to' when in view
+      // Animate number counting from 0 to target
       const controls = animate(0, to, {
         duration: 2,
         onUpdate(value) {
@@ -40,6 +45,12 @@ const AnimatedStat = ({ to, label, icon: Icon }) => {
   );
 };
 
+/**
+ * Stats Component
+ * 
+ * Displays key professional statistics in a 3-column grid layout.
+ * Features animated counters that trigger when scrolled into view.
+ */
 const Stats = () => {
   return (
     <div className="grid grid-cols-3 gap-6">

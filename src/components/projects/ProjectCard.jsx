@@ -8,6 +8,13 @@ import { FaDiscord } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { CursorContext } from '../../context/CursorContext';
 
+/**
+ * ProjectCard Component
+ * 
+ * Interactive project card with hover animations and custom cursor support.
+ * Handles both internal navigation and external links, displays project metadata
+ * and social/platform links with appropriate icons.
+ */
 const ProjectCard = ({ project }) => {
     const { setCursorVariant } = useContext(CursorContext);
     const navigate = useNavigate();
@@ -15,7 +22,7 @@ const ProjectCard = ({ project }) => {
     const handleMouseEnter = () => setCursorVariant('view');
     const handleMouseLeave = () => setCursorVariant('default');
 
-    // Handles card click: external links open in new tab, internal navigates
+    // Routes to project detail or opens external link
     const handleCardClick = () => {
         if (project.linkType === 'external') {
             window.open(project.url, '_blank', 'noopener,noreferrer');
@@ -24,7 +31,7 @@ const ProjectCard = ({ project }) => {
         }
     };
 
-    // Returns appropriate icon for each link type
+    // Maps link types to their corresponding icons
     const renderIcon = (key) => {
         switch (key) {
             case 'github': return <FaGithub />;

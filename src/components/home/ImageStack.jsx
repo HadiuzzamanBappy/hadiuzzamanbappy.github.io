@@ -11,7 +11,12 @@ const initialImages = [
   "images/gallery/photo3.jpg",
 ];
 
-// Shows a drag hint overlay until user interacts
+/**
+ * DragHint Component
+ * 
+ * Displays an animated mouse icon with bounce effect to indicate
+ * drag interaction capability. Auto-fades in after initial delay.
+ */
 const DragHint = () => (
   <motion.div
     className="absolute inset-0 flex flex-col items-center justify-center text-purple-200/50 pointer-events-none z-50"
@@ -69,7 +74,12 @@ const ImageViewer = ({ imgSrc, onClose }) => {
   );
 };
 
-// Individual draggable image card
+/**
+ * Card Component
+ * 
+ * Individual draggable image card with random positioning and rotation.
+ * Supports click to view full-size and drag-to-dismiss interactions.
+ */
 const Card = ({ imgSrc, index, totalCards, onDismiss }) => {
   const randomRotation = useMemo(() => Math.random() * 20 - 10, []);
   const randomX = useMemo(() => Math.random() * 20 - 10, []);
@@ -117,12 +127,19 @@ const Card = ({ imgSrc, index, totalCards, onDismiss }) => {
   );
 };
 
+/**
+ * ImageStack Component
+ * 
+ * Interactive photo gallery featuring stackable, draggable cards with random positioning.
+ * Supports drag-to-cycle through images and click-to-view full-screen. Includes
+ * helpful drag hints for first-time users.
+ */
 const ImageStack = () => {
   const [images, setImages] = useState(initialImages);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Move dismissed image to bottom of stack
+  // Move dismissed image to bottom of stack for cycling effect
   const handleDismiss = (dismissedImage, direction) => {
     if (!hasInteracted) setHasInteracted(true);
     const remainingImages = images.filter(img => img !== dismissedImage);
@@ -130,7 +147,6 @@ const ImageStack = () => {
     setImages(newImageOrder);
   };
 
-  // Show full-screen viewer for top card
   const handleTopCardClick = () => {
     if (!hasInteracted) setHasInteracted(true);
     const topCard = images[images.length - 1];

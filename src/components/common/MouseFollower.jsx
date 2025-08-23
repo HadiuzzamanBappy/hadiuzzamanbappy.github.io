@@ -1,8 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
+/**
+ * MouseFollower Component
+ * 
+ * Creates a large, blurred circular element that follows the mouse cursor,
+ * providing a subtle interactive background effect. Adapts color based on
+ * theme and automatically disabled on touch devices.
+ */
 const MouseFollower = () => {
-    // Detect if the device uses a coarse pointer (touch)
+    // Detect touch devices to disable mouse follower
     const [isCoarsePointer, setIsCoarsePointer] = useState(() => {
         if (typeof window !== 'undefined') {
             return window.matchMedia('(pointer: coarse)').matches;
@@ -15,7 +22,7 @@ const MouseFollower = () => {
     const { theme } = useContext(ThemeContext);
 
     useEffect(() => {
-        if (isCoarsePointer) return; // Skip effect on touch devices
+        if (isCoarsePointer) return;
 
         const handleMouseMove = (e) => setPosition({ x: e.clientX, y: e.clientY });
         const handleMouseEnter = () => setIsMouseInViewport(true);
@@ -32,10 +39,11 @@ const MouseFollower = () => {
         };
     }, [isCoarsePointer]);
 
+    // Adapt follower color based on current theme
     const pointerColor = theme === 'dark' ? 'rgba(173, 113, 255, 0.2)' : 'rgba(173, 113, 255, 0.3)';
 
     if (isCoarsePointer) {
-        return null; // Hide follower on touch devices
+        return null;
     }
 
     return (

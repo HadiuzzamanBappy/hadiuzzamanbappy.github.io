@@ -5,7 +5,12 @@ import { motion } from 'framer-motion';
 import { CursorContext } from '../../context/CursorContext';
 import { projects, featuredProjects } from '../../data/projects';
 
-// Renders a single project image with overlay title
+/**
+ * ProjectImage Component
+ * 
+ * Displays a single project with hover effects and gradient overlay.
+ * Positioning and gradient direction varies based on grid position.
+ */
 const ProjectImage = ({ title, imgSrc, index }) => {
   let positionClasses = '';
   let gradientClasses = '';
@@ -53,6 +58,13 @@ const ProjectImage = ({ title, imgSrc, index }) => {
   );
 };
 
+/**
+ * Projects Component
+ * 
+ * Displays a 2x2 grid of featured projects with hover interactions.
+ * Shows first 4 projects from the featured projects list with
+ * custom cursor support and link to full projects page.
+ */
 const Projects = () => {
   const { setCursorVariant } = useContext(CursorContext);
 

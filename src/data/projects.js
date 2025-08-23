@@ -1,5 +1,8 @@
+/**
+ * Randomizes array order using Fisher-Yates shuffle algorithm
+ * Ensures different project order on each page load for varied content display
+ */
 function shuffleArray(array) {
-  // Fisher-Yates shuffle
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -7,6 +10,12 @@ function shuffleArray(array) {
   return array;
 }
 
+/**
+ * Featured Projects
+ * 
+ * Highlighted projects displayed prominently on the home page.
+ * Order randomized on each load to showcase different work.
+ */
 export const featuredProjects = shuffleArray([
   { id: "landing-page-cryptowire-cryptocurrency" },
   { id: "case-study-bookmore-buy-sell-and-share-book" },
@@ -14,6 +23,13 @@ export const featuredProjects = shuffleArray([
   { id: "properties-buy-sell-app-screen" },
 ]);
 
+/**
+ * Main Projects Collection
+ * 
+ * Complete portfolio of projects including UI/UX designs, web development,
+ * and various digital solutions. Each project includes metadata, preview images,
+ * and external links. Order randomized for dynamic content presentation.
+ */
 export const projects = shuffleArray([
   {
     id: "landing-page-cryptowire-cryptocurrency",
@@ -223,6 +239,13 @@ export const projects = shuffleArray([
   },
 ]);
 
+/**
+ * Archived Projects
+ * 
+ * Collection of older or completed projects maintained for portfolio history.
+ * These projects may be less actively maintained but demonstrate skill progression
+ * and diverse project experience over time.
+ */
 export const archivedProjects = [
   {
     id: "gotravel-app-onboard-to-explore",

@@ -5,24 +5,30 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 const services = [
   {
     name: 'UI/UX Design',
-    img: 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop&q=80'
+    img: '/public/images/service/ui-ux.jpeg'
   },
   {
     name: 'Frontend Dev',
-    img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&q=80'
+    img: '/public/images/service/development.jpeg'
   },
   {
     name: 'Product Solution',
-    img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop&q=80'
+    img: '/public/images/service/product-solution.jpeg'
   },
   {
     name: 'Mobile App Design',
-    img: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&q=80'
+    img: '/public/images/service/mobile-app.jpeg'
   },
 ];
 
+/**
+ * Services Component
+ * 
+ * Displays a horizontally scrolling carousel of service offerings.
+ * Features infinite loop scrolling with smooth animations and hover effects.
+ */
 const Services = () => {
-  // Duplicate services for seamless loop
+  // Duplicate services for seamless infinite loop
   const duplicatedServices = [...services, ...services];
 
   const x = useMotionValue(0);

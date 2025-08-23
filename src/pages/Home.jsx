@@ -10,6 +10,13 @@ import ImageStack from '../components/home/ImageStack';
 import Services from '../components/home/Services';
 import { CursorContext } from '../context/CursorContext';
 
+/**
+ * Home Page Component
+ * 
+ * Main landing page featuring a responsive grid layout with personal information,
+ * skills, projects, testimonials, and contact details. Optimized for both desktop
+ * and mobile viewing experiences with custom cursor integration.
+ */
 const Home = () => {
   const { setCursorVariant } = useContext(CursorContext);
 
@@ -23,7 +30,6 @@ const Home = () => {
       onMouseEnter={handleMouseEnter}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* First Row */}
         <div className="lg:col-span-5 flex">
           <About />
         </div>

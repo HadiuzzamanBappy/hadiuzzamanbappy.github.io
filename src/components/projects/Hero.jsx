@@ -11,13 +11,19 @@ import { ThemeToggle } from '../common/ThemeToggle';
 import { CursorContext } from '../../context/CursorContext';
 import { socialLinks } from '../../data/social';
 
+/**
+ * Hero Component
+ * 
+ * Full-screen hero section featuring animated background, typewriter text effect,
+ * social links, and navigation controls. Includes theme toggle and smooth scrolling.
+ */
 const Hero = ({ scrollToContact, scrollToProjects }) => {
     const { setCursorVariant } = useContext(CursorContext);
 
     const handleLinkEnter = () => setCursorVariant('link');
     const handleDefaultEnter = () => setCursorVariant('default');
 
-    // Animation variants for container and items
+    // Staggered animation variants for hero elements
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.3 } }

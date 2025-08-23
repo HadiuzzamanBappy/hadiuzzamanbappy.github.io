@@ -5,6 +5,14 @@ import ProjectCard from '../components/projects/ProjectCard';
 import Hero from '../components/projects/Hero';
 import ContactForm from '../components/projects/ContactForm';
 
+/**
+ * ProjectsPage Component
+ * 
+ * Displays a filterable grid of projects with category-based filtering,
+ * pagination (load more), and animated transitions. Features hero section
+ * and integrated contact form for seamless user engagement.
+ */
+
 const categories = ["All", "UI/UX Design", "Web Development", "Others"];
 const INITIAL_LOAD = 9;
 const LOAD_MORE_COUNT = 3;
@@ -24,7 +32,7 @@ const ProjectsPage = () => {
         setVisibleCount(INITIAL_LOAD);
     }, [activeFilter]);
 
-    // Projects to render
+    // Projects to render with pagination
     const projectsToShow = filteredProjects.slice(0, visibleCount);
 
     // Load more projects

@@ -11,9 +11,17 @@ import { MdEmail } from 'react-icons/md';
 import { projects, archivedProjects } from '../data/projects';
 import { CursorContext } from '../context/CursorContext';
 
+/**
+ * ProjectDetailPage Component
+ * 
+ * Displays detailed information about a specific project including description,
+ * tags, preview image, and external links. Features responsive layout with
+ * animated transitions and comprehensive platform icon support.
+ */
+
 const allProjects = [...projects, ...archivedProjects];
 
-// Maps link keys to icons
+// Maps link keys to their corresponding platform icons
 const renderIcon = (key) => {
     switch (key) {
         case 'github': return <FaGithub />;
@@ -62,6 +70,12 @@ const LinkButton = ({ href, label, iconKey, onMouseEnter, onMouseLeave }) => (
     </div>
 );
 
+/**
+ * Main ProjectDetailPage Component Function
+ * 
+ * Fetches and displays project data based on URL parameters, handles loading states,
+ * and provides navigation back to projects page with custom cursor integration.
+ */
 const ProjectDetailPage = () => {
     const { projectId } = useParams();
     const [project, setProject] = useState(null);

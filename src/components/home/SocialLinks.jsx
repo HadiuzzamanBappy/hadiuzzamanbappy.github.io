@@ -2,8 +2,13 @@ import React, { useContext } from 'react';
 import { CursorContext } from '../../context/CursorContext';
 import { socialLinksHome } from '../../data/social';
 
+/**
+ * SocialLinks Component
+ * 
+ * Displays social media links in an interactive card format.
+ * Features 3D hover effects and individual icon animations with custom cursor support.
+ */
 const SocialLinks = () => {
-  // Get cursor variant setter from context
   const { setCursorVariant } = useContext(CursorContext);
 
   const handleMouseEnter = () => setCursorVariant('link');
@@ -25,7 +30,6 @@ const SocialLinks = () => {
             rel="noopener noreferrer"
             aria-label={link.label}
             className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-slate-700 rounded-full text-xl text-gray-700 dark:text-gray-300 transition-all duration-300 group-hover:scale-90 hover:!scale-110 hover:!shadow-lg hover:bg-gray-100 dark:hover:bg-slate-700"
-            // Also handle cursor on individual links
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >

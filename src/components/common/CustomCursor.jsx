@@ -2,8 +2,14 @@ import React, { useState, useEffect, useContext } from 'react';
 import { motion } from 'framer-motion';
 import { CursorContext } from '../../context/CursorContext';
 
+/**
+ * CustomCursor Component
+ * 
+ * Provides an animated custom cursor that follows mouse movement and adapts to different
+ * interaction states (default, link hover, view mode). Automatically disabled on touch devices.
+ */
 const CustomCursor = () => {
-  // THE FIX: Use `matchMedia` to reliably check if the primary input is coarse (touch).
+  // Detect touch devices to disable custom cursor
   const [isCoarsePointer, setIsCoarsePointer] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.matchMedia('(pointer: coarse)').matches;
@@ -12,12 +18,11 @@ const CustomCursor = () => {
   });
 
   const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [isMouseInViewport, setIsMouseInViewport] = useState(true); // Default to true
+  const [isMouseInViewport, setIsMouseInViewport] = useState(true);
   const { cursorVariant } = useContext(CursorContext);
 
   useEffect(() => {
-    // If it's a coarse pointer device (touch), don't run the effect.
-    // Skip effect on touch devices
+    // Skip cursor tracking on touch devices
     if (isCoarsePointer) return;
 
     const handleMouseMove = (e) => setPosition({ x: e.clientX, y: e.clientY });
@@ -35,6 +40,7 @@ const CustomCursor = () => {
     };
   }, [isCoarsePointer]);
 
+  // Cursor appearance variants for different interaction states
   const variants = {
     default: { x: position.x - 8, y: position.y - 8, height: 16, width: 16, backgroundColor: '#b044ee' },
     link: { x: position.x - 24, y: position.y - 24, height: 48, width: 48, backgroundColor: '#b044ee4f' },
@@ -42,7 +48,7 @@ const CustomCursor = () => {
     hidden: { opacity: 0, scale: 0, x: position.x, y: position.y }
   };
   
-  // THE FIX: This guard clause now correctly renders nothing only on touch-primary devices.
+  // Don't render custom cursor on touch devices
   if (isCoarsePointer) {
     return null;
   }

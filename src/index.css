@@ -1,32 +1,45 @@
+/* Tailwind CSS imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom component styles using Tailwind's @layer directive */
 @layer components {
+  /* Reusable form input styling with theme support */
   .form-input {
     @apply w-full px-4 py-3 rounded-md bg-white/70 dark:bg-slate-900/70 border border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition placeholder:text-slate-400 dark:placeholder:text-slate-500;
   }
 }
 
+/* ===== ROOT VARIABLES & GLOBAL SETTINGS ===== */
 :root {
+  /* Typography settings */
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  /* Color scheme configuration for light/dark mode support */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
+  
+  /* Theme-specific color variables (light mode defaults) */
   --background-color: #f1f1f1;
   --dot-color: rgba(0, 0, 0, 0.1) font-synthesis: none;
+  
+  /* Font rendering optimizations */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* Custom scrollbar color variables */
   --scrollbar-track-color: transparent;
   --scrollbar-thumb-color: #a8a8a8;
   --scrollbar-thumb-hover-color: #7d7d7d;
 }
 
+/* ===== DARK MODE THEME OVERRIDES ===== */
 [prefers-color-scheme='dark'] {
+  /* Dark theme color variables */
   --background-color: #0f172a;
   --dot-color: #4e468552;
   --scrollbar-track-color: transparent;
@@ -34,51 +47,70 @@
   --scrollbar-thumb-hover-color: #374151;
 }
 
+/* ===== BODY & BACKGROUND STYLES ===== */
 body {
+  /* Smooth background color transitions between themes */
   background-color: var(--background-color);
   transition: background-color 0.3s ease-in-out;
 }
 
+/* ===== SKILLS SPHERE 3D COMPONENT STYLES ===== */
 .skills-sphere-html {
+  /* Disable pointer events on container to allow click-through */
   pointer-events: none;
 }
 
 .skills-sphere-html>div {
+  /* Re-enable pointer events on child elements */
   pointer-events: auto;
+  /* Maintain 3D positioning and transformations */
   position: relative !important;
   transform-style: preserve-3d !important;
 }
 
+/* ===== DOTTED BACKGROUND PATTERN ===== */
 .dotted-background {
+  /* Fixed positioning to cover entire viewport */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  /* Radial gradient pattern using CSS variables for theme support */
   background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 20px 20px;
+  /* Keep behind all content */
   z-index: -1;
 }
 
+/* ===== CUSTOM CURSOR IMPLEMENTATION ===== */
 body {
+  /* Hide default cursor to enable custom cursor */
   cursor: none;
 }
 
 a,
 button {
+  /* Inherit custom cursor behavior for interactive elements */
   cursor: inherit; /* This makes links and buttons use the body's cursor style */
 }
 
+/* ===== CUSTOM SCROLLBAR STYLING ===== */
+
+/* Webkit-based browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
+  /* Scrollbar dimensions */
   width: 12px;
   height: 12px;
 }
 
 ::-webkit-scrollbar-track {
+  /* Transparent track background */
   background: var(--scrollbar-track-color);
 }
 
 ::-webkit-scrollbar-thumb {
+  /* Scrollbar thumb styling with theme variables */
   background-color: var(--scrollbar-thumb-color);
   border-radius: 10px;
   border: 3px solid var(--scrollbar-track-color);
@@ -86,11 +118,14 @@ button {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  /* Hover state for scrollbar thumb */
   background-color: var(--scrollbar-thumb-hover-color);
   transition: background-color 0.3s ease;
 }
 
+/* Firefox scrollbar styling */
 html {
+  /* Thin scrollbar with custom colors */
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
 }
