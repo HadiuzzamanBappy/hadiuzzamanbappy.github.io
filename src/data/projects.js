@@ -10,7 +10,7 @@ function shuffleArray(array) {
 export const featuredProjects = shuffleArray([
   { id: "landing-page-cryptowire-cryptocurrency" },
   { id: "case-study-bookmore-buy-sell-and-share-book" },
-  { id: "landing-page-tfl-tech-fusion-limited" },
+  { id: "open-llm-chat" },
   { id: "properties-buy-sell-app-screen" },
 ]);
 
@@ -203,6 +203,22 @@ export const projects = shuffleArray([
       github: "https://github.com/HadiuzzamanBappy/SCASL",
       vercel: "https://scasl.vercel.app/",
       figma: "https://www.figma.com/design/VxeHCmdzGI2Lf4IMt63uG3/SCASL---Refined?node-id=2701-9298&t=IfyQsrcovklxSipo-1"
+    },
+  },
+  {
+    id: "open-llm-chat",
+    title: "Open LLM Chat",
+    category: "Web Development",
+    previewImage:
+      "https://github.com/HadiuzzamanBappy/Open-LLM-AI/raw/main/public/images/image.png",
+    tags: ["React", "AI", "ChatGPT", "TypeScript"],
+    description:
+      "A modern ChatGPT-like AI assistant interface built with React for intelligent conversations and chat history management.",
+    linkType: "external",
+    url: "https://open-llm-chat.vercel.app/",
+    links: {
+      github: "https://github.com/HadiuzzamanBappy/Open-LLM-CHAT",
+      vercel: "https://open-llm-chat.vercel.app/",
     },
   },
 ]);
