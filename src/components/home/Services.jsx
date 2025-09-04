@@ -5,19 +5,19 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 const services = [
   {
     name: 'UI/UX Design',
-    img: '/public/images/service/ui-ux.jpeg'
+    img: '/images/service/ui-ux.jpeg'
   },
   {
     name: 'Frontend Dev',
-    img: '/public/images/service/development.jpeg'
+    img: '/images/service/development.jpeg'
   },
   {
     name: 'Product Solution',
-    img: '/public/images/service/product-solution.jpeg'
+    img: '/images/service/product-solution.jpeg'
   },
   {
     name: 'Mobile App Design',
-    img: '/public/images/service/mobile-app.jpeg'
+    img: '/images/service/mobile-app.jpeg'
   },
 ];
 
