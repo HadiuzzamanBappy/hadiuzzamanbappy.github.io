@@ -48,6 +48,19 @@ export const projects = shuffleArray([
     },
   },
   {
+    "id": "zepto-dashboard",
+    "title": "Zepto Dashboard",
+    "category": "Web Development",
+    "previewImage": "https://github.com/HadiuzzamanBappy/Asset/blob/main/Zepto/img/1_hero.png?raw=true",
+    "tags": ["React", "Next.js", "Tailwind CSS", "Dashboard"],
+    "description": "A dynamic and responsive web development dashboard hosted on Vercel, featuring real-time data visualization and management tools.",
+    "linkType": "external",
+    "url": "https://zepto-dashboard.vercel.app/",
+    "links": {
+      "behance": "",
+    }
+  },
+  {
     id: "case-study-bookmore-buy-sell-and-share-book",
     title: "Case Study : Bookmore - Buy, Sell and Share book",
     category: "UI/UX Design",
