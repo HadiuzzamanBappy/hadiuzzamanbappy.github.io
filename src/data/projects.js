@@ -119,8 +119,7 @@ export const projects = shuffleArray([
     linkType: "external",
     url: "http://upworkcopilot.com/",
     links: {
-      website: "http://upworkcopilot.com/",
-      chrome: "https://chromewebstore.google.com/detail/upilot-upwork-co-pilot/olambebifobkbkhocophifjcmkcfjloj?hl=en&authuser=0"
+      website: "https://chromewebstore.google.com/detail/upilot-upwork-co-pilot/olambebifobkbkhocophifjcmkcfjloj?hl=en&authuser=0"
     }
   },
   {
