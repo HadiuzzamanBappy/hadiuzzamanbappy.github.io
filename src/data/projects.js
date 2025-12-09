@@ -19,8 +19,8 @@ function shuffleArray(array) {
 export const featuredProjects = shuffleArray([
   { id: "landing-page-cryptowire-cryptocurrency" },
   { id: "case-study-bookmore-buy-sell-and-share-book" },
-  { id: "open-llm-chat" },
-  { id: "properties-buy-sell-app-screen" },
+  { id: "upwork-co-pilot" },
+  { id: "zepto-admin-dashboard" },
 ]);
 
 /**
@@ -48,10 +48,10 @@ export const projects = shuffleArray([
     },
   },
   {
-    "id": "zepto-dashboard",
-    "title": "Zepto Dashboard",
+    "id": "zepto-admin-dashboard",
+    "title": "Zepto - Admin Dashboard",
     "category": "Web Development",
-    "previewImage": "https://github.com/HadiuzzamanBappy/Asset/blob/main/Zepto/img/1_hero.png?raw=true",
+    "previewImage": "https://github.com/HadiuzzamanBappy/Asset/blob/main/Zepto/Preview/01_preview.png?raw=true",
     "tags": ["React", "Next.js", "Tailwind CSS", "Dashboard"],
     "description": "A dynamic and responsive web development dashboard hosted on Vercel, featuring real-time data visualization and management tools.",
     "linkType": "external",
@@ -92,6 +92,38 @@ export const projects = shuffleArray([
     },
   },
   {
+    id: "ux-copywriter",
+    title: "UX Copywriter",
+    category: "Others",
+    previewImage:
+      "https://github.com/HadiuzzamanBappy/Asset/blob/main/ux-copwriter/img/Cover.jpg?raw=true",
+    tags: ["AI", "UX Writing", "Automation", "Figma Plugin", "Copy Generation"],
+    description:
+      "AI-powered Figma plugin to generate, translate and batch-edit copy and layer names — ideal for UX writing workflows.",
+    linkType: "external",
+    url:
+      "https://www.figma.com/files/team/1038837779447989609/resources/community/plugin/1576517029594781870?fuid=1038837773937582450",
+    links: {
+      figma: "https://www.figma.com/files/team/1038837779447989609/resources/community/plugin/1576517029594781870?fuid=1038837773937582450"
+    }
+  },
+  {
+    id: "upwork-co-pilot",
+    title: "Upwork Co-Pilot",
+    category: "Others",
+    previewImage:
+      "https://github.com/HadiuzzamanBappy/Asset/blob/main/UPilot/Promotional.jpg?raw=true",
+    tags: ["AI", "Freelancer Tools", "Upwork", "Automation", "Chrome Extension"],
+    description:
+      "AI-powered assistant for Upwork freelancers: analyze jobs, optimize profiles, and generate smarter proposals in one click.",
+    linkType: "external",
+    url: "http://upworkcopilot.com/",
+    links: {
+      website: "http://upworkcopilot.com/",
+      chrome: "https://chromewebstore.google.com/detail/upilot-upwork-co-pilot/olambebifobkbkhocophifjcmkcfjloj?hl=en&authuser=0"
+    }
+  },
+  {
     id: "landing-page-tfl-tech-fusion-limited",
     title: "Landing Page : TFL - Tech Fusion Limited",
     category: "UI/UX Design",
@@ -120,20 +152,6 @@ export const projects = shuffleArray([
     url: "https://dribbble.com/shots/17359768-Properties-Buy-Sell-App-Screen",
     links: {
       dribbble: "https://dribbble.com/shots/17359768-Properties-Buy-Sell-App-Screen",
-    },
-  },
-  {
-    id: "e-home-app-explore",
-    title: "E-Home App : Explore",
-    category: "UI/UX Design",
-    previewImage:
-      "https://cdn.dribbble.com/userupload/35197024/file/original-3cf00daef5efcb61ee2aa9786a2b7f35.jpg?resize=1024x728&vertical=center",
-    tags: ["Figma", "Mobile Screen"],
-    description: "A dark-themed dashboard for controlling smart home devices.",
-    linkType: "internal",
-    url: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
-    links: {
-      dribbble: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
     },
   },
   {
@@ -276,6 +294,20 @@ export const archivedProjects = [
     },
   },
   {
+    id: "e-home-app-explore",
+    title: "E-Home App : Explore",
+    category: "UI/UX Design",
+    previewImage:
+      "https://cdn.dribbble.com/userupload/35197024/file/original-3cf00daef5efcb61ee2aa9786a2b7f35.jpg?resize=1024x728&vertical=center",
+    tags: ["Figma", "Mobile Screen"],
+    description: "A dark-themed dashboard for controlling smart home devices.",
+    linkType: "internal",
+    url: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
+    links: {
+      dribbble: "https://dribbble.com/shots/17359709-E-Home-App-Explore",
+    },
+  },
+  {
     id: "unit-converter",
     title: "Unit Converter",
     category: "Web Development",
@@ -334,7 +366,7 @@ export const archivedProjects = [
     linkType: "external",
     url: "https://dribbble.com/shots/17359690-Crystal-App-login-signup",
     links: {
-      dribble: "https://dribbble.com/shots/17359690-Crystal-App-login-signup",  
+      dribble: "https://dribbble.com/shots/17359690-Crystal-App-login-signup",
     },
   },
   {
