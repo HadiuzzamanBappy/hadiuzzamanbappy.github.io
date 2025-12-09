@@ -188,38 +188,6 @@ export const projects = shuffleArray([
     },
   },
   {
-    id: "dynamic-currency-converter",
-    title: "Dynamic Currency Converter",
-    category: "Web Development",
-    previewImage:
-      "https://github.com/HadiuzzamanBappy/Currency-Converter/raw/master/res/img/image.png",
-    tags: ["JavaScript", "CSS", "HTML", "API"],
-    description:
-      "A web app that fetches real-time exchange rates to convert between currencies.",
-    linkType: "external",
-    url: "https://currency-convert-bro.vercel.app",
-    links: {
-      github: "https://github.com/HadiuzzamanBappy/Currency-Converter",
-      vercel: "https://currency-convert-bro.vercel.app",
-    },
-  },
-  {
-    id: "asset-bundler",
-    title: "Asset Bundler",
-    category: "Web Development",
-    previewImage:
-      "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web/raw/main/assets/image/image.png",
-    tags: ["JavaScript", "HTML", "CSS", "Client-side Tools"],
-    description:
-      "A lightweight, client-side tool for combining and minifying JS and CSS in the browser.",
-    linkType: "external",
-    url: "https://asset-bundle-bro.vercel.app",
-    links: {
-      github: "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web",
-      vercel: "https://asset-bundle-bro.vercel.app",
-    },
-  },
-  {
     id: "color-craft-color-palette-generator",
     title: "Color Craft - Color Palette Generator",
     category: "Web Development",
@@ -291,6 +259,38 @@ export const archivedProjects = [
     url: "https://dribbble.com/shots/17359757-GoTravel-App-Onboard-to-Explore",
     links: {
       dribble: "https://dribbble.com/shots/17359757-GoTravel-App-Onboard-to-Explore",
+    },
+  },
+  {
+    id: "dynamic-currency-converter",
+    title: "Dynamic Currency Converter",
+    category: "Web Development",
+    previewImage:
+      "https://github.com/HadiuzzamanBappy/Currency-Converter/raw/master/res/img/image.png",
+    tags: ["JavaScript", "CSS", "HTML", "API"],
+    description:
+      "A web app that fetches real-time exchange rates to convert between currencies.",
+    linkType: "external",
+    url: "https://currency-convert-bro.vercel.app",
+    links: {
+      github: "https://github.com/HadiuzzamanBappy/Currency-Converter",
+      vercel: "https://currency-convert-bro.vercel.app",
+    },
+  },
+  {
+    id: "asset-bundler",
+    title: "Asset Bundler",
+    category: "Web Development",
+    previewImage:
+      "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web/raw/main/assets/image/image.png",
+    tags: ["JavaScript", "HTML", "CSS", "Client-side Tools"],
+    description:
+      "A lightweight, client-side tool for combining and minifying JS and CSS in the browser.",
+    linkType: "external",
+    url: "https://asset-bundle-bro.vercel.app",
+    links: {
+      github: "https://github.com/HadiuzzamanBappy/Asset-Bundle-Web",
+      vercel: "https://asset-bundle-bro.vercel.app",
     },
   },
   {
