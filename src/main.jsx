@@ -8,6 +8,8 @@ import './index.css';
 import CustomCursor from './components/common/CustomCursor';
 import MouseFollower from './components/common/MouseFollower.jsx';
 import ScrollToTop from './components/common/ScrollToTop.jsx';
+import { inject } from '@vercel/analytics';
+inject();
 
 /**
  * Application entry point with provider setup and global components
