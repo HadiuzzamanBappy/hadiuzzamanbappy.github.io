@@ -77,21 +77,6 @@ export const projects = shuffleArray([
     },
   },
   {
-    id: "logo-design-cryptowire-cryptocurrency",
-    title: "Logo Design : CryptoWire - Cryptocurrency",
-    category: "Others",
-    previewImage:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/280345134145281.61cf0b18bf3ce.jpg",
-    tags: ["Branding", "Graphic Design", "Industrial Design"],
-    description:
-      "Logo design for a platform facilitating cryptocurrency and NFT transactions.",
-    linkType: "external",
-    url: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
-    links: {
-      behance: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
-    },
-  },
-  {
     id: "ux-copywriter",
     title: "UX Copywriter",
     category: "Others",
@@ -208,7 +193,7 @@ export const projects = shuffleArray([
     category: "Web Development",
     previewImage:
       "https://github.com/HadiuzzamanBappy/SCASL/raw/main/assets/img/demo.png",
-    tags: ["HTML", "CSS", "SCSS", "JavaScript"],
+    tags: ["HTML", "CSS", "SCSS", "JavaScript", "Desktop"],
     description:
       "A professional services frontend project with clean navigation and responsive design.",
     linkType: "external",
@@ -245,6 +230,21 @@ export const projects = shuffleArray([
  * and diverse project experience over time.
  */
 export const archivedProjects = [
+  {
+    id: "logo-design-cryptowire-cryptocurrency",
+    title: "Logo Design : CryptoWire - Cryptocurrency",
+    category: "Others",
+    previewImage:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/280345134145281.61cf0b18bf3ce.jpg",
+    tags: ["Branding", "Graphic Design", "Industrial Design"],
+    description:
+      "Logo design for a platform facilitating cryptocurrency and NFT transactions.",
+    linkType: "external",
+    url: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
+    links: {
+      behance: "https://www.behance.net/gallery/134145281/Logo-Design-CryptoWire-Cryptocurrency",
+    },
+  },
   {
     id: "gotravel-app-onboard-to-explore",
     title: "GoTravel App : Onboard to Explore",
